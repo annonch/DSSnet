@@ -1,0 +1,8 @@
+SetProp, 1E050,   -1E050, 1E050, -1E050, 16777215, 16777215, 0, 4
+Curve, 0, 0, 2, 0, 0, 1, " t(sec)"
+Curve, 0, 255, 2, 0, 0, 1, " Q1 (kvar)"
+Curve, 0, 16711680, 2, 0, 0, 1, " Q2 (kvar)"
+Xlabel, "Time, H"
+Ylabel, "Mag"
+ChartCaption, "source.pq:  P1 (kW),  P2 (kW),  P3 (kW)"
+PctRim, 2

@@ -1,0 +1,53 @@
+# file for setting up switch links
+# ie. `new s1` - or `s1 PMU1001`
+#
+# channon@iit.edu  *
+#
+new s1
+new s2
+new s3
+new s4
+new s5
+new s6
+new s7
+new s8
+new s9
+new s10
+new s11
+new s12
+new s13
+new s14
+new s15
+new s16
+new s17
+#
+#
+DR s8
+#
+#
+s1 s3
+s2 s4
+#s3 s6 
+s3 s9
+#s4 s6
+s4 s5
+s4 s10
+#s6 s9
+#s6 s10
+s7 s8
+s8 s9 
+s9 s10
+#s9 s12
+s9 s14
+s10 s11 
+#s10 s12
+s10 s13
+#s12 s14
+#s12 s13
+#s12 s15
+s13 s15
+s14 s16
+s15 s17
+#
+#
+s1 LOAD1

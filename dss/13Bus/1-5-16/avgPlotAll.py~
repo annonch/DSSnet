@@ -1,0 +1,75 @@
+#!/usr/bin/python
+
+import sys
+import matplotlib.pyplot as plt
+import numpy as np
+import six
+import matplotlib.colors as colors
+# import matplotlib.markers.MarkerStyle as ms
+
+def plot_all(output_file):
+    global cnt
+    plt.figure()
+    # freeze = []
+    # unfreeze = []
+    data = []
+    # scales = [1, 10, 50, 100, 250, 500]
+    #for scale in scales:
+    loadShiftData = np.loadtxt("LoadShiftData.txt")
+    loadShiftTimeData=np.loadtxt("LoadShiftTimeData.txt")
+    
+    noLoadShiftData= np.loadtxt("noLoadShiftData.txt")
+    noLoadShiftTimeData=np.loadtxt("noLoadShiftTimeData.txt")
+    
+    DoSData= np.loadtxt("DoSData.txt")
+    DoSTimeData=np.loadtxt("DoSTimeData.txt")
+    
+    utilityData= np.loadtxt("utilityData2.txt")
+    utilityTimeData=np.loadtxt("utilityTimeData2.txt")
+        
+        #freezeData *= 1000 # to milliseconds
+        #unfreezeData *= 1000
+        # freeze.append(np.average(freezeData))
+        # unfreeze.append(np.average(unfreezeData))
+        
+        #sync = np.concatenate((freezeData, unfreezeData))
+        #data.append(np.average(sync))
+
+    # plt.xscale('log')
+    plt.plot(loadShiftTimeData, loadShiftData, color='red', linewidth=1.0, label='Load Shifting Algorithm')
+    cnt += 1
+
+    plt.plot(noLoadShiftTimeData, noLoadShiftData, color='blue', linewidth=1.0, label='Without Load Shifting Algorithm')
+    cnt += 1
+
+    plt.plot(DoSTimeData, DoSData, color='green', linewidth=1.0, label='DoS attack on Algorithm')
+    cnt += 1
+
+    plt.plot(utilityTimeData, utilityData, color='cyan', linewidth=1.0, label='Utility Max Desired Price')
+    cnt += 1
+
+
+                               
+    #plt.plot(scales, freeze, color=colors_name[cnt], marker='o', ls='-.', linewidth=3.0, label='freeze')
+    # cnt += 1
+    #plt.plot(scales, unfreeze, color=colors_name[cnt], marker='v', ls=':', linewidth=3.0, label='unfreeze')
+    # cnt += 1
+
+    plt.grid(True)
+    plt.xlabel('time ')
+    plt.ylabel('Total Power (kW)')
+    plt.legend(loc='upper right')
+    plt.savefig(output_file, format='eps')
+
+if __name__ == '__main__':
+    cnt = 0
+    ls_name = ['solid', 'dashed', 'dashdot', 'dotted', '-', '--', '-.', ':']
+    colors_ = list(six.iteritems(colors.cnames))
+    colors_name = [x[0] for x in colors_]
+    colors_name = ['red', 'blue', 'cyan', 'peru', 'green', 'salmon', 'pink', 'lime', 'tan', 'seagreen', 'purple', 'wheat']
+    print colors_name
+    output = sys.argv[1]
+    plot_all(output)
+
+
+

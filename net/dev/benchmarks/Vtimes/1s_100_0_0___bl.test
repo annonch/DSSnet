@@ -1,0 +1,605 @@
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+[main loop] recv_time[1446843297.801796]
+[gather_statistics] send_time[1446843297.801704]s
+[gather_statistics] recv_time[1446843297.801796]s
+[gather_statistics] try_recv_time[1446843297.801799]s
+[gather_statistics] triptime[0.92]s
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.092 ms
+[main loop] recv_time[1446843298.801842]
+[gather_statistics] send_time[1446843298.801772]s
+[gather_statistics] recv_time[1446843298.801842]s
+[gather_statistics] try_recv_time[1446843298.801852]s
+[gather_statistics] triptime[0.70]s
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=0.070 ms
+[main loop] recv_time[1446843299.801802]
+[gather_statistics] send_time[1446843299.801749]s
+[gather_statistics] recv_time[1446843299.801802]s
+[gather_statistics] try_recv_time[1446843299.801811]s
+[gather_statistics] triptime[0.53]s
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=0.053 ms
+[main loop] recv_time[1446843300.801933]
+[gather_statistics] send_time[1446843300.801864]s
+[gather_statistics] recv_time[1446843300.801933]s
+[gather_statistics] try_recv_time[1446843300.801946]s
+[gather_statistics] triptime[0.69]s
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=0.069 ms
+[main loop] recv_time[1446843301.802037]
+[gather_statistics] send_time[1446843301.801974]s
+[gather_statistics] recv_time[1446843301.802037]s
+[gather_statistics] try_recv_time[1446843301.802047]s
+[gather_statistics] triptime[0.63]s
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=0.063 ms
+[main loop] recv_time[1446843302.802025]
+[gather_statistics] send_time[1446843302.801971]s
+[gather_statistics] recv_time[1446843302.802025]s
+[gather_statistics] try_recv_time[1446843302.802035]s
+[gather_statistics] triptime[0.54]s
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=0.054 ms
+[main loop] recv_time[1446843303.801808]
+[gather_statistics] send_time[1446843303.801755]s
+[gather_statistics] recv_time[1446843303.801808]s
+[gather_statistics] try_recv_time[1446843303.801817]s
+[gather_statistics] triptime[0.53]s
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=0.053 ms
+[main loop] recv_time[1446843304.802695]
+[gather_statistics] send_time[1446843304.802643]s
+[gather_statistics] recv_time[1446843304.802695]s
+[gather_statistics] try_recv_time[1446843304.802705]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843305.802008]
+[gather_statistics] send_time[1446843305.801952]s
+[gather_statistics] recv_time[1446843305.802008]s
+[gather_statistics] try_recv_time[1446843305.802018]s
+[gather_statistics] triptime[0.56]s
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=0.056 ms
+[main loop] recv_time[1446843306.801996]
+[gather_statistics] send_time[1446843306.801941]s
+[gather_statistics] recv_time[1446843306.801996]s
+[gather_statistics] try_recv_time[1446843306.802005]s
+[gather_statistics] triptime[0.55]s
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=0.055 ms
+[main loop] recv_time[1446843307.801817]
+[gather_statistics] send_time[1446843307.801766]s
+[gather_statistics] recv_time[1446843307.801817]s
+[gather_statistics] try_recv_time[1446843307.801827]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=11 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843308.801813]
+[gather_statistics] send_time[1446843308.801763]s
+[gather_statistics] recv_time[1446843308.801813]s
+[gather_statistics] try_recv_time[1446843308.801822]s
+[gather_statistics] triptime[0.50]s
+64 bytes from 10.0.0.2: icmp_seq=12 ttl=64 time=0.050 ms
+[main loop] recv_time[1446843309.801959]
+[gather_statistics] send_time[1446843309.801908]s
+[gather_statistics] recv_time[1446843309.801959]s
+[gather_statistics] try_recv_time[1446843309.801969]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=13 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843310.801955]
+[gather_statistics] send_time[1446843310.801903]s
+[gather_statistics] recv_time[1446843310.801955]s
+[gather_statistics] try_recv_time[1446843310.801965]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=14 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843311.801807]
+[gather_statistics] send_time[1446843311.801755]s
+[gather_statistics] recv_time[1446843311.801807]s
+[gather_statistics] try_recv_time[1446843311.801816]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=15 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843312.801957]
+[gather_statistics] send_time[1446843312.801905]s
+[gather_statistics] recv_time[1446843312.801957]s
+[gather_statistics] try_recv_time[1446843312.801966]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=16 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843313.801932]
+[gather_statistics] send_time[1446843313.801882]s
+[gather_statistics] recv_time[1446843313.801932]s
+[gather_statistics] try_recv_time[1446843313.801942]s
+[gather_statistics] triptime[0.50]s
+64 bytes from 10.0.0.2: icmp_seq=17 ttl=64 time=0.050 ms
+[main loop] recv_time[1446843314.801938]
+[gather_statistics] send_time[1446843314.801887]s
+[gather_statistics] recv_time[1446843314.801938]s
+[gather_statistics] try_recv_time[1446843314.801947]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=18 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843315.801807]
+[gather_statistics] send_time[1446843315.801756]s
+[gather_statistics] recv_time[1446843315.801807]s
+[gather_statistics] try_recv_time[1446843315.801816]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=19 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843316.801902]
+[gather_statistics] send_time[1446843316.801850]s
+[gather_statistics] recv_time[1446843316.801902]s
+[gather_statistics] try_recv_time[1446843316.801911]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=20 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843317.801914]
+[gather_statistics] send_time[1446843317.801862]s
+[gather_statistics] recv_time[1446843317.801914]s
+[gather_statistics] try_recv_time[1446843317.801923]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=21 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843318.801892]
+[gather_statistics] send_time[1446843318.801841]s
+[gather_statistics] recv_time[1446843318.801892]s
+[gather_statistics] try_recv_time[1446843318.801902]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=22 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843319.801808]
+[gather_statistics] send_time[1446843319.801757]s
+[gather_statistics] recv_time[1446843319.801808]s
+[gather_statistics] try_recv_time[1446843319.801817]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=23 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843320.802650]
+[gather_statistics] send_time[1446843320.802599]s
+[gather_statistics] recv_time[1446843320.802650]s
+[gather_statistics] try_recv_time[1446843320.802659]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=24 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843321.801880]
+[gather_statistics] send_time[1446843321.801829]s
+[gather_statistics] recv_time[1446843321.801880]s
+[gather_statistics] try_recv_time[1446843321.801889]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=25 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843322.801863]
+[gather_statistics] send_time[1446843322.801812]s
+[gather_statistics] recv_time[1446843322.801863]s
+[gather_statistics] try_recv_time[1446843322.801872]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=26 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843323.802698]
+[gather_statistics] send_time[1446843323.802647]s
+[gather_statistics] recv_time[1446843323.802698]s
+[gather_statistics] try_recv_time[1446843323.802708]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=27 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843324.801847]
+[gather_statistics] send_time[1446843324.801796]s
+[gather_statistics] recv_time[1446843324.801847]s
+[gather_statistics] try_recv_time[1446843324.801856]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=28 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843325.801834]
+[gather_statistics] send_time[1446843325.801781]s
+[gather_statistics] recv_time[1446843325.801834]s
+[gather_statistics] try_recv_time[1446843325.801844]s
+[gather_statistics] triptime[0.53]s
+64 bytes from 10.0.0.2: icmp_seq=29 ttl=64 time=0.053 ms
+[main loop] recv_time[1446843326.802656]
+[gather_statistics] send_time[1446843326.802602]s
+[gather_statistics] recv_time[1446843326.802656]s
+[gather_statistics] try_recv_time[1446843326.802665]s
+[gather_statistics] triptime[0.54]s
+64 bytes from 10.0.0.2: icmp_seq=30 ttl=64 time=0.054 ms
+[main loop] recv_time[1446843327.801787]
+[gather_statistics] send_time[1446843327.801736]s
+[gather_statistics] recv_time[1446843327.801787]s
+[gather_statistics] try_recv_time[1446843327.801797]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=31 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843328.801797]
+[gather_statistics] send_time[1446843328.801746]s
+[gather_statistics] recv_time[1446843328.801797]s
+[gather_statistics] try_recv_time[1446843328.801807]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=32 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843329.802129]
+[gather_statistics] send_time[1446843329.802077]s
+[gather_statistics] recv_time[1446843329.802129]s
+[gather_statistics] try_recv_time[1446843329.802138]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=33 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843330.802918]
+[gather_statistics] send_time[1446843330.802864]s
+[gather_statistics] recv_time[1446843330.802918]s
+[gather_statistics] try_recv_time[1446843330.802927]s
+[gather_statistics] triptime[0.54]s
+64 bytes from 10.0.0.2: icmp_seq=34 ttl=64 time=0.054 ms
+[main loop] recv_time[1446843331.801911]
+[gather_statistics] send_time[1446843331.801864]s
+[gather_statistics] recv_time[1446843331.801911]s
+[gather_statistics] try_recv_time[1446843331.801921]s
+[gather_statistics] triptime[0.47]s
+64 bytes from 10.0.0.2: icmp_seq=35 ttl=64 time=0.047 ms
+[main loop] recv_time[1446843332.802150]
+[gather_statistics] send_time[1446843332.802097]s
+[gather_statistics] recv_time[1446843332.802150]s
+[gather_statistics] try_recv_time[1446843332.802159]s
+[gather_statistics] triptime[0.53]s
+64 bytes from 10.0.0.2: icmp_seq=36 ttl=64 time=0.053 ms
+[main loop] recv_time[1446843333.802954]
+[gather_statistics] send_time[1446843333.802903]s
+[gather_statistics] recv_time[1446843333.802954]s
+[gather_statistics] try_recv_time[1446843333.802964]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=37 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843334.802135]
+[gather_statistics] send_time[1446843334.802083]s
+[gather_statistics] recv_time[1446843334.802135]s
+[gather_statistics] try_recv_time[1446843334.802144]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=38 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843335.802566]
+[gather_statistics] send_time[1446843335.802515]s
+[gather_statistics] recv_time[1446843335.802566]s
+[gather_statistics] try_recv_time[1446843335.802576]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=39 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843336.801992]
+[gather_statistics] send_time[1446843336.801941]s
+[gather_statistics] recv_time[1446843336.801992]s
+[gather_statistics] try_recv_time[1446843336.802001]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=40 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843337.802175]
+[gather_statistics] send_time[1446843337.802123]s
+[gather_statistics] recv_time[1446843337.802175]s
+[gather_statistics] try_recv_time[1446843337.802184]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=41 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843338.802955]
+[gather_statistics] send_time[1446843338.802899]s
+[gather_statistics] recv_time[1446843338.802955]s
+[gather_statistics] try_recv_time[1446843338.802964]s
+[gather_statistics] triptime[0.56]s
+64 bytes from 10.0.0.2: icmp_seq=42 ttl=64 time=0.056 ms
+[main loop] recv_time[1446843339.802560]
+[gather_statistics] send_time[1446843339.802509]s
+[gather_statistics] recv_time[1446843339.802560]s
+[gather_statistics] try_recv_time[1446843339.802570]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=43 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843340.802371]
+[gather_statistics] send_time[1446843340.802317]s
+[gather_statistics] recv_time[1446843340.802371]s
+[gather_statistics] try_recv_time[1446843340.802380]s
+[gather_statistics] triptime[0.54]s
+64 bytes from 10.0.0.2: icmp_seq=44 ttl=64 time=0.054 ms
+[main loop] recv_time[1446843341.802856]
+[gather_statistics] send_time[1446843341.802803]s
+[gather_statistics] recv_time[1446843341.802856]s
+[gather_statistics] try_recv_time[1446843341.802866]s
+[gather_statistics] triptime[0.53]s
+64 bytes from 10.0.0.2: icmp_seq=45 ttl=64 time=0.053 ms
+[main loop] recv_time[1446843342.802157]
+[gather_statistics] send_time[1446843342.802107]s
+[gather_statistics] recv_time[1446843342.802157]s
+[gather_statistics] try_recv_time[1446843342.802167]s
+[gather_statistics] triptime[0.50]s
+64 bytes from 10.0.0.2: icmp_seq=46 ttl=64 time=0.050 ms
+[main loop] recv_time[1446843343.801790]
+[gather_statistics] send_time[1446843343.801739]s
+[gather_statistics] recv_time[1446843343.801790]s
+[gather_statistics] try_recv_time[1446843343.801799]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=47 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843344.802136]
+[gather_statistics] send_time[1446843344.802084]s
+[gather_statistics] recv_time[1446843344.802136]s
+[gather_statistics] try_recv_time[1446843344.802145]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=48 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843345.802954]
+[gather_statistics] send_time[1446843345.802900]s
+[gather_statistics] recv_time[1446843345.802954]s
+[gather_statistics] try_recv_time[1446843345.802963]s
+[gather_statistics] triptime[0.54]s
+64 bytes from 10.0.0.2: icmp_seq=49 ttl=64 time=0.054 ms
+[main loop] recv_time[1446843346.801985]
+[gather_statistics] send_time[1446843346.801933]s
+[gather_statistics] recv_time[1446843346.801985]s
+[gather_statistics] try_recv_time[1446843346.801994]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=50 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843347.801794]
+[gather_statistics] send_time[1446843347.801743]s
+[gather_statistics] recv_time[1446843347.801794]s
+[gather_statistics] try_recv_time[1446843347.801804]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=51 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843348.802379]
+[gather_statistics] send_time[1446843348.802328]s
+[gather_statistics] recv_time[1446843348.802379]s
+[gather_statistics] try_recv_time[1446843348.802388]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=52 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843349.802125]
+[gather_statistics] send_time[1446843349.802073]s
+[gather_statistics] recv_time[1446843349.802125]s
+[gather_statistics] try_recv_time[1446843349.802134]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=53 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843350.802934]
+[gather_statistics] send_time[1446843350.802883]s
+[gather_statistics] recv_time[1446843350.802934]s
+[gather_statistics] try_recv_time[1446843350.802944]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=54 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843351.801931]
+[gather_statistics] send_time[1446843351.801884]s
+[gather_statistics] recv_time[1446843351.801931]s
+[gather_statistics] try_recv_time[1446843351.801941]s
+[gather_statistics] triptime[0.47]s
+64 bytes from 10.0.0.2: icmp_seq=55 ttl=64 time=0.047 ms
+[main loop] recv_time[1446843352.802135]
+[gather_statistics] send_time[1446843352.802084]s
+[gather_statistics] recv_time[1446843352.802135]s
+[gather_statistics] try_recv_time[1446843352.802144]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=56 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843353.802938]
+[gather_statistics] send_time[1446843353.802887]s
+[gather_statistics] recv_time[1446843353.802938]s
+[gather_statistics] try_recv_time[1446843353.802948]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=57 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843354.802129]
+[gather_statistics] send_time[1446843354.802078]s
+[gather_statistics] recv_time[1446843354.802129]s
+[gather_statistics] try_recv_time[1446843354.802139]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=58 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843355.801801]
+[gather_statistics] send_time[1446843355.801746]s
+[gather_statistics] recv_time[1446843355.801801]s
+[gather_statistics] try_recv_time[1446843355.801810]s
+[gather_statistics] triptime[0.55]s
+64 bytes from 10.0.0.2: icmp_seq=59 ttl=64 time=0.055 ms
+[main loop] recv_time[1446843356.801970]
+[gather_statistics] send_time[1446843356.801918]s
+[gather_statistics] recv_time[1446843356.801970]s
+[gather_statistics] try_recv_time[1446843356.801980]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=60 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843357.802636]
+[gather_statistics] send_time[1446843357.802585]s
+[gather_statistics] recv_time[1446843357.802636]s
+[gather_statistics] try_recv_time[1446843357.802646]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=61 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843358.801848]
+[gather_statistics] send_time[1446843358.801793]s
+[gather_statistics] recv_time[1446843358.801848]s
+[gather_statistics] try_recv_time[1446843358.801858]s
+[gather_statistics] triptime[0.55]s
+64 bytes from 10.0.0.2: icmp_seq=62 ttl=64 time=0.055 ms
+[main loop] recv_time[1446843359.801802]
+[gather_statistics] send_time[1446843359.801746]s
+[gather_statistics] recv_time[1446843359.801802]s
+[gather_statistics] try_recv_time[1446843359.801811]s
+[gather_statistics] triptime[0.56]s
+64 bytes from 10.0.0.2: icmp_seq=63 ttl=64 time=0.056 ms
+[main loop] recv_time[1446843360.802026]
+[gather_statistics] send_time[1446843360.801974]s
+[gather_statistics] recv_time[1446843360.802026]s
+[gather_statistics] try_recv_time[1446843360.802037]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=64 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843361.801988]
+[gather_statistics] send_time[1446843361.801934]s
+[gather_statistics] recv_time[1446843361.801988]s
+[gather_statistics] try_recv_time[1446843361.801997]s
+[gather_statistics] triptime[0.54]s
+64 bytes from 10.0.0.2: icmp_seq=65 ttl=64 time=0.054 ms
+[main loop] recv_time[1446843362.802123]
+[gather_statistics] send_time[1446843362.802072]s
+[gather_statistics] recv_time[1446843362.802123]s
+[gather_statistics] try_recv_time[1446843362.802133]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=66 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843363.801795]
+[gather_statistics] send_time[1446843363.801744]s
+[gather_statistics] recv_time[1446843363.801795]s
+[gather_statistics] try_recv_time[1446843363.801804]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=67 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843364.802113]
+[gather_statistics] send_time[1446843364.802062]s
+[gather_statistics] recv_time[1446843364.802113]s
+[gather_statistics] try_recv_time[1446843364.802123]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=68 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843365.802938]
+[gather_statistics] send_time[1446843365.802887]s
+[gather_statistics] recv_time[1446843365.802938]s
+[gather_statistics] try_recv_time[1446843365.802947]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=69 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843366.801992]
+[gather_statistics] send_time[1446843366.801941]s
+[gather_statistics] recv_time[1446843366.801992]s
+[gather_statistics] try_recv_time[1446843366.802002]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=70 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843367.801796]
+[gather_statistics] send_time[1446843367.801744]s
+[gather_statistics] recv_time[1446843367.801796]s
+[gather_statistics] try_recv_time[1446843367.801806]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=71 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843368.802739]
+[gather_statistics] send_time[1446843368.802687]s
+[gather_statistics] recv_time[1446843368.802739]s
+[gather_statistics] try_recv_time[1446843368.802748]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=72 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843369.802118]
+[gather_statistics] send_time[1446843369.802067]s
+[gather_statistics] recv_time[1446843369.802118]s
+[gather_statistics] try_recv_time[1446843369.802127]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=73 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843370.802927]
+[gather_statistics] send_time[1446843370.802876]s
+[gather_statistics] recv_time[1446843370.802927]s
+[gather_statistics] try_recv_time[1446843370.802936]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=74 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843371.801965]
+[gather_statistics] send_time[1446843371.801913]s
+[gather_statistics] recv_time[1446843371.801965]s
+[gather_statistics] try_recv_time[1446843371.801975]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=75 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843372.802106]
+[gather_statistics] send_time[1446843372.802054]s
+[gather_statistics] recv_time[1446843372.802106]s
+[gather_statistics] try_recv_time[1446843372.802115]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=76 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843373.801900]
+[gather_statistics] send_time[1446843373.801845]s
+[gather_statistics] recv_time[1446843373.801900]s
+[gather_statistics] try_recv_time[1446843373.801909]s
+[gather_statistics] triptime[0.55]s
+64 bytes from 10.0.0.2: icmp_seq=77 ttl=64 time=0.055 ms
+[main loop] recv_time[1446843374.802294]
+[gather_statistics] send_time[1446843374.802242]s
+[gather_statistics] recv_time[1446843374.802294]s
+[gather_statistics] try_recv_time[1446843374.802303]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=78 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843375.801841]
+[gather_statistics] send_time[1446843375.801788]s
+[gather_statistics] recv_time[1446843375.801841]s
+[gather_statistics] try_recv_time[1446843375.801851]s
+[gather_statistics] triptime[0.53]s
+64 bytes from 10.0.0.2: icmp_seq=79 ttl=64 time=0.053 ms
+[main loop] recv_time[1446843376.801983]
+[gather_statistics] send_time[1446843376.801932]s
+[gather_statistics] recv_time[1446843376.801983]s
+[gather_statistics] try_recv_time[1446843376.801992]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=80 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843377.802309]
+[gather_statistics] send_time[1446843377.802053]s
+[gather_statistics] recv_time[1446843377.802309]s
+[gather_statistics] try_recv_time[1446843377.802323]s
+[gather_statistics] triptime[0.256]s
+64 bytes from 10.0.0.2: icmp_seq=81 ttl=64 time=0.256 ms
+[main loop] recv_time[1446843378.801865]
+[gather_statistics] send_time[1446843378.801814]s
+[gather_statistics] recv_time[1446843378.801865]s
+[gather_statistics] try_recv_time[1446843378.801874]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=82 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843379.801796]
+[gather_statistics] send_time[1446843379.801745]s
+[gather_statistics] recv_time[1446843379.801796]s
+[gather_statistics] try_recv_time[1446843379.801805]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=83 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843380.802532]
+[gather_statistics] send_time[1446843380.802479]s
+[gather_statistics] recv_time[1446843380.802532]s
+[gather_statistics] try_recv_time[1446843380.802542]s
+[gather_statistics] triptime[0.53]s
+64 bytes from 10.0.0.2: icmp_seq=84 ttl=64 time=0.053 ms
+[main loop] recv_time[1446843381.802048]
+[gather_statistics] send_time[1446843381.801993]s
+[gather_statistics] recv_time[1446843381.802048]s
+[gather_statistics] try_recv_time[1446843381.802058]s
+[gather_statistics] triptime[0.55]s
+64 bytes from 10.0.0.2: icmp_seq=85 ttl=64 time=0.055 ms
+[main loop] recv_time[1446843382.802077]
+[gather_statistics] send_time[1446843382.802025]s
+[gather_statistics] recv_time[1446843382.802077]s
+[gather_statistics] try_recv_time[1446843382.802086]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=86 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843383.801789]
+[gather_statistics] send_time[1446843383.801739]s
+[gather_statistics] recv_time[1446843383.801789]s
+[gather_statistics] try_recv_time[1446843383.801799]s
+[gather_statistics] triptime[0.50]s
+64 bytes from 10.0.0.2: icmp_seq=87 ttl=64 time=0.050 ms
+[main loop] recv_time[1446843384.802103]
+[gather_statistics] send_time[1446843384.802049]s
+[gather_statistics] recv_time[1446843384.802103]s
+[gather_statistics] try_recv_time[1446843384.802113]s
+[gather_statistics] triptime[0.54]s
+64 bytes from 10.0.0.2: icmp_seq=88 ttl=64 time=0.054 ms
+[main loop] recv_time[1446843385.802926]
+[gather_statistics] send_time[1446843385.802875]s
+[gather_statistics] recv_time[1446843385.802926]s
+[gather_statistics] try_recv_time[1446843385.802935]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=89 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843386.801990]
+[gather_statistics] send_time[1446843386.801939]s
+[gather_statistics] recv_time[1446843386.801990]s
+[gather_statistics] try_recv_time[1446843386.802000]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=90 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843387.801793]
+[gather_statistics] send_time[1446843387.801742]s
+[gather_statistics] recv_time[1446843387.801793]s
+[gather_statistics] try_recv_time[1446843387.801802]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=91 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843388.802377]
+[gather_statistics] send_time[1446843388.802326]s
+[gather_statistics] recv_time[1446843388.802377]s
+[gather_statistics] try_recv_time[1446843388.802386]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=92 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843389.802090]
+[gather_statistics] send_time[1446843389.802039]s
+[gather_statistics] recv_time[1446843389.802090]s
+[gather_statistics] try_recv_time[1446843389.802100]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=93 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843390.802934]
+[gather_statistics] send_time[1446843390.802883]s
+[gather_statistics] recv_time[1446843390.802934]s
+[gather_statistics] try_recv_time[1446843390.802944]s
+[gather_statistics] triptime[0.51]s
+64 bytes from 10.0.0.2: icmp_seq=94 ttl=64 time=0.051 ms
+[main loop] recv_time[1446843391.801937]
+[gather_statistics] send_time[1446843391.801884]s
+[gather_statistics] recv_time[1446843391.801937]s
+[gather_statistics] try_recv_time[1446843391.801947]s
+[gather_statistics] triptime[0.53]s
+64 bytes from 10.0.0.2: icmp_seq=95 ttl=64 time=0.053 ms
+[main loop] recv_time[1446843392.802238]
+[gather_statistics] send_time[1446843392.802186]s
+[gather_statistics] recv_time[1446843392.802238]s
+[gather_statistics] try_recv_time[1446843392.802247]s
+[gather_statistics] triptime[0.52]s
+64 bytes from 10.0.0.2: icmp_seq=96 ttl=64 time=0.052 ms
+[main loop] recv_time[1446843393.802940]
+[gather_statistics] send_time[1446843393.802886]s
+[gather_statistics] recv_time[1446843393.802940]s
+[gather_statistics] try_recv_time[1446843393.802949]s
+[gather_statistics] triptime[0.54]s
+64 bytes from 10.0.0.2: icmp_seq=97 ttl=64 time=0.054 ms
+[main loop] recv_time[1446843394.802077]
+[gather_statistics] send_time[1446843394.802024]s
+[gather_statistics] recv_time[1446843394.802077]s
+[gather_statistics] try_recv_time[1446843394.802086]s
+[gather_statistics] triptime[0.53]s
+64 bytes from 10.0.0.2: icmp_seq=98 ttl=64 time=0.053 ms
+[main loop] recv_time[1446843395.801797]
+[gather_statistics] send_time[1446843395.801742]s
+[gather_statistics] recv_time[1446843395.801797]s
+[gather_statistics] try_recv_time[1446843395.801807]s
+[gather_statistics] triptime[0.55]s
+64 bytes from 10.0.0.2: icmp_seq=99 ttl=64 time=0.055 ms
+[main loop] recv_time[1446843396.802004]
+[gather_statistics] send_time[1446843396.801942]s
+[gather_statistics] recv_time[1446843396.802004]s
+[gather_statistics] try_recv_time[1446843396.802013]s
+[gather_statistics] triptime[0.62]s
+64 bytes from 10.0.0.2: icmp_seq=100 ttl=64 time=0.062 ms
+
+--- 10.0.0.2 ping statistics ---
+100 packets transmitted, 100 received, 0% packet loss, time 99000ms
+rtt min/avg/max/mdev = 0.047/0.054/0.256/0.023 ms

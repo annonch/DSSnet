@@ -1,0 +1,11 @@
+!!!!!!!!!!!!!!!!!!!!!
+!  channon@iit.edu  !
+!!!!!!!!!!!!!!!!!!!!!
+
+New Monitor.a1 Line.line1 1 Mode=0
+New Monitor.L2 load.load1 1 Mode=0
+New Monitor.L3 Line.line1 2 Mode=0
+New Monitor.L4 Line.line2 1 Mode=0
+New Monitor.L5 Line.line2 2 Mode=0
+New Monitor.L6 Transformer.t1 1 Mode=0
+New Monitor.L7 Transformer.t1 2 Mode=0

@@ -1,0 +1,74 @@
+##########################
+#  channon@hawk.iit.edu  #
+##########################
+#
+here is a summary of newest results as of Nov 5 2015
+
+iperf3 test - iperf3 runs for 60 seconds. The kernel is VitualTimeKernel
+
+The emulation is uninturrupted for the Base Line test
+The emulation is repeatedly paused and unpaused for the Virtual test
+
+1 switch
+
+Paused time	  Running Time 	    Base line 	Virtual	Theoretical	Notes
+0.33   		  0.33	  	    91.7 	139	100		pt = rt
+0.033		  0.033		    91.7	179	100		
+
+0.66		  0.33		    91.6	111	100		pt = 2 * rt
+0.066		  0.033		    91.9	241	100
+
+0.33		  0.66		    91.6	106	100		pt * 2 = rt
+0.033		  0.066		    91.7	141	100
+
+10 switchs
+
+Paused time	  Running Time 	    Base line 	Virtual	Theoretical	Notes
+
+0.33   		  0.33	  	    93.8 	146	100		pt = rt
+0.033		  0.033		    93.7	174	100		
+
+0.66		  0.33		    93.3	115	100		pt = 2 * rt
+0.066		  0.033		    93.6	234	100
+
+0.33		  0.66		    93.1	113	100		pt * 2 = rt
+0.033		  0.066		    93.6	140	100
+
+
+############################################################################################
+
+iperf2 test - iperf2 runs for 60 seconds. The kernel is VitualTimeKernel
+
+The emulation is uninturrupted for the Base Line test
+The emulation is repeatedly paused and unpaused for the Virtual test
+
+1 switch
+
+Paused time	  Running Time 	    Base line 	Virtual	Theoretical	Notes
+0.66   		  0.33	  	    92.1 	39.3	100	
+0.066		  0.033		    92.1	85.4	100
+	 
+0.33		  0.33		    92.1	62.8	100		
+0.033		  0.033		    92.1	87.6	100		
+
+0.33   		  0.66	  	    92	 	70.9	100		
+0.033		  0.066		    91.8	88.2	100		
+
+1		  1		    92		49.8	100
+
+
+
+10 switches
+
+Paused time	  Running Time 	    Base line 	Virtual	Theoretical	Notes
+0.66   		  0.33	  	    93.5 	39.2	100	
+0.066		  0.033		    93.5	85.1	100
+	 
+0.33		  0.33		    93.6	86.6	100		
+0.033		  0.033		    93.4	87.6	100		
+
+0.33   		  0.66	  	    93.5 	73.1	100		
+0.033		  0.066		    93.7	87.7	100		
+
+1		  1		    93.4	42.1	100
+
