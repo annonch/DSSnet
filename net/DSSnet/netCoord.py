@@ -179,7 +179,7 @@ def sync():
             pass
     
 def postProcess(reply,newEvent):
-    global net,hosts
+    global net,hosts,num_block
     event = newEvent.split()
     try:
         postprocess=getattr(handler,event[4])
@@ -187,12 +187,11 @@ def postProcess(reply,newEvent):
     except AttributeError:
         print('post process error:  %s' % newEvent)
         logging.info('post process error with event request: %s' % newEvent)
-        
-    if newEvent[1] == 'b':
+    
+    if event[1] == 'b':
         num_block -= 1
         if num_block == 0:
-            unpause()
-
+            resume()
     thread.exit()
 
     

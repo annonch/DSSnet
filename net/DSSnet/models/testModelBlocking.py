@@ -8,5 +8,7 @@ pipin = pipe.setup_pipe_w()
 time.sleep(10)
 
 while 1:
-    pipe.send_sync_event('update b p pow_default %s post_d something\n' % time.time(), pipin)
+    pipe.send_sync_event('update b p pre_pmu post_pmu %s a1 0\n' % time.time(), pipin)
     time.sleep(30)
+
+# listen and print
