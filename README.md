@@ -16,12 +16,25 @@
 * get this repository
 * navigate to LINUX-FAST/
 * run vagrant up
-* run vagrant ssh to log in
+* may take a while to download image
+* If the message 
+ ```
+ default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection timeout. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+    default: Warning: Authentication failure. Retrying...
+```
+* this is some problem because of the re-packaging just ctrl+c and ignore
+* run vagrant ssh to log in. if it prompts for password use `vagrant`
 * see vagrant docs for more info on vagrant (other useful commands vagrant destroy and vagrant halt)
 
 #### I want to build everything the long way (everything will be very updated) ####
 * navigate to LINUX-SLOW/
-* run vagrant up (this takes about 2-3 hours or less depending on Internet and processor)
+* run vagrant up (this takes about 2-3 hours more or less depending on Internet and processor)
 * vagrant ssh
 * sudo reboot (IMPORTANT - we have recompiled the kernel with the latest virtual time kernel)
 * wait 60 seconds
