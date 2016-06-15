@@ -12,6 +12,8 @@
 
 ## How do I get set up? ##
 
+### two ways to set up the network emulation (use the fast version) ###
+
 #### Set up the network emulation ####
 * get this repository
 * navigate to LINUX-FAST/
