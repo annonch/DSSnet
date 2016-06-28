@@ -9,8 +9,9 @@ import pipes
 import time
 import sys
 
-pipeout = pipe.setup_pipe_l(sys.argv[1])
 pipin = pipe.setup_pipe_w()
+
+pipeout = pipe.setup_pipe_l(sys.argv[1])
 
 from ctypes import *
 #from numpy import array
