@@ -106,3 +106,787 @@ INFO:root:reply recieved 407181 7199 0 7199 -120 7199 119 334 -35 331 -154 341 8
 INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1465852576.23', 'a1', '0']
 INFO:root:reply recieved 407181 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
 INFO:root:resume time: 1465852592.51
+INFO:root:pause time: 1465928358.17
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1465928358.16', 'a1', '0']
+INFO:root:pause time: 1465928573.14
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1465928573.14', 'a1', '0']
+INFO:root:reply recieved 407202 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1465928573.14', 'a1', '0']
+INFO:root:reply recieved 407202 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1465928581.3
+INFO:root:pause time: 1465928611.34
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1465928603.17', 'a1', '0']
+INFO:root:pause time: 1466520729.61
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1466520729.61', 'a1', '0']
+INFO:root:reply recieved 407366 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1466520729.61', 'a1', '0']
+INFO:root:resume time: 1466520836.62
+INFO:root:reply recieved 407366 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:pause time: 1467124734.97
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467124734.97', 'a1', '0']
+INFO:root:pause time: 1467125480.23
+INFO:root:pause time: 1467125480.53
+INFO:root:pause time: 1467125480.84
+INFO:root:pause time: 1467125481.14
+INFO:root:pause time: 1467125481.44
+INFO:root:pause time: 1467125481.74
+INFO:root:pause time: 1467125482.04
+INFO:root:pause time: 1467125482.34
+INFO:root:pause time: 1467125482.64
+INFO:root:pause time: 1467125482.95
+INFO:root:pause time: 1467125483.25
+INFO:root:pause time: 1467125483.55
+INFO:root:pause time: 1467125483.85
+INFO:root:pause time: 1467125484.17
+INFO:root:pause time: 1467125484.47
+INFO:root:pause time: 1467125484.77
+INFO:root:pause time: 1467125485.07
+INFO:root:pause time: 1467125485.38
+INFO:root:pause time: 1467125485.68
+INFO:root:pause time: 1467125485.98
+INFO:root:pause time: 1467125486.28
+INFO:root:pause time: 1467125486.58
+INFO:root:pause time: 1467125486.88
+INFO:root:pause time: 1467125487.18
+INFO:root:pause time: 1467125487.48
+INFO:root:pause time: 1467125487.79
+INFO:root:pause time: 1467125488.09
+INFO:root:pause time: 1467125488.39
+INFO:root:pause time: 1467125488.69
+INFO:root:pause time: 1467125488.99
+INFO:root:pause time: 1467125489.29
+INFO:root:pause time: 1467125489.59
+INFO:root:pause time: 1467125489.89
+INFO:root:pause time: 1467125490.19
+INFO:root:pause time: 1467125490.49
+INFO:root:pause time: 1467125490.8
+INFO:root:pause time: 1467125491.1
+INFO:root:pause time: 1467125491.4
+INFO:root:pause time: 1467125491.7
+INFO:root:pause time: 1467125492.0
+INFO:root:pause time: 1467125492.31
+INFO:root:pause time: 1467125492.61
+INFO:root:pause time: 1467125492.91
+INFO:root:pause time: 1467125493.21
+INFO:root:pause time: 1467125493.51
+INFO:root:pause time: 1467125493.82
+INFO:root:pause time: 1467125494.12
+INFO:root:pause time: 1467125494.42
+INFO:root:pause time: 1467125494.72
+INFO:root:pause time: 1467125495.02
+INFO:root:pause time: 1467125495.32
+INFO:root:pause time: 1467125495.62
+INFO:root:pause time: 1467125495.92
+INFO:root:pause time: 1467125496.22
+INFO:root:pause time: 1467125496.53
+INFO:root:pause time: 1467125496.84
+INFO:root:pause time: 1467125497.14
+INFO:root:pause time: 1467125497.44
+INFO:root:pause time: 1467125497.74
+INFO:root:pause time: 1467125498.04
+INFO:root:pause time: 1467125498.34
+INFO:root:pause time: 1467125498.64
+INFO:root:pause time: 1467125498.95
+INFO:root:pause time: 1467125499.25
+INFO:root:pause time: 1467125499.55
+INFO:root:pause time: 1467125724.11
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467125724.11', 'a1', '0']
+INFO:root:pause time: 1467126782.16
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467126782.16', 'a1', '0']
+INFO:root:pause time: 1467126782.46
+INFO:root:pause time: 1467126782.76
+INFO:root:pause time: 1467126783.06
+INFO:root:pause time: 1467126783.36
+INFO:root:pause time: 1467126783.66
+INFO:root:pause time: 1467126783.96
+INFO:root:pause time: 1467126784.27
+INFO:root:pause time: 1467126784.57
+INFO:root:pause time: 1467126784.87
+INFO:root:pause time: 1467126785.17
+INFO:root:pause time: 1467126785.47
+INFO:root:pause time: 1467126785.77
+INFO:root:pause time: 1467126786.07
+INFO:root:pause time: 1467126786.38
+INFO:root:pause time: 1467126786.68
+INFO:root:pause time: 1467126786.98
+INFO:root:pause time: 1467126787.28
+INFO:root:pause time: 1467126787.59
+INFO:root:pause time: 1467126787.89
+INFO:root:pause time: 1467126788.19
+INFO:root:pause time: 1467126788.49
+INFO:root:pause time: 1467126788.79
+INFO:root:pause time: 1467126789.09
+INFO:root:pause time: 1467126789.39
+INFO:root:pause time: 1467126789.69
+INFO:root:pause time: 1467126958.5
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467126958.4939811', 'a1', '0']
+INFO:root:pause time: 1467126958.8
+INFO:root:pause time: 1467126959.1
+INFO:root:pause time: 1467126959.4
+INFO:root:pause time: 1467126959.7
+INFO:root:pause time: 1467126960.01
+INFO:root:pause time: 1467126960.31
+INFO:root:pause time: 1467126960.61
+INFO:root:pause time: 1467126960.91
+INFO:root:pause time: 1467126961.21
+INFO:root:pause time: 1467126961.51
+INFO:root:pause time: 1467126961.81
+INFO:root:pause time: 1467126962.11
+INFO:root:pause time: 1467126962.42
+INFO:root:pause time: 1467126962.72
+INFO:root:pause time: 1467126963.02
+INFO:root:pause time: 1467126963.32
+INFO:root:pause time: 1467126963.62
+INFO:root:pause time: 1467126963.92
+INFO:root:pause time: 1467126964.22
+INFO:root:pause time: 1467126964.52
+INFO:root:pause time: 1467126964.82
+INFO:root:pause time: 1467126965.13
+INFO:root:pause time: 1467126965.43
+INFO:root:pause time: 1467126965.73
+INFO:root:pause time: 1467126966.03
+INFO:root:pause time: 1467126966.33
+INFO:root:pause time: 1467126966.63
+INFO:root:pause time: 1467126966.93
+INFO:root:pause time: 1467126967.23
+INFO:root:pause time: 1467126967.53
+INFO:root:pause time: 1467126967.83
+INFO:root:pause time: 1467126968.13
+INFO:root:pause time: 1467126968.43
+INFO:root:pause time: 1467126968.74
+INFO:root:pause time: 1467126969.04
+INFO:root:pause time: 1467126969.34
+INFO:root:pause time: 1467126969.65
+INFO:root:pause time: 1467126969.95
+INFO:root:pause time: 1467126970.25
+INFO:root:pause time: 1467126970.55
+INFO:root:pause time: 1467126970.86
+INFO:root:pause time: 1467126971.16
+INFO:root:pause time: 1467126971.46
+INFO:root:pause time: 1467126971.76
+INFO:root:pause time: 1467126972.06
+INFO:root:pause time: 1467126972.36
+INFO:root:pause time: 1467126972.66
+INFO:root:pause time: 1467126972.96
+INFO:root:pause time: 1467126973.26
+INFO:root:pause time: 1467126973.56
+INFO:root:pause time: 1467126973.87
+INFO:root:pause time: 1467126974.17
+INFO:root:pause time: 1467126974.47
+INFO:root:pause time: 1467126974.77
+INFO:root:pause time: 1467126975.07
+INFO:root:pause time: 1467126975.38
+INFO:root:pause time: 1467127193.92
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467127193.92', 'a1', '0']
+INFO:root:pause time: 1467128653.61
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467128653.6', 'a1', '0']
+INFO:root:pause time: 1467128695.83
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467128695.83', 'a1', '0']
+INFO:root:pause time: 1467128786.39
+INFO:root:pause time: 1467128786.69
+INFO:root:pause time: 1467128786.99
+INFO:root:pause time: 1467128787.29
+INFO:root:pause time: 1467128787.59
+INFO:root:pause time: 1467128787.9
+INFO:root:pause time: 1467128788.2
+INFO:root:pause time: 1467128788.5
+INFO:root:pause time: 1467128788.8
+INFO:root:pause time: 1467128789.1
+INFO:root:pause time: 1467128789.4
+INFO:root:pause time: 1467128789.7
+INFO:root:pause time: 1467128790.0
+INFO:root:pause time: 1467128790.31
+INFO:root:pause time: 1467128790.61
+INFO:root:pause time: 1467128790.91
+INFO:root:pause time: 1467128791.21
+INFO:root:pause time: 1467128791.51
+INFO:root:pause time: 1467128791.81
+INFO:root:pause time: 1467128792.11
+INFO:root:pause time: 1467128792.42
+INFO:root:pause time: 1467128792.73
+INFO:root:pause time: 1467128793.03
+INFO:root:pause time: 1467128793.33
+INFO:root:pause time: 1467128793.63
+INFO:root:pause time: 1467128793.94
+INFO:root:pause time: 1467128794.24
+INFO:root:pause time: 1467128794.54
+INFO:root:pause time: 1467128794.84
+INFO:root:pause time: 1467128795.14
+INFO:root:pause time: 1467128795.45
+INFO:root:pause time: 1467128795.75
+INFO:root:pause time: 1467128796.05
+INFO:root:pause time: 1467128796.35
+INFO:root:pause time: 1467128796.65
+INFO:root:pause time: 1467128796.95
+INFO:root:pause time: 1467128797.25
+INFO:root:pause time: 1467128797.56
+INFO:root:pause time: 1467128797.86
+INFO:root:pause time: 1467128798.16
+INFO:root:pause time: 1467128798.46
+INFO:root:pause time: 1467128798.77
+INFO:root:pause time: 1467128799.07
+INFO:root:pause time: 1467128799.37
+INFO:root:pause time: 1467128799.67
+INFO:root:pause time: 1467128799.98
+INFO:root:pause time: 1467128800.28
+INFO:root:pause time: 1467128800.58
+INFO:root:pause time: 1467128800.88
+INFO:root:pause time: 1467128801.18
+INFO:root:pause time: 1467128801.49
+INFO:root:pause time: 1467128801.79
+INFO:root:pause time: 1467128802.09
+INFO:root:pause time: 1467128802.39
+INFO:root:pause time: 1467128802.69
+INFO:root:pause time: 1467128802.99
+INFO:root:pause time: 1467128803.29
+INFO:root:pause time: 1467128803.59
+INFO:root:pause time: 1467128803.89
+INFO:root:pause time: 1467128804.2
+INFO:root:pause time: 1467128804.5
+INFO:root:pause time: 1467128804.8
+INFO:root:pause time: 1467128805.1
+INFO:root:pause time: 1467128805.4
+INFO:root:pause time: 1467128805.7
+INFO:root:pause time: 1467128806.0
+INFO:root:pause time: 1467128806.3
+INFO:root:pause time: 1467128806.6
+INFO:root:pause time: 1467128888.52
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467128888.517604', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:pause time: 1467128892.54
+INFO:root:resume time: 1467128892.54
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467128892.5380106', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467128896.54
+INFO:root:pause time: 1467128896.55
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467128896.5526862', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467128900.56
+INFO:root:pause time: 1467128900.57
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467128900.56183', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:pause time: 1467128904.58
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467128904.580439', 'a1', '0']
+INFO:root:resume time: 1467128904.58
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467128908.6
+INFO:root:pause time: 1467128908.6
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467128908.5976298', 'a1', '0']
+INFO:root:pause time: 1467129175.45
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129175.4462075', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467129179.46
+INFO:root:pause time: 1467129179.47
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129179.4652927', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467129183.48
+INFO:root:pause time: 1467129183.49
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129183.485618', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467129187.5
+INFO:root:pause time: 1467129187.51
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129187.5054655', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467129191.53
+INFO:root:pause time: 1467129191.53
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129191.5261729', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467129195.53
+INFO:root:pause time: 1467129195.55
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129195.54475', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467129199.57
+INFO:root:pause time: 1467129199.57
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129199.5726573', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467129203.59
+INFO:root:pause time: 1467129203.6
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129203.5972273', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:pause time: 1467129207.61
+INFO:root:resume time: 1467129207.61
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129207.613706', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467129211.62
+INFO:root:pause time: 1467129211.62
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129211.621648', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467129215.63
+INFO:root:pause time: 1467129215.63
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129215.6319578', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467129219.64
+INFO:root:pause time: 1467129219.65
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129219.6426408', 'a1', '0']
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:pause time: 1467129223.66
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129223.6586251', 'a1', '0']
+INFO:root:resume time: 1467129223.66
+INFO:root:reply recieved 407535 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1467129227.67
+INFO:root:pause time: 1467129227.68
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467129227.6767778', 'a1', '0']
+INFO:root:pause time: 1467134969.93
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467134969.9251964', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:pause time: 1467135076.53
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135076.5224857', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:pause time: 1467135128.36
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135128.364009', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:pause time: 1467135211.43
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135211.4268703', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135211.4268703 a1 0
+INFO:root:resume time: 1467135215.46
+INFO:root:pause time: 1467135215.46
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135215.4571545', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135215.4571545 a1 0
+INFO:root:resume time: 1467135219.47
+INFO:root:pause time: 1467135219.48
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135219.4759126', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135219.4759126 a1 0
+INFO:root:resume time: 1467135223.49
+INFO:root:pause time: 1467135223.5
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135223.4966347', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135223.4966347 a1 0
+INFO:root:resume time: 1467135227.5
+INFO:root:pause time: 1467135227.5
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135227.5019338', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135227.5019338 a1 0
+INFO:root:resume time: 1467135231.51
+INFO:root:pause time: 1467135231.51
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135231.512603', 'a1', '0']
+INFO:root:pause time: 1467135369.59
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135369.5854023', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135369.5854023 a1 0
+INFO:root:resume time: 1467135373.59
+INFO:root:pause time: 1467135373.6
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135373.5973477', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135373.5973477 a1 0
+INFO:root:resume time: 1467135377.61
+INFO:root:pause time: 1467135377.61
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135377.6123002', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135377.6123002 a1 0
+INFO:root:resume time: 1467135381.62
+INFO:root:pause time: 1467135381.63
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135381.6253366', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135381.6253366 a1 0
+INFO:root:pause time: 1467135385.64
+INFO:root:resume time: 1467135385.64
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135385.6413684', 'a1', '0']
+INFO:root:pause time: 1467135431.37
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135431.3730218', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135431.3730218 a1 0
+INFO:root:resume time: 1467135435.39
+INFO:root:pause time: 1467135435.39
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135435.3882794', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135435.3882794 a1 0
+INFO:root:resume time: 1467135439.4
+INFO:root:pause time: 1467135439.4
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135439.4014354', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135439.4014354 a1 0
+INFO:root:resume time: 1467135443.42
+INFO:root:pause time: 1467135443.43
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135443.429472', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135443.429472 a1 0
+INFO:root:resume time: 1467135447.44
+INFO:root:pause time: 1467135447.44
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135447.4382217', 'a1', '0']
+INFO:root:pause time: 1467135563.43
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135563.43266', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135563.43266 a1 0
+INFO:root:resume time: 1467135567.45
+INFO:root:pause time: 1467135567.45
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135567.4463816', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135567.4463816 a1 0
+INFO:root:resume time: 1467135571.46
+INFO:root:pause time: 1467135571.47
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135571.4623206', 'a1', '0']
+INFO:root:pause time: 1467135665.23
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135665.232289', 'a1', '0']
+INFO:root:pause time: 1467135726.86
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135726.8513973', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135726.8513973 a1 0
+INFO:root:pause time: 1467135730.87
+INFO:root:resume time: 1467135730.87
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135730.8656278', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135730.8656278 a1 0
+INFO:root:resume time: 1467135734.88
+INFO:root:pause time: 1467135734.89
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135734.8835568', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135734.8835568 a1 0
+INFO:root:resume time: 1467135738.9
+INFO:root:pause time: 1467135738.91
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135738.9054883', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135738.9054883 a1 0
+INFO:root:resume time: 1467135742.91
+INFO:root:pause time: 1467135742.91
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135742.9136796', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135742.9136796 a1 0
+INFO:root:resume time: 1467135746.92
+INFO:root:pause time: 1467135746.92
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135746.9215264', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467135746.9215264 a1 0
+INFO:root:resume time: 1467135750.93
+INFO:root:pause time: 1467135750.95
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467135750.94647', 'a1', '0']
+INFO:root:pause time: 1467136042.96
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136042.955717', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136042.955717 a1 0
+INFO:root:resume time: 1467136046.96
+INFO:root:pause time: 1467136046.97
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136046.9652026', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136046.9652026 a1 0
+INFO:root:resume time: 1467136050.99
+INFO:root:pause time: 1467136051.0
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136050.9943905', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136050.9943905 a1 0
+INFO:root:resume time: 1467136055.01
+INFO:root:pause time: 1467136055.01
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136055.0102425', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136055.0102425 a1 0
+INFO:root:resume time: 1467136059.04
+INFO:root:pause time: 1467136059.04
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136059.0363376', 'a1', '0']
+INFO:root:pause time: 1467136074.3
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136074.2948134', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136074.2948134 a1 0
+INFO:root:resume time: 1467136078.3
+INFO:root:pause time: 1467136078.31
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136078.3090186', 'a1', '0']
+INFO:root:pause time: 1467136124.49
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136124.490937', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136124.490937 a1 0
+INFO:root:resume time: 1467136128.5
+INFO:root:pause time: 1467136128.51
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136128.5089486', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136128.5089486 a1 0
+INFO:root:pause time: 1467136132.52
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136132.5190654', 'a1', '0']
+INFO:root:resume time: 1467136132.52
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136132.5190654 a1 0
+INFO:root:resume time: 1467136136.54
+INFO:root:pause time: 1467136136.54
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136136.5389466', 'a1', '0']
+INFO:root:pause time: 1467136332.02
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136332.0183485', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136332.0183485 a1 0
+INFO:root:resume time: 1467136336.03
+INFO:root:pause time: 1467136336.03
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136336.0292246', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136336.0292246 a1 0
+INFO:root:resume time: 1467136340.03
+INFO:root:pause time: 1467136340.04
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136340.0406072', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136340.0406072 a1 0
+INFO:root:resume time: 1467136344.05
+INFO:root:pause time: 1467136344.06
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136344.0573442', 'a1', '0']
+INFO:root:pause time: 1467136360.7
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136360.6967726', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136360.6967726 a1 0
+INFO:root:resume time: 1467136364.71
+INFO:root:pause time: 1467136364.71
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136364.7076144', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136364.7076144 a1 0
+INFO:root:resume time: 1467136368.72
+INFO:root:pause time: 1467136368.72
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136368.719685', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136368.719685 a1 0
+INFO:root:resume time: 1467136372.73
+INFO:root:pause time: 1467136372.74
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136372.7297316', 'a1', '0']
+INFO:root:pause time: 1467136490.23
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136490.230774', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136490.230774 a1 0
+INFO:root:pause time: 1467136548.87
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136548.8699346', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:post process error with event request: update b p pre_pmu post_pmu 1467136548.8699346 a1 0
+INFO:root:pause time: 1467136734.98
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136734.9807098', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:resume time: 1467136739.0
+INFO:root:pause time: 1467136739.01
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136739.0063899', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:resume time: 1467136743.01
+INFO:root:pause time: 1467136743.01
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136743.0136564', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:resume time: 1467136747.04
+INFO:root:pause time: 1467136747.04
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136747.0378919', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407537: 
+INFO:root:resume time: 1467136751.05
+INFO:root:pause time: 1467136751.05
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467136751.05265', 'a1', '0']
+INFO:root:pause time: 1467140457.25
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467140457.2537107', 'a1', '0']
+INFO:root:pause time: 1467140793.69
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467140793.6864145', 'a1', '0']
+INFO:root:pause time: 1467140793.99
+INFO:root:pause time: 1467140794.29
+INFO:root:pause time: 1467140794.59
+INFO:root:pause time: 1467140794.89
+INFO:root:pause time: 1467140795.19
+INFO:root:pause time: 1467140795.49
+INFO:root:pause time: 1467140795.79
+INFO:root:pause time: 1467140796.09
+INFO:root:pause time: 1467140796.39
+INFO:root:pause time: 1467140796.7
+INFO:root:pause time: 1467140797.0
+INFO:root:pause time: 1467140797.3
+INFO:root:pause time: 1467140797.6
+INFO:root:pause time: 1467140797.9
+INFO:root:pause time: 1467140798.2
+INFO:root:pause time: 1467140798.5
+INFO:root:pause time: 1467140798.8
+INFO:root:pause time: 1467140799.1
+INFO:root:pause time: 1467140799.41
+INFO:root:pause time: 1467140799.71
+INFO:root:pause time: 1467140800.01
+INFO:root:pause time: 1467140800.31
+INFO:root:pause time: 1467140800.61
+INFO:root:pause time: 1467140800.91
+INFO:root:pause time: 1467140801.21
+INFO:root:pause time: 1467140801.51
+INFO:root:pause time: 1467140801.82
+INFO:root:pause time: 1467140802.12
+INFO:root:pause time: 1467140802.42
+INFO:root:pause time: 1467140802.72
+INFO:root:pause time: 1467140803.02
+INFO:root:pause time: 1467140803.32
+INFO:root:pause time: 1467140803.62
+INFO:root:pause time: 1467140803.92
+INFO:root:pause time: 1467140804.22
+INFO:root:pause time: 1467140804.52
+INFO:root:pause time: 1467140804.82
+INFO:root:pause time: 1467140805.12
+INFO:root:pause time: 1467140805.43
+INFO:root:pause time: 1467140805.73
+INFO:root:pause time: 1467140806.03
+INFO:root:pause time: 1467140806.33
+INFO:root:pause time: 1467140806.63
+INFO:root:pause time: 1467140806.93
+INFO:root:pause time: 1467140807.23
+INFO:root:pause time: 1467140807.53
+INFO:root:pause time: 1467140807.83
+INFO:root:pause time: 1467140808.13
+INFO:root:pause time: 1467140808.44
+INFO:root:pause time: 1467140808.74
+INFO:root:pause time: 1467140809.04
+INFO:root:pause time: 1467140809.35
+INFO:root:pause time: 1467140809.65
+INFO:root:pause time: 1467140809.95
+INFO:root:pause time: 1467140810.25
+INFO:root:pause time: 1467140810.55
+INFO:root:pause time: 1467140810.85
+INFO:root:pause time: 1467140811.15
+INFO:root:pause time: 1467140811.45
+INFO:root:pause time: 1467140811.75
+INFO:root:pause time: 1467140812.06
+INFO:root:pause time: 1467140812.36
+INFO:root:pause time: 1467140812.66
+INFO:root:pause time: 1467140812.96
+INFO:root:pause time: 1467140813.27
+INFO:root:pause time: 1467140813.57
+INFO:root:pause time: 1467140813.87
+INFO:root:pause time: 1467140814.17
+INFO:root:pause time: 1467140814.47
+INFO:root:pause time: 1467140814.77
+INFO:root:pause time: 1467140815.07
+INFO:root:pause time: 1467140815.37
+INFO:root:pause time: 1467140815.67
+INFO:root:pause time: 1467140815.97
+INFO:root:pause time: 1467140816.28
+INFO:root:pause time: 1467140816.58
+INFO:root:pause time: 1467140816.88
+INFO:root:pause time: 1467140817.18
+INFO:root:pause time: 1467140817.48
+INFO:root:pause time: 1467140817.78
+INFO:root:pause time: 1467140818.08
+INFO:root:pause time: 1467140818.38
+INFO:root:pause time: 1467140818.68
+INFO:root:pause time: 1467140818.98
+INFO:root:pause time: 1467140819.29
+INFO:root:pause time: 1467140819.59
+INFO:root:pause time: 1467140819.89
+INFO:root:pause time: 1467140820.19
+INFO:root:pause time: 1467140820.49
+INFO:root:pause time: 1467140820.79
+INFO:root:pause time: 1467140821.09
+INFO:root:pause time: 1467140821.39
+INFO:root:pause time: 1467140821.69
+INFO:root:pause time: 1467140821.99
+INFO:root:pause time: 1467140822.29
+INFO:root:pause time: 1467140822.59
+INFO:root:pause time: 1467140822.89
+INFO:root:pause time: 1467140823.19
+INFO:root:pause time: 1467140823.5
+INFO:root:pause time: 1467140823.8
+INFO:root:pause time: 1467140824.1
+INFO:root:pause time: 1467140824.4
+INFO:root:pause time: 1467140824.7
+INFO:root:pause time: 1467140825.0
+INFO:root:pause time: 1467140825.3
+INFO:root:pause time: 1467140825.6
+INFO:root:pause time: 1467140825.9
+INFO:root:pause time: 1467140826.2
+INFO:root:pause time: 1467140826.5
+INFO:root:pause time: 1467140826.8
+INFO:root:pause time: 1467140827.1
+INFO:root:pause time: 1467140827.4
+INFO:root:pause time: 1467140827.71
+INFO:root:pause time: 1467140828.01
+INFO:root:pause time: 1467141257.81
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467141257.8111694', 'a1', '0']
+INFO:root:pause time: 1467141411.45
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467141411.45', 'a1', '0']
+INFO:root:pause time: 1467141411.75
+INFO:root:pause time: 1467141412.05
+INFO:root:pause time: 1467141412.36
+INFO:root:pause time: 1467141412.68
+INFO:root:pause time: 1467141412.98
+INFO:root:pause time: 1467141413.28
+INFO:root:pause time: 1467141413.58
+INFO:root:pause time: 1467141413.88
+INFO:root:pause time: 1467141414.18
+INFO:root:pause time: 1467141414.49
+INFO:root:pause time: 1467141414.79
+INFO:root:pause time: 1467141415.09
+INFO:root:pause time: 1467141415.39
+INFO:root:pause time: 1467141415.69
+INFO:root:pause time: 1467141415.99
+INFO:root:pause time: 1467141416.29
+INFO:root:pause time: 1467141416.6
+INFO:root:pause time: 1467141416.9
+INFO:root:pause time: 1467141417.2
+INFO:root:pause time: 1467141417.5
+INFO:root:pause time: 1467141417.8
+INFO:root:pause time: 1467141418.1
+INFO:root:pause time: 1467141418.41
+INFO:root:pause time: 1467141418.71
+INFO:root:pause time: 1467141419.01
+INFO:root:pause time: 1467141419.31
+INFO:root:pause time: 1467141419.61
+INFO:root:pause time: 1467141419.91
+INFO:root:pause time: 1467141420.22
+INFO:root:pause time: 1467141420.52
+INFO:root:pause time: 1467141420.82
+INFO:root:pause time: 1467141421.12
+INFO:root:pause time: 1467141421.42
+INFO:root:pause time: 1467141421.73
+INFO:root:pause time: 1467141422.03
+INFO:root:pause time: 1467141422.33
+INFO:root:pause time: 1467141422.63
+INFO:root:pause time: 1467141422.93
+INFO:root:pause time: 1467141423.23
+INFO:root:pause time: 1467141423.54
+INFO:root:pause time: 1467141423.84
+INFO:root:pause time: 1467141424.14
+INFO:root:pause time: 1467141424.44
+INFO:root:pause time: 1467141424.74
+INFO:root:pause time: 1467141425.04
+INFO:root:pause time: 1467141425.35
+INFO:root:pause time: 1467141425.65
+INFO:root:pause time: 1467141425.95
+INFO:root:pause time: 1467141426.25
+INFO:root:pause time: 1467141426.55
+INFO:root:pause time: 1467141426.85
+INFO:root:pause time: 1467141427.15
+INFO:root:pause time: 1467141427.46
+INFO:root:pause time: 1467141427.76
+INFO:root:pause time: 1467141428.06
+INFO:root:pause time: 1467141428.36
+INFO:root:pause time: 1467141428.66
+INFO:root:pause time: 1467141428.96
+INFO:root:pause time: 1467141429.27
+INFO:root:pause time: 1467141429.57
+INFO:root:pause time: 1467141429.87
+INFO:root:pause time: 1467141430.17
+INFO:root:pause time: 1467141430.47
+INFO:root:pause time: 1467141430.77
+INFO:root:pause time: 1467141431.07
+INFO:root:pause time: 1467141431.37
+INFO:root:pause time: 1467141431.67
+INFO:root:pause time: 1467141431.97
+INFO:root:pause time: 1467141432.28
+INFO:root:pause time: 1467141432.58
+INFO:root:pause time: 1467141432.88
+INFO:root:pause time: 1467141433.18
+INFO:root:pause time: 1467141433.49
+INFO:root:pause time: 1467141433.79
+INFO:root:pause time: 1467141434.1
+INFO:root:pause time: 1467141434.4
+INFO:root:pause time: 1467141434.7
+INFO:root:pause time: 1467141435.0
+INFO:root:pause time: 1467141435.31
+INFO:root:pause time: 1467141435.61
+INFO:root:pause time: 1467141435.91
+INFO:root:pause time: 1467141436.21
+INFO:root:pause time: 1467141436.51
+INFO:root:pause time: 1467141436.82
+INFO:root:pause time: 1467141437.12
+INFO:root:pause time: 1467141437.42
+INFO:root:pause time: 1467141437.72
+INFO:root:pause time: 1467141438.02
+INFO:root:pause time: 1467141438.32
+INFO:root:pause time: 1467141438.62
+INFO:root:pause time: 1467141438.92
+INFO:root:pause time: 1467141439.22
+INFO:root:pause time: 1467141439.52
+INFO:root:pause time: 1467141439.82
+INFO:root:pause time: 1467141440.13
+INFO:root:pause time: 1467141440.43
+INFO:root:pause time: 1467141440.73
+INFO:root:pause time: 1467141441.03
+INFO:root:pause time: 1467141441.33
+INFO:root:pause time: 1467141441.63
+INFO:root:pause time: 1467141441.93
+INFO:root:pause time: 1467141442.23
+INFO:root:pause time: 1467141442.53
+INFO:root:pause time: 1467141442.83
+INFO:root:pause time: 1467141443.14
+INFO:root:pause time: 1467141443.44
+INFO:root:pause time: 1467141443.74
+INFO:root:pause time: 1467141444.04
+INFO:root:pause time: 1467141444.34
+INFO:root:pause time: 1467141444.64

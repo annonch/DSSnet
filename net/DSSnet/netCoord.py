@@ -36,6 +36,7 @@ import shlex
 
 # local
 
+import models.pipe
 import DSSnet_handler as handler
 import DSSnet_hosts
 import DSSnet_events
@@ -179,14 +180,16 @@ def sync():
             pass
     
 def postProcess(reply,newEvent):
-    global net,hosts,num_block
+    global net,hosts,num_block,pipes
     event = newEvent.split()
     try:
         postprocess=getattr(handler,event[4])
-        processed_event=postprocess(newEvent,reply,net,hosts)
+        processed_event=postprocess(newEvent,reply,net,hosts,pipes)
     except AttributeError:
         print('post process error:  %s' % newEvent)
         logging.info('post process error with event request: %s' % newEvent)
+
+    #models.pipe.send_sync('hi',pipes['h1'])
     
     if event[1] == 'b':
         num_block -= 1

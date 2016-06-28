@@ -5,18 +5,20 @@
 
 #pmu.py
 
-import pipes
+import pipe
 import time
 import sys
+import threading
 
+
+pipout = pipe.setup_pipe_l(sys.argv[1])
 pipin = pipe.setup_pipe_w()
 
-pipeout = pipe.setup_pipe_l(sys.argv[1])
 
 from ctypes import *
 #from numpy import array
 
-libpmu=cdll.LoadLibrary('./libpmu.so')
+libpmu=cdll.LoadLibrary('./models/libpmu.so')
 
 class PMU:
 
@@ -223,19 +225,18 @@ def pad(d,size):
     return data
 
  #scheduler function
- def do_every(interval, worker_func, iterations = 0):
-     if iterations !=1:
-         threading.Timer (
-             interval,
-             do_every, [interval, worker_func, 0 if iterations == 0 else iterations-1]
-         ).start();
-         worker_func();
+def do_every(interval, worker_func, iterations = 0):
+    if iterations !=1:
+         threading.Timer (interval,do_every, [interval, worker_func, 0 if iterations == 0 else iterations-1]
+         ).start()
+         worker_func()
 
 def request_data():
-    pipe.send_sync_event('update b p pre_pmu post_pmu %s a1 0\n'% time.time(), pipin)
+    update = ('update b p pre_pmu post_pmu %s a1 0\n'% time.time())
+    pipe.send_sync_event(update.encode('UTF-8'), pipin)
 
 
-pmu = read_pmu('pmu.config')
+pmu = read_pmu('./models/pmu.config')
 
 _cfg2(pmu)
 
@@ -243,7 +244,8 @@ _cfg2(pmu)
 do_every(0.3,request_data)
 
 while 1:
-    if raw_message=pipe.listen(pipout):
+    raw_message=pipe.listen(pipout)
+    if raw_message:
         message=raw_message[0]
         if message[0] == 'cfg2':
             _cfg2(pmu)
@@ -252,3 +254,5 @@ while 1:
             #raw_data = '7199.36 0.1 7199.37 -2.27 7199.36 2.27 334.51 -0.6225 59.9 0.01'
             phasor_data, analog_data, digital_data, freq_data, dfreq_data = data_process(raw_data,pmu)
             _data(pmu, phasor_data, analog_data, digital_data, freq_data, dfreq_data)
+
+            print('Sent')
