@@ -1,0 +1,5 @@
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Hadoop.Replication/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/Hadoop.Replication.dll.mdb
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/Hadoop.Replication.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Hadoop.Replication/obj/Mono/Hadoop.Replication.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Hadoop.Replication/obj/Mono/Hadoop.Replication.dll.mdb

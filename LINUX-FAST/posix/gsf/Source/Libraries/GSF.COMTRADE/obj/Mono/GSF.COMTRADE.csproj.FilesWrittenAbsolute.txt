@@ -1,0 +1,5 @@
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.COMTRADE/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.COMTRADE.dll.mdb
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.COMTRADE.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.COMTRADE/obj/Mono/GSF.COMTRADE.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.COMTRADE/obj/Mono/GSF.COMTRADE.dll.mdb
