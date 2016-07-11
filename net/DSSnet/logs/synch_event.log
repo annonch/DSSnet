@@ -106,3 +106,59 @@ INFO:root:reply recieved 407181 7199 0 7199 -120 7199 119 334 -35 331 -154 341 8
 INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1465852576.23', 'a1', '0']
 INFO:root:reply recieved 407181 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
 INFO:root:resume time: 1465852592.51
+INFO:root:pause time: 1465928358.17
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1465928358.16', 'a1', '0']
+INFO:root:pause time: 1465928573.14
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1465928573.14', 'a1', '0']
+INFO:root:reply recieved 407202 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1465928573.14', 'a1', '0']
+INFO:root:reply recieved 407202 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85: 
+INFO:root:resume time: 1465928581.3
+INFO:root:pause time: 1465928611.34
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1465928603.17', 'a1', '0']
+INFO:root:pause time: 1467993647.01
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467993647.01', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407776: 
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1467993647.01', 'a1', '0']
+INFO:root:resume time: 1467993651.05
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407776: 
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1467993677.03', 'a1', '0']
+INFO:root:pause time: 1467993681.08
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407776: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467993677.04', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407776: 
+INFO:root:resume time: 1467993689.09
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1467993707.06', 'a1', '0']
+INFO:root:pause time: 1467993719.12
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407776: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1467993707.07', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407776: 
+INFO:root:resume time: 1467993727.17
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1468251850.45', 'a1', '0']
+INFO:root:pause time: 1468251850.47
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407847: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1468251850.45', 'a1', '0']
+INFO:root:reply recieved 0 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85 407847: 
+INFO:root:resume time: 1468251858.49
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1468251880.48', 'a1', '0']
+INFO:root:pause time: 1468251888.51
+INFO:root:pause time: 1468252271.55
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1468252271.55', 'a1', '0']
+INFO:root:pause time: 1468252371.45
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1468252371.45', 'a1', '0']
+INFO:root:pause time: 1468252763.26
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1468252763.26', 'a1', '0']
+INFO:root:reply recieved 0 370 -154 370 -154 370 -154 0 0 0 0 0 0 407848: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1468252763.26', 'a1', '0']
+INFO:root:reply recieved 0 370 -154 370 -154 370 -154 0 0 0 0 0 0 407848: 
+INFO:root:resume time: 1468252788.73
+INFO:root:pause time: 1468252818.75
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1468252793.29', 'a1', '0']
+INFO:root:pause time: 1468252927.08
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1468252927.08', 'a1', '0']
+INFO:root:reply recieved 0 370 -154 370 -154 370 -154 0 0 0 0 0 0 407848: 
+INFO:root:resume time: 1468252934.74
+INFO:root:event being processed: ['update', 'n', 'p', 'pre_pmu', 'post_pmu', '1468252927.08', 'a1', '0']
+INFO:root:reply recieved 0 370 -154 370 -154 370 -154 0 0 0 0 0 0 407848: 
+INFO:root:pause time: 1468252964.77
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_pmu', 'post_pmu', '1468252957.11', 'a1', '0']

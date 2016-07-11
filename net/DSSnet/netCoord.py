@@ -183,7 +183,7 @@ def postProcess(reply,newEvent):
     event = newEvent.split()
     try:
         postprocess=getattr(handler,event[4])
-        processed_event=postprocess(newEvent,reply,net,hosts)
+        processed_event=postprocess(newEvent,reply,net,hosts,pipes)
     except AttributeError:
         print('post process error:  %s' % newEvent)
         logging.info('post process error with event request: %s' % newEvent)
