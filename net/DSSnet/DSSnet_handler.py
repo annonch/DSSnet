@@ -1,4 +1,5 @@
 #!/bin/python
+import models.pipe 
 
 # file used for processing synchronization events
 
@@ -53,3 +54,14 @@ def pre_energyStorage(msg,net,hosts):
 
 def post_energyStorage(event,reply,net,hosts,pipes):
     return reply
+
+def post_pmu(event, reply, net, hosts, pipes):
+    even =  event.split()
+    rep = reply.split()
+    reorder = rep[1]+' '+rep[2]+' '+rep[3]+' '+rep[4]+' '+rep[5]+ ' '+rep[6]+' '+rep[7]+' '+rep[8]+' '+rep[9]+' '+rep[0]+ ' '+rep[0]
+    
+   
+    models.pipe.send_sync_event(reorder, pipes['h1'])
+    print 'we did it!'
+    return reply
+    

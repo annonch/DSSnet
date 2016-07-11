@@ -1,0 +1,10 @@
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Historian/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Historian/obj/Mono/GSF.Historian.DataListener.bmp
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Historian/obj/Mono/GSF.Historian.Files.ArchiveFile.bmp
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Historian/obj/Mono/GSF.Historian.Files.IntercomFile.bmp
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Historian/obj/Mono/GSF.Historian.Files.MetadataFile.bmp
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Historian/obj/Mono/GSF.Historian.Files.StateFile.bmp
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Historian.dll.mdb
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Historian.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Historian/obj/Mono/GSF.Historian.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Historian/obj/Mono/GSF.Historian.dll.mdb

@@ -1,0 +1,5 @@
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/InfluxDBAdapters/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Release/Libraries/InfluxDBAdapters.dll.mdb
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Release/Libraries/InfluxDBAdapters.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/InfluxDBAdapters/obj/Release/InfluxDBAdapters.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/InfluxDBAdapters/obj/Release/InfluxDBAdapters.dll.mdb

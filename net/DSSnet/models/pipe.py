@@ -7,7 +7,7 @@ pipe_read = ''
 def setup_pipe_w():
     
     # pipe to coord
-    pipe_name = 'tmp/coordination.pipe'
+    pipe_name = './tmp/coordination.pipe'
     if not os.path.exists(pipe_name):
         os.mkfifo(pipe_name)
     pipeout = os.open(pipe_name, os.O_WRONLY)
@@ -24,7 +24,7 @@ def setup_pipe_l(name):
 
         
 def send_sync_event(update,pipeout):
-    os.write(pipeout, ('%s' % update))
+    os.write(pipeout, (update))
 
 def listen(pipein):
     return pipein.readline()

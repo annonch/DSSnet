@@ -1,0 +1,5 @@
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Media/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Media.dll.mdb
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Media.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Media/obj/Mono/GSF.Media.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Media/obj/Mono/GSF.Media.dll.mdb

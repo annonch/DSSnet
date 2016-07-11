@@ -1,0 +1,5 @@
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/FtpAdapters/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/FtpAdapters.dll.mdb
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/FtpAdapters.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/FtpAdapters/obj/Mono/FtpAdapters.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/FtpAdapters/obj/Mono/FtpAdapters.dll.mdb

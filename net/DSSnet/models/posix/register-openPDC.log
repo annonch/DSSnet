@@ -1,0 +1,6 @@
+openPDC service registration
+Fri Feb 26 16:18:56 CST 2016
+Linux operating system assumed...
+‘openPDC.sh’ -> ‘/etc/init.d/openPDC’
+mode of ‘/etc/init.d/openPDC’ changed from 0644 (rw-r--r--) to 0755 (rwxr-xr-x)
+‘/opt/openPDC/openPDC’ -> ‘/etc/init.d/openPDC’

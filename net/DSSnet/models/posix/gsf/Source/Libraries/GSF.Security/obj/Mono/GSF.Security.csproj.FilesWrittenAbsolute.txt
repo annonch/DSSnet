@@ -1,0 +1,5 @@
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Security/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Security.dll.mdb
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Security.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Security/obj/Mono/GSF.Security.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Security/obj/Mono/GSF.Security.dll.mdb
