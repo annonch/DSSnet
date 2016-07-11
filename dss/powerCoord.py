@@ -17,6 +17,7 @@ from gen import updateG
 from load import updateL
 import ied
 import DSSnet_handler as handler
+import time
 
 ###########
 #  Setup  #
@@ -28,12 +29,15 @@ parser.add_argument('--ip', help='ip of power coordinator',default='10.47.142.26
 parser.add_argument('--port', help='port reserved for power coordinator',default='50021',type=str)
 parser.add_argument('--IED_config', help='path to IED file',default='IED.config',type=str)
 parser.add_argument('--circuit_filename', help='path to main circuit file',default = 'master.dss', type=str)
+parser.add_argument('--timestep', help='resolution of time step',default=0.001,type=float)
 args = parser.parse_args()
 
 engine=win32com.client.Dispatch("OpenDSSEngine.DSS")
 engine.Start("0")
 engine.Text.Command='clear'
 circuit=engine.ActiveCircuit
+
+previous_time=0.0#in seconds used to compute intervals in between calls
 
 def setupCircuit():
     print('starting circuit')
@@ -133,17 +137,19 @@ def read_monitor(element):
     iang2 = DSSMonitors.Channel(10)[0]
     i3 = DSSMonitors.Channel(11)[0]
     iang3 = DSSMonitors.Channel(12)[0]
-    
+    freq = DSSMonitors.dblFreq[0]
+
     #clear
     DSSMonitors.resetAll()
-    return ('%d %d %d %d %d %d %d %d %d %d %d %d %d' % 
-            ( time, 
+    return ('%d %d %d %d %d %d %d %d %d %d %d %d %d %d' % 
+            ( freq, 
                 v1, vang1,
                 v2, vang2,
                 v3, vang3,
                 i1, iang1,
                 i2, iang2,
-                i3, iang3))
+                i3, iang3,
+                time))
 
 def fault(name,phase,node1,node2):
     if node2 == 'a' :
@@ -152,6 +158,36 @@ def fault(name,phase,node1,node2):
     else:
         engine.Text.Command='New Fault.%s phases=%s Bus1=%s Bus2=%s' % (name,phase,node1,node2)
         print('New Fault.%s phases=%s Bus1=%s Bus2=%s' % (name,phase,node1,node2))
+
+def energyStorage(l_name, load, g_name, gen):
+    engine.Text.Command='generator.%s.KW=%s'%(str(g_name),str(int(gen)))
+    engine.Text.Command='load.%s.KW=%s'%(str(l_name),str(int(load)))
+
+def get_load(load_id,t):
+    total_load = 100
+    #10     sec  
+    if l =='load_1':
+        p=t*(.025*total_load)+1/8*total_load
+        return str(p)
+    if l =='load_2':
+        p=t*(-.025*total_load)+3/8*total_load
+        return str(p)
+    if l =='load_3':
+        p=t*(-.05*total_load)
+        return str(p)
+    if l =='load_4':
+        p=t*(.05*total_load)+2/8*total_load
+        return str(p)   
+
+def static_vars(**kwargs):
+    def decorate(func):
+        for k in kwargs:
+            setattr(func,k,kwargs[k])
+        return func
+    return decorate
+
+def get_gen(gen_id,t):
+    updateG(gen_id,t)
 
 def direct(cmd):
     engine.Text.Command=cmd
@@ -162,6 +198,23 @@ def updateTime(dt):
     updateLoads(dt)
     updateGeneration(dt)
     engine.Text.Command='solve'
+
+def get_up_to_date(t): # solve for time step up until previous time
+    if previous_time == 0.0:
+        previous_time = t
+        return 0
+    time=float(t)-0.0005 # force round down
+    iterations = int(args.timestep*round(time,3)-round(previous_time,3)) 
+    print(iterations)
+    for i in range(iterations):
+        dt =previous_time + (i+1)* args.timestep
+        cmd='set sec=%s' % str(dt)
+        engine.Text.Command=cmd
+        updateLoads(dt)
+        updateGeneration(dt)
+        engine.Text.Command='solve'
+        direct('sample')
+    previous_time = t    
 
 ##############################
 #  communicate with Comm net #
@@ -180,12 +233,14 @@ def commNet(serverIn):
         # what does mininet want us to do????
         if length > 1 :
             newTime = line[5]
+            get_up_to_date(newTime)
             updateTime(newTime)
 
             reply='ok'
             
             #do preprocessing
             try:
+                #time.sleep(4)
                 preprocess=getattr(handler,line[3])
                 pre_processed_event=preprocess(line)
                 # RUN MAIN EVENT
