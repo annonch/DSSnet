@@ -27,8 +27,8 @@ parser = argparse.ArgumentParser(description= 'Manages power system simulation a
 parser.add_argument('--version', action='version',version='DSSnet 2.0')
 parser.add_argument('--ip', help='ip of power coordinator',default='10.47.142.26',type=str)
 parser.add_argument('--port', help='port reserved for power coordinator',default='50021',type=str)
-parser.add_argument('--IED_config', help='path to IED file',default='IED.config',type=str)
-parser.add_argument('--circuit_filename', help='path to main circuit file',default = 'master.dss', type=str)
+parser.add_argument('--IED_config', help='path to IED file',default='C:\DSS\DSSnet\dss/4bus\IED.config',type=str)
+parser.add_argument('--circuit_filename', help='path to main circuit file',default = 'C:\DSS\DSSnet\dss/4bus\master.dss', type=str)
 parser.add_argument('--timestep', help='resolution of time step',default=0.001,type=float)
 args = parser.parse_args()
 
@@ -113,10 +113,11 @@ def updateGeneration(t):
         update_controllable_gens(x,result)
 
 def update_controllable_loads(load,val):
-    engine.Text.Command= 'load.%s.kW=%s'% (str(int(load)),str(int(val)))
+    #print('load.%s.kW=%s'% (str(load),str(val)))
+    engine.Text.Command= 'load.%s.kW=%s'% (str(load),str(val))
 
 def update_controllable_gens(gen,val):
-    engine.Text.Command= 'generator.%s.kW=%s'% (str(int(gen)),str(int(val)))
+    engine.Text.Command= 'generator.%s.kW=%s'% (str(gen),str(val))
     
 def read_monitor(element):
     DSSMonitors = circuit.Monitors
@@ -166,16 +167,16 @@ def energyStorage(l_name, load, g_name, gen):
 def get_load(load_id,t):
     total_load = 100
     #10     sec  
-    if l =='load_1':
+    if l =='load1':
         p=t*(.025*total_load)+1/8*total_load
         return str(p)
-    if l =='load_2':
+    if l =='load2':
         p=t*(-.025*total_load)+3/8*total_load
         return str(p)
-    if l =='load_3':
+    if l =='load3':
         p=t*(-.05*total_load)
         return str(p)
-    if l =='load_4':
+    if l =='load4':
         p=t*(.05*total_load)+2/8*total_load
         return str(p)   
 
@@ -199,22 +200,25 @@ def updateTime(dt):
     updateGeneration(dt)
     engine.Text.Command='solve'
 
+@static_vars(previous_time=0.0)
 def get_up_to_date(t): # solve for time step up until previous time
-    if previous_time == 0.0:
-        previous_time = t
+    print('iterpolating')
+    if get_up_to_date.previous_time == 0.0:
+        get_up_to_date.previous_time = t
         return 0
     time=float(t)-0.0005 # force round down
     iterations = int(args.timestep*round(time,3)-round(previous_time,3)) 
     print(iterations)
     for i in range(iterations):
-        dt =previous_time + (i+1)* args.timestep
+        dt =get_up_to_date.previous_time + (i+1)* args.timestep
         cmd='set sec=%s' % str(dt)
         engine.Text.Command=cmd
         updateLoads(dt)
         updateGeneration(dt)
         engine.Text.Command='solve'
         direct('sample')
-    previous_time = t    
+        direct('export monitors')
+    get_up_to_date.previous_time = t    
 
 ##############################
 #  communicate with Comm net #
@@ -225,6 +229,7 @@ def commNet(serverIn):
     requestIn_bytes = serverIn.recv()
     requestIn_str = requestIn_bytes.decode('utf-8')
     line0 = requestIn_str
+    #print('%s\n'%line0)
     line=line0.split()
     if line[0] == 'update':
         print ('update request recieved from emulation coordinator: %s' % line0)

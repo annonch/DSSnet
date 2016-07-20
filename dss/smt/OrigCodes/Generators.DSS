@@ -1,0 +1,9 @@
+! VOLATILE WIND OUTPUT
+New Loadshape.WindRamp npts=1000 sinterval=0.01 mult= (file= WindRamp.csv)
+
+! WIND TURBINE
+New Generator.WindGen Phases=3 Bus1=634 kV=4.16 kW=1000 PF=0.9 Duty=WindRamp
+
+! ENERGY STORAGE DEFINITION
+! New Storage.ES1 Phases=3 Bus1=675 kV=4.16 kWRated=1000 kWhRated=1000  pf=1 %stored=100 kw=1000
+!New Generator.EnergyStorage Phases=3 Bus1=675 kV=4.16 kW=1000 PF=1.0

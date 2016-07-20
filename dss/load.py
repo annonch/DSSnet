@@ -10,16 +10,16 @@ def updateL(l,t):
 	if l == '671' : 
 		return str(float(3*1400)-(3/4* float(t)) + (random.random()*40-20))
 	
-	if l =='load_1':
+	if l =='load1':
 		p=t*(.025*total_load)+1/8*total_load
 		return str(p)
-	if l =='load_2':
+	if l =='load2':
 		p=t*(-.025*total_load)+3/8*total_load
 		return str(p)
-	if l =='load_3':
+	if l =='load3':
 		p=t*(-.05*total_load)
 		return str(p)
-	if l =='load_4':
+	if l =='load4':
 		p=t*(.05*total_load)+2/8*total_load
 		return str(p)	
 

@@ -1,4 +1,5 @@
 #import 
+pu = 1000*1.333
 time_interval = 0.001
 end_time = 10
 fille = 'wind_gen.csv'
@@ -24,5 +25,5 @@ def readWind(fille):
 def updateG(G,t):
 	if G == ' ' :
 		return t*100 + 5400 
-	if G == 'wind':
-		return updateG.data[int(len(updateG.data)/(end_time/time_interval)*(t*time_interval))]
+	if G == 'gen':
+		return updateG.data[int(len(updateG.data)/(end_time/time_interval)*(t*time_interval))]*pu
