@@ -15,6 +15,7 @@ import sys
 import argparse
 from gen import updateG
 from load import updateL
+import load
 import ied
 import DSSnet_handler as handler
 import time
@@ -27,9 +28,9 @@ parser = argparse.ArgumentParser(description= 'Manages power system simulation a
 parser.add_argument('--version', action='version',version='DSSnet 2.0')
 parser.add_argument('--ip', help='ip of power coordinator',default='10.47.142.26',type=str)
 parser.add_argument('--port', help='port reserved for power coordinator',default='50021',type=str)
-parser.add_argument('--IED_config', help='path to IED file',default='C:\DSS\DSSnet\dss/4bus\IED.config',type=str)
-parser.add_argument('--circuit_filename', help='path to main circuit file',default = 'C:\DSS\DSSnet\dss/4bus\master.dss', type=str)
-parser.add_argument('--timestep', help='resolution of time step',default=0.001,type=float)
+parser.add_argument('-IED','--IED_config', help='path to IED file',default='C:\DSS\DSSnet\dss/4bus\IED.config',type=str)
+parser.add_argument('-cf','--circuit_filename', help='path to main circuit file',default = 'C:\DSS\DSSnet\dss/4bus\master.dss', type=str)
+parser.add_argument('-ts','--timestep', help='resolution of time step',default=0.001,type=float)
 args = parser.parse_args()
 
 engine=win32com.client.Dispatch("OpenDSSEngine.DSS")
@@ -60,6 +61,7 @@ def setupSocket():
 pmu = []
 loads = []
 gens = []
+monitors = []
 
 def read_config():
     with open(args.IED_config, 'r') as ied_config:
@@ -72,6 +74,9 @@ def read_config():
                     add_gen(ied)
                 if ied[0] =='pmu':
                     add_pmu(ied)
+                if ied[0] =='monitor':
+                    add_monitor(ied)
+
 
 #load = load
 def add_load(ied):
@@ -84,6 +89,9 @@ def add_gen(ied):
 # pmu = monitor
 def add_pmu(ied):
     pmu.append(ied[1])
+
+def add_monitor(ied):
+    monitors.append(ied[1])
 
 ######################
 #  Helper Functions  #
@@ -105,11 +113,13 @@ def getBusVolts():
 def updateLoads(t):
     for x in loads:
         result = updateL(x,t)
+        #print('%s: %s'%(x,result))
         update_controllable_loads(x,result)
 
 def updateGeneration(t):
     for x in gens:
-        result = updateG(g,t)       
+        result = updateG(x,t,args.timestep)       
+        #print('%s: %s'%(x,result))
         update_controllable_gens(x,result)
 
 def update_controllable_loads(load,val):
@@ -164,22 +174,6 @@ def energyStorage(l_name, load, g_name, gen):
     engine.Text.Command='generator.%s.KW=%s'%(str(g_name),str(int(gen)))
     engine.Text.Command='load.%s.KW=%s'%(str(l_name),str(int(load)))
 
-def get_load(load_id,t):
-    total_load = 100
-    #10     sec  
-    if l =='load1':
-        p=t*(.025*total_load)+1/8*total_load
-        return str(p)
-    if l =='load2':
-        p=t*(-.025*total_load)+3/8*total_load
-        return str(p)
-    if l =='load3':
-        p=t*(-.05*total_load)
-        return str(p)
-    if l =='load4':
-        p=t*(.05*total_load)+2/8*total_load
-        return str(p)   
-
 def static_vars(**kwargs):
     def decorate(func):
         for k in kwargs:
@@ -188,7 +182,7 @@ def static_vars(**kwargs):
     return decorate
 
 def get_gen(gen_id,t):
-    updateG(gen_id,t)
+    return str(updateG(gen_id,t,args.timestep))
 
 def direct(cmd):
     engine.Text.Command=cmd
@@ -200,32 +194,41 @@ def updateTime(dt):
     updateGeneration(dt)
     engine.Text.Command='solve'
 
-@static_vars(previous_time=0.0)
+def exportMonitors():
+    for m in monitors:
+        direct('export monitor %s' % m)
+
+@static_vars(previous_time=float(-0.5))
 def get_up_to_date(t): # solve for time step up until previous time
-    print('iterpolating')
-    if get_up_to_date.previous_time == 0.0:
+    #print('iterpolating')
+    if get_up_to_date.previous_time < 0.0:
         get_up_to_date.previous_time = t
+        #print('You should only see this once! %s'%type(get_up_to_date.previous_time))
         return 0
-    time=float(t)-0.0005 # force round down
-    iterations = int(args.timestep*round(time,3)-round(previous_time,3)) 
-    print(iterations)
+    time=t#-0.0005 # force round down I dont think we need cuz of round function
+    iterations = int((round(time,3)-round(get_up_to_date.previous_time,3))/args.timestep) 
+    #print('iterations: %s'%iterations)
     for i in range(iterations):
-        dt =get_up_to_date.previous_time + (i+1)* args.timestep
+        dt =get_up_to_date.previous_time + args.timestep
         cmd='set sec=%s' % str(dt)
         engine.Text.Command=cmd
         updateLoads(dt)
         updateGeneration(dt)
         engine.Text.Command='solve'
         direct('sample')
-        direct('export monitors')
-    get_up_to_date.previous_time = t    
+        get_up_to_date.previous_time = dt    
+    
+    #print(get_up_to_date.previous_time)
+
+    exportMonitors()
+        
 
 ##############################
 #  communicate with Comm net #
 ##############################
 
 def commNet(serverIn):
-    print('waiting for request')
+    #print('waiting for request')
     requestIn_bytes = serverIn.recv()
     requestIn_str = requestIn_bytes.decode('utf-8')
     line0 = requestIn_str
@@ -238,7 +241,7 @@ def commNet(serverIn):
         # what does mininet want us to do????
         if length > 1 :
             newTime = line[5]
-            get_up_to_date(newTime)
+            get_up_to_date(float(newTime))
             updateTime(newTime)
 
             reply='ok'
@@ -252,8 +255,8 @@ def commNet(serverIn):
                 funkName = pre_processed_event
                 try:
                     processed_event = eval(funkName)
-                except NameError :
-                    print('error with eval' % pre_processed_event)
+                except NameError:
+                    print('error with eval %s' % pre_processed_event)
 
             except AttributeError:
                 print('error with pre_processed_event %s' % line)
@@ -264,6 +267,7 @@ def commNet(serverIn):
                 reply=postprocess(line,processed_event)
             except AttributeError:
                 print('error with post %s' % line)
+            
             ok=reply.encode('utf-8')
             serverIn.send(ok)
 

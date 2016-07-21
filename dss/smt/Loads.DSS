@@ -19,7 +19,7 @@ New Load.680c Bus1=680.3    Phases=1 Conn=Wye  Model=1 kV=2.4  kW=117  kvar=68
 ! MODIFIED FILE
 
 ! Energy Storage (Load part)
-New Load.gen_l Bus1=675    Phases=1 Conn=Wye  Model=1 kV=2.4  kW=117  kvar=68 
+New Load.es_l Bus1=675    Phases=1 Conn=Wye  Model=1 kV=2.4  kW=117  kvar=68 
 
 
 ! Changed names of load

@@ -1,26 +1,27 @@
 import random
-total_load = 100
+total_load = 1000.0
 end_time = 10
 
 def updateL(l,t):
-	if l == 'load1' :
+	if l == 'load1a' :
 		return str(float(t)*100 + 5400) 
 
 
 	if l == '671' : 
-		return str(float(3*1400)-(3/4* float(t)) + (random.random()*40-20))
+		return str(float(3*1400)-((3/4)* float(t)) + (random.random()*40-20))
 	
 	if l =='load1':
-		p=t*(.025*total_load)+1/8*total_load
-		return str(p)
+		p=(float(t)*((.25*total_load)/end_time))+(1/8)*total_load
+		return str(p+0.001)
 	if l =='load2':
-		p=t*(-.025*total_load)+3/8*total_load
-		return str(p)
+		p=(float(t)*((-.25*total_load)/end_time))+(3/8)*total_load
+		return str(p+0.001)
 	if l =='load3':
-		p=t*(-.05*total_load)
-		return str(p)
+		
+		p=float(t)*(.5*total_load)/end_time
+		return str(p+0.001)
 	if l =='load4':
-		p=t*(.05*total_load)+2/8*total_load
-		return str(p)	
+		p=float(t)*(.5*total_load)/end_time+(1/2)*total_load
+		return str(p+0.001)	
 
 

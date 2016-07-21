@@ -26,5 +26,5 @@ Calcvoltagebases
 
 New monitor.mon_1 element=Line.650632 terminal=1 mode=0 Residual=yes
 New monitor.mon_2 element=Generator.gen terminal=1 mode=1 Residual=yes
-!New monitor.mon_3 element=Generator.es_g terminal=1 mode=1 Residual=yes
+New monitor.mon_3 element=Generator.es_g terminal=1 mode=1 Residual=yes
 
