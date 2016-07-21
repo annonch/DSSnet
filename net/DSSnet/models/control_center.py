@@ -4,11 +4,13 @@ import time
 import threading
 import os
 import sys
- 
-myIP = sys.argv[1]
-ListenPort = sys.argv[2]
-es_IP = sys.argv[3]
-es_port = sys.argv[4]
+import pipe
+
+cc_ID = sys.argv[1] 
+myIP = sys.argv[2]
+ListenPort = sys.argv[3]
+es_IP = sys.argv[4]
+es_port = sys.argv[5]
 
 #initialize values
 gen_val = 0
@@ -35,10 +37,15 @@ load_4_val = 0
       # send message to energy storage to discharge battery
 '''
 
+pipeout=pipe.setup_pipe_l(cc_ID)
+pipin = pipe.setup_pipe_w()
+
+
 # listen to Loads/Generator
 contextIn = zmq.Context()
 serverIn = contextIn.socket(zmq.REP)
-ServerIn.bind("tcp://%s:%s" % (myIP,ListenPort))
+#serverIn.bind("tcp://%s:%s" % (myIP,ListenPort))
+serverIn.bind("tcp://*:%s" % (ListenPort))
 
 # sent to Energy Storage Device
 contextOut = zmq.Context()
@@ -54,7 +61,13 @@ def do_every(interval, worker_func, iterations = 0):
         ).start();
     worker_func();
 
-def func(l1,l2,l3,l4,g):
+def func():
+    l1=load_1_val
+    l2=load_2_val
+    l3=load_3_val
+    l4=load_4_val
+    g=gen_val
+
     dif = g - (l1+l2+l3+l4) 
     if dif > 0:
         charge(dif)
@@ -91,7 +104,7 @@ def listen():
             gen_val = int(line[1])
 
 
-do_every(1,func(load_1_val,load_2_val,load_3_val,load_4_val,gen_val))
+do_every(1,func)
 
 while 1:
     listen()

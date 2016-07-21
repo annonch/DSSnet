@@ -1,4 +1,6 @@
 #!/bin/bash
+sudo pkill java
+sudo killall -s SIGKILL /usr/bin/java
 sudo rm ./tmp/*
 sudo touch ./tmp/pidlist
 sudo rm /tmp/fifo.tmp

@@ -31,7 +31,8 @@ def send_cc(val):
     status=clientOut.recv()
 
 def get_val():
-    pipe.send_sync_event('update b p pre_load_report post_load_report %s %s 0\n' %(time.time(),Load_ID), pipin)
+    update = 'update b p pre_load_report post_load_report %s %s 0\n' %(time.time(),Load_ID)
+    pipe.send_sync_event(update.encode('UTF-8'), pipin)
 
 # scheduler function
 def do_every(interval, worker_func, iterations = 0):

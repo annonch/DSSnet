@@ -1,4 +1,4 @@
-#!usr/bin/python
+#!/usr/bin/python
 
 ##########################
 #  channon@hawk.iit.edu  #
@@ -11,13 +11,16 @@
 #  Mininet Imports  #
 ##################### 
 
-from mininet.topo import Topo
+from mininet.topo import Topo, SingleSwitchTopo
 from mininet.net import Mininet
 from mininet.node import CPULimitedHost, Controller, OVSKernelSwitch, RemoteController, Host
 from mininet.cli import CLI
 from mininet.link import TCLink
-from mininet.util import irange, dumpNodeConnections
-from mininet.log import setLogLevel, info
+from mininet.util import irange, dumpNodeConnections, quietRun, specialClass
+from mininet.log import setLogLevel, info, warn, error, debug
+from mininet.nodelib import LinuxBridge
+from mininet.examples.controlnet import MininetFacade
+
 
 ####################
 #  System Imports  #
@@ -26,6 +29,10 @@ from mininet.log import setLogLevel, info
 import sys
 import time
 import os
+from os import environ
+from os.path import dirname,join, isfile
+from glob import glob
+from functools import partial
 import subprocess
 import zmq
 import logging
@@ -40,6 +47,7 @@ import models.pipe
 import DSSnet_handler as handler
 import DSSnet_hosts
 import DSSnet_events
+import onos
 
 ######################
 #  Global Variables  #
@@ -53,13 +61,15 @@ if not os.path.exists(COORD_PIPE):
 
 parser = argparse.ArgumentParser(description= 'Manages network emulation and synchronizes with the power Coordinator.')
 parser.add_argument('--version', action='version', version='DSSnet 2.0')
-parser.add_argument('--ip', help='ip of power coordinator', default='10.47.142.26', type=str)
-parser.add_argument('--port', help='port of the power coordinator, default/recommended: 50021', default='50021', type=str)
-parser.add_argument('--topo_config', help='path to topology file',default='./configs/topo.config', type=str)
-parser.add_argument('--IED_config', help='path to IED file', default='./configs/IED.config',type=str)
+parser.add_argument('-ip','--ip', help='ip of power coordinator', default='10.47.142.26', type=str)
+parser.add_argument('-port','--port', help='port of the power coordinator, default/recommended: 50021', default='50021', type=str)
+parser.add_argument('-topo','--topo_config', help='path to topology file',default='./configs/topo.config', type=str)
+parser.add_argument('-IED','--IED_config', help='path to IED file', default='./configs/IED.config',type=str)
 parser.add_argument('--sync_event_log', help='path to logging file for synchronization events', default='logs/synch_event.log', type=str)
 #parser.add_argument('--window_size', help='maximum synchonization time(ms) for blocking events. see docs for more info', default = 0, type=int)
 parser.add_argument('-c','--c','--clean', action='store_const' , const = 1, help='cleans DSSnet, should be ran before running DSSnet')
+parser.add_argument('-onos','--onos', action='store_const', const=1, help='use onos (default yes)')
+parser.add_argument('-nc','--numControllers', help='number of controllers for onos to use',default=3,type=int)
 
 args = parser.parse_args()
     
@@ -86,6 +96,16 @@ def pidList(net):
         pIDS += ' %s' % s.pid
     for c in net.controllers:
         pIDS += ' %s' % c.pid
+    #find pids of onos controllers
+    if args.onos:
+        for h in controlNetwork.net.hosts:
+            pIDS += ' %s' % h.pid
+        for s in controlNetwork.net.switches:
+            pIDS += ' %s' % s.pid
+        #for c in controlNetwork.net.controllers:
+        #    #pIDS += ' %s' % c.pid
+
+
     print ('pids in virtual time: %s' % pIDS)
 
 
@@ -149,9 +169,23 @@ def pipe_listen (net):
                            DSSnet_events.Events(newEvent,event[5]))
             
                         
-            # sync new thread
-            # thread.start_new_thread(sync,newEvent)
             
+def static_vars(**kwargs):
+    def decorate(func):
+        for k in kwargs:
+            setattr(func, k, kwargs[k])
+        return func
+    return decorate
+
+@static_vars(beginning_of_time = -10.0)
+def adjust_time(event):
+    if adjust_time.beginning_of_time < 0.0:
+        adjust_time.beginning_of_time = float(event[5])
+        event[5] = str(0.00001)# very small because 0 breaks things 
+    else:
+        event[5] = str(float(event[5]) - float(adjust_time.beginning_of_time))
+    return event
+
 def sync():
     global eventQueue
     global num_block
@@ -162,10 +196,12 @@ def sync():
             e_obj = heapq.heappop(eventQueue)
             newEvent = e_obj.get_event() 
             event = newEvent.split()
+            #adjust time
+            event = adjust_time(event)
             logging.info('event being processed: %s' % event)
             try:
                 preprocess=getattr(handler,event[3])
-                processed_event=preprocess(newEvent,net,hosts)
+                processed_event=preprocess(event,net,hosts)
             except AttributeError:
                 print('pre-process error: %s' % newEvent)
                 logging.info('pre-process error with event request %s' % newEvent)
@@ -198,7 +234,9 @@ def postProcess(reply,newEvent):
     thread.exit()
 
     
-def do_com(request):
+def do_com(req):
+    #request is a list turn to string
+    request = ' '.join(req)
     req_bytes=request.encode('utf-8')
     DSSout.send(req_bytes)
     status=DSSout.recv()
@@ -222,8 +260,8 @@ class topo(Topo):
                     properties = line.split(' split ') # wont interfere with command 
                     # msg id command
                     hosts.append(DSSnet_hosts.DSSnet_hosts(properties[1], properties[0], properties[3], properties[2]))
-                    host = self.addHost(properties[0])
-
+                    thost = self.addHost(properties[0])
+                    
         with open(args.topo_config, 'r') as ins:
             for line in ins:
                 if line[0] != '#':
@@ -254,36 +292,60 @@ def setup_pipes(net):
 def run_main():
     global hosts
     global net
-    
+    global controlNetwork 
     top = topo()
-    net = Mininet(top, link = TCLink)
+    if args.onos:
+        controlNetwork = onos.ONOSCluster('c0', args.numControllers)
+        net = Mininet(top,
+                      controller=[ controlNetwork],
+                      switch=onos.ONOSOVSSwitch )
+    else:
+        net = Mininet(top, link = TCLink)
+    
     net.start()
 
     # set IP
+    '''
     for i in hosts:
-        net.get(i.get_host_name()).cmd('ifconfig %s-etho %s' % (i.get_host_name, i.get_ip))
+        net.get(i.get_host_name()).cmd('ifconfig %s-eth0 %s' % (i.get_host_name(), i.get_ip()))
+        print('ifconfig %s-eth0 %s' % (i.get_host_name(), i.get_ip()))
+    '''
+    for i in hosts:
+        net.get(i.get_host_name()).setIP(i.get_ip())
+    
+
     
     print('Dumping Host Connections')
     dumpNodeConnections(net.hosts)
+
+    net.waitConnected()
 
     pidList(net)
     setupPause()
     time.sleep(1)
 
+
+    global startTime
+    startTime = time.time()
+    print('initiation finished')
+    
     # start commands
+    '''
+    time.sleep(30)
+    '''
     for i in hosts:
         print i.get_process_command()
         net.get(i.get_host_name()).cmd(i.get_process_command())
         
     setup_pipes(net)
-
-    global startTime
-    startTime = time.time()
-    print('initiation finished')
+    
     if os.fork():
         pipe_listen(net)
-    CLI(net)
-
+    
+    if args.onos:
+        onos.CLI(net)
+    else:
+        CLI(net)
 
 if __name__ == '__main__':
     

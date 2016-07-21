@@ -20,7 +20,7 @@ clientOut.connect("tcp://%s:%s" % (server_IP,server_Port))
 
 # open pipe to communicate to opendss
 
-pipeout=pipe.setup_pipe_l(Load_ID)
+pipeout=pipe.setup_pipe_l(Gen_ID)
 pipin = pipe.setup_pipe_w()
 
 # send to control center
@@ -31,7 +31,8 @@ def send_cc(val):
     status=clientOut.recv()
 
 def get_val():
-    pipe.send_sync_event('update b p pre_gen_report post_gen_report %s %s 0\n' %(time.time(),Gen_ID), pipin)
+    update = 'update b p pre_gen_report post_gen_report %s %s 0\n' %(time.time(),Gen_ID)
+    pipe.send_sync_event(update.encode('UTF-8'), pipin)
 
 # scheduler function
 def do_every(interval, worker_func, iterations = 0):

@@ -1,0 +1,192 @@
+INFO:root:pause time: 1469119675.49
+INFO:root:pause time: 1469119675.5
+INFO:root:pause time: 1469119675.5
+INFO:root:pause time: 1469119675.5
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '0.001', 'load1', '0']
+INFO:root:reply recieved 125.02600000000001: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '0.000954627990723', 'load4', '0']
+INFO:root:reply recieved 500.0487313995361: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '0.00342583656311', 'gen', '0']
+INFO:root:reply recieved 730.4592941779999: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '0.00437450408936', 'load3', '0']
+INFO:root:reply recieved 0.219725204468: 
+INFO:root:resume time: 1469119691.23
+INFO:root:pause time: 1469119691.28
+INFO:root:pause time: 1469119691.28
+INFO:root:pause time: 1469119691.28
+INFO:root:pause time: 1469119691.28
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '15.7389335632', 'load2', '0']
+INFO:root:reply recieved -18.472339080000015: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '15.7395031452', 'load4', '0']
+INFO:root:reply recieved 1286.97615726: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '15.7396652699', 'load1', '0']
+INFO:root:reply recieved 518.4926317474999: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '15.7402422428', 'gen', '0']
+INFO:root:reply recieved 730.4592941779999: 
+INFO:root:resume time: 1469119704.48
+INFO:root:pause time: 1469119704.5
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '29.0095822811', 'load2', '0']
+INFO:root:pause time: 1469119704.51
+INFO:root:pause time: 1469119704.51
+INFO:root:pause time: 1469119704.52
+INFO:root:pause time: 1469119704.52
+INFO:root:reply recieved -350.23855702749995: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '29.0104703903', 'load4', '0']
+INFO:root:reply recieved 1950.524519515: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '29.0138566494', 'load1', '0']
+INFO:root:pause time: 1469119954.9
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '0.001', 'gen', '0']
+INFO:root:pause time: 1469119954.9
+INFO:root:pause time: 1469119954.9
+INFO:root:pause time: 1469119954.9
+INFO:root:reply recieved 730.4592941779999: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '0.000752687454224', 'load2', '0']
+INFO:root:reply recieved 374.9821828136444: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '0.00290036201477', 'load1', '0']
+INFO:root:reply recieved 125.07350905036925: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '0.00553894042969', 'load4', '0']
+INFO:root:reply recieved 500.27794702148447: 
+INFO:root:resume time: 1469120543.07
+INFO:root:pause time: 1469120543.16
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '588.264670372', 'load3', '0']
+INFO:root:pause time: 1469120543.17
+INFO:root:pause time: 1469120543.17
+INFO:root:pause time: 1469120543.17
+INFO:root:pause time: 1469120627.91
+INFO:root:pause time: 1469120627.92
+INFO:root:pause time: 1469120627.92
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '0.001', 'load4', '0']
+INFO:root:reply recieved 500.051: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '0.00420928001404', 'load1', '0']
+INFO:root:reply recieved 125.106232000351: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '0.0055239200592', 'load2', '0']
+INFO:root:reply recieved 374.86290199852: 
+INFO:root:pause time: 1469120628.0
+INFO:root:pause time: 1469120628.0
+INFO:root:resume time: 1469120627.98
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '0.072154045105', 'load3', '0']
+INFO:root:reply recieved 3.6087022552499994: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '0.0928885936737', 'gen', '0']
+INFO:root:reply recieved 730.4592941779999: 
+INFO:root:resume time: 1469120628.13
+INFO:root:pause time: 1469120628.91
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '1.0002579689', 'load4', '0']
+INFO:root:reply recieved 550.013898445: 
+INFO:root:resume time: 1469120629.66
+INFO:root:pause time: 1469120629.68
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '1.76485562325', 'load1', '0']
+INFO:root:pause time: 1469120629.68
+INFO:root:pause time: 1469120629.68
+INFO:root:pause time: 1469120629.68
+INFO:root:reply recieved 169.12239058125002: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '1.76634001732', 'load2', '0']
+INFO:root:reply recieved 330.842499567: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '1.76723575592', 'load3', '0']
+INFO:root:reply recieved 88.362787796: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '1.76772856712', 'gen', '0']
+INFO:root:reply recieved 730.4592941779999: 
+INFO:root:resume time: 1469120630.79
+INFO:root:pause time: 1469120630.86
+INFO:root:pause time: 1469120630.86
+INFO:root:pause time: 1469120630.86
+INFO:root:pause time: 1469120630.86
+INFO:root:pause time: 1469120630.86
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '2.91290807724', 'load2', '0']
+INFO:root:reply recieved 302.178298069: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '2.9130396843', 'gen', '0']
+INFO:root:reply recieved 730.4592941779999: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '2.92683982849', 'load1', '0']
+INFO:root:reply recieved 198.17199571225: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '2.92702031136', 'load3', '0']
+INFO:root:reply recieved 146.352015568: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '2.92715263367', 'load4', '0']
+INFO:root:reply recieved 646.3586316835: 
+INFO:root:resume time: 1469120632.52
+INFO:root:pause time: 1469120632.56
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '4.64924716949', 'load3', '0']
+INFO:root:pause time: 1469120632.56
+INFO:root:pause time: 1469120632.56
+INFO:root:pause time: 1469120632.56
+INFO:root:pause time: 1469120632.56
+INFO:root:reply recieved 232.46335847449998: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '4.64996099472', 'load4', '0']
+INFO:root:reply recieved 732.499049736: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '4.65005135536', 'gen', '0']
+INFO:root:reply recieved 730.4592941779999: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '4.65048742294', 'load1', '0']
+INFO:root:reply recieved 241.2631855735: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '4.65279102325', 'load2', '0']
+INFO:root:reply recieved 258.68122441875: 
+INFO:root:resume time: 1469120634.81
+INFO:root:pause time: 1469120634.82
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '6.90389871597', 'load3', '0']
+INFO:root:pause time: 1469120634.82
+INFO:root:pause time: 1469120634.82
+INFO:root:pause time: 1469120634.82
+INFO:root:pause time: 1469120634.82
+INFO:root:reply recieved 345.1959357985: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '6.90483188629', 'gen', '0']
+INFO:root:reply recieved 730.4592941779999: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '6.90510869026', 'load1', '0']
+INFO:root:reply recieved 297.62871725649995: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '6.9052066803', 'load2', '0']
+INFO:root:reply recieved 202.3708329925: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '6.90828585625', 'load4', '0']
+INFO:root:reply recieved 845.4152928125: 
+INFO:root:resume time: 1469120637.57
+INFO:root:pause time: 1469120637.59
+INFO:root:pause time: 1469120637.6
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '9.67187690735', 'load3', '0']
+INFO:root:pause time: 1469120637.61
+INFO:root:pause time: 1469120637.61
+INFO:root:pause time: 1469120637.61
+INFO:root:reply recieved 483.5948453675: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '9.67715930939', 'load1', '0']
+INFO:root:reply recieved 366.92998273474996: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '9.69762778282', 'load2', '0']
+INFO:root:reply recieved 132.5603054295: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '9.69770932198', 'gen', '0']
+INFO:root:reply recieved 730.4592941779999: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '9.69985103607', 'load4', '0']
+INFO:root:reply recieved 984.9935518034999: 
+INFO:root:resume time: 1469120641.57
+INFO:root:pause time: 1469120641.57
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '13.655516386', 'load4', '0']
+INFO:root:pause time: 1469120641.57
+INFO:root:pause time: 1469120641.57
+INFO:root:pause time: 1469120641.57
+INFO:root:pause time: 1469120641.57
+INFO:root:reply recieved 1182.7768193: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '13.6561689377', 'gen', '0']
+INFO:root:reply recieved 730.4592941779999: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '13.6563725471', 'load1', '0']
+INFO:root:reply recieved 466.41031367749997: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '13.6565847397', 'load2', '0']
+INFO:root:reply recieved 33.586381507500015: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '13.6567447186', 'load3', '0']
+INFO:root:reply recieved 682.83823593: 
+INFO:root:resume time: 1469120646.53
+INFO:root:pause time: 1469120646.54
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '18.6294243336', 'load4', '0']
+INFO:root:pause time: 1469120646.58
+INFO:root:pause time: 1469120646.59
+INFO:root:pause time: 1469120646.59
+INFO:root:pause time: 1469120646.59
+INFO:root:reply recieved 1431.47221668: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '18.6602566242', 'load2', '0']
+INFO:root:reply recieved -91.50541560499997: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '18.6604580879', 'load3', '0']
+INFO:root:reply recieved 933.0239043949999: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '18.6606318951', 'gen', '0']
+INFO:root:reply recieved 730.4592941779999: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '18.6607706547', 'load1', '0']
+INFO:root:reply recieved 591.5202663675: 
+INFO:root:resume time: 1469120652.95
+INFO:root:pause time: 1469120652.96
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_load_report', 'post_load_report', '25.0360808372', 'load4', '0']
+INFO:root:pause time: 1469120652.98
+INFO:root:pause time: 1469120652.99
+INFO:root:pause time: 1469120652.99
+INFO:root:pause time: 1469120653.01
+INFO:root:reply recieved 1751.8050418599998: 
+INFO:root:event being processed: ['update', 'b', 'p', 'pre_gen_report', 'post_gen_report', '25.0650458336', 'gen', '0']
