@@ -65,7 +65,7 @@ parser.add_argument('-ip','--ip', help='ip of power coordinator', default='10.47
 parser.add_argument('-port','--port', help='port of the power coordinator, default/recommended: 50021', default='50021', type=str)
 parser.add_argument('-topo','--topo_config', help='path to topology file',default='./configs/topo.config', type=str)
 parser.add_argument('-IED','--IED_config', help='path to IED file', default='./configs/IED.config',type=str)
-parser.add_argument('--sync_event_log', help='path to logging file for synchronization events', default='logs/synch_event.log', type=str)
+parser.add_argument('-sel','--sync_event_log', help='path to logging file for synchronization events', default='logs/synch_event.log', type=str)
 #parser.add_argument('--window_size', help='maximum synchonization time(ms) for blocking events. see docs for more info', default = 0, type=int)
 parser.add_argument('-c','--c','--clean', action='store_const' , const = 1, help='cleans DSSnet, should be ran before running DSSnet')
 parser.add_argument('-onos','--onos', action='store_const', const=1, help='use onos (default yes)')
@@ -179,11 +179,17 @@ def static_vars(**kwargs):
 
 @static_vars(beginning_of_time = -10.0)
 def adjust_time(event):
+    old_GToD = event[5]
     if adjust_time.beginning_of_time < 0.0:
         adjust_time.beginning_of_time = float(event[5])
         event[5] = str(0.00001)# very small because 0 breaks things 
     else:
         event[5] = str(float(event[5]) - float(adjust_time.beginning_of_time))
+    
+    #debugging virtual time
+    
+    logging.debug('wall clock GToD: %s VT GToD: %s adjusted time: %s beginning of time %s'%(time.time(),old_GToD,event[5],adjust_time.beginning_of_time))
+    
     return event
 
 def sync():
@@ -275,7 +281,8 @@ class topo(Topo):
 pipes={}
                 
 def setup_pipes(net):
-    global hosts
+    global host
+    global pipes
 
     for i in hosts:
 
@@ -329,6 +336,9 @@ def run_main():
     startTime = time.time()
     print('initiation finished')
     
+    CLI(net)
+
+def start_processes(net):
     # start commands
     '''
     time.sleep(30)
@@ -338,14 +348,37 @@ def run_main():
         net.get(i.get_host_name()).cmd(i.get_process_command())
         
     setup_pipes(net)
-    
+
     if os.fork():
         pipe_listen(net)
     
-    if args.onos:
-        onos.CLI(net)
-    else:
-        CLI(net)
+
+if args.onos:
+    OldCLI=onos.CLI
+else:
+    OldCLI=CLI
+
+class DSSnetCLI( OldCLI ):
+    "CLI extensions for DSSnet"
+
+    prompt = '[%s] DSSnet -->  ' % time.time()
+    
+    def __init__( self,net, **kwargs ):
+        OldCLI.__init__( self,net, **kwargs )
+
+    def DSSnet( self, line):
+        pass
+
+    def do_pause( self, line):
+        pause()
+
+    def do_resume( self, line):
+        resume()
+
+    def do_start( self, line ):
+        start_processes(net)
+
+CLI = DSSnetCLI
 
 if __name__ == '__main__':
     
