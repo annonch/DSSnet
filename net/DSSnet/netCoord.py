@@ -57,6 +57,7 @@ COORD_PIPE = 'tmp/coordination.pipe'
 if not os.path.exists(COORD_PIPE):
     os.mkfifo(COORD_PIPE)
 
+MIN_PAUSE_INTERVAL = 0.05
 # parser
 
 parser = argparse.ArgumentParser(description= 'Manages network emulation and synchronizes with the power Coordinator.')
@@ -70,7 +71,8 @@ parser.add_argument('-sel','--sync_event_log', help='path to logging file for sy
 parser.add_argument('-c','--c','--clean', action='store_const' , const = 1, help='cleans DSSnet, should be ran before running DSSnet')
 parser.add_argument('-onos','--onos', action='store_const', const=1, help='use onos (default yes)')
 parser.add_argument('-nc','--numControllers', help='number of controllers for onos to use',default=3,type=int)
-
+parser.add_argument('-tm','--test_mode',help='test mode for debugging',default=0,type=int)
+parser.add_argument('-mpt',help='WARNING DO NOT CHANGE',default=0.05,type=float)
 args = parser.parse_args()
     
 logging.basicConfig(filename=args.sync_event_log,level=logging.DEBUG)
@@ -83,6 +85,8 @@ DSSout=contextOutDSS.socket(zmq.REQ)
 
 print 'Opening Connection to tcp://%s:%s' % (args.ip,args.port)
 DSSout.connect('tcp://%s:%s' % (args.ip,args.port))
+
+debug=1
 
 # Virtual time helpers
 
@@ -124,13 +128,16 @@ def setupPause():
     
 def pause ():
     fh.write('p')
-    before_time = time.time()
-    logging.info('pause time: %s'%before_time)
+    if debug:
+        before_time = time.time()
+        logging.info('pause time: %s'%before_time)
     
 def resume ():
     fh.write('u')
-    before_time = time.time()
-    logging.info('resume time: %s'%time.time())    
+    time.sleep(MIN_PAUSE_INTERVAL)
+    if debug:
+        before_time = time.time()
+        logging.info('resume time: %s'%time.time())    
 
 #event Queue
 
@@ -160,9 +167,10 @@ def pipe_listen (net):
         if newEvent:
             event = newEvent.split()
             if event[1] == 'b': # blocking
+                if num_block < 1:
+                    pause()
                 num_block+=1
-                pause()
-
+                
             
             # add event to priority queue
             heapq.heappush(eventQueue,
@@ -343,9 +351,10 @@ def start_processes(net):
     '''
     time.sleep(30)
     '''
-    for i in hosts:
-        print i.get_process_command()
-        net.get(i.get_host_name()).cmd(i.get_process_command())
+    if not args.test_mode:
+        for i in hosts:
+            print i.get_process_command()
+            net.get(i.get_host_name()).cmd(i.get_process_command())
         
     setup_pipes(net)
 
@@ -377,6 +386,9 @@ class DSSnetCLI( OldCLI ):
 
     def do_start( self, line ):
         start_processes(net)
+
+    def do_setup_pipes(self, line):
+        setup_pipes(net)
 
 CLI = DSSnetCLI
 

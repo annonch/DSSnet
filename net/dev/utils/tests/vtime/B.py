@@ -1,4 +1,4 @@
-#!/usr/bin/python3.4
+#!/usr/bin/python
 
 # this program recieves the message from program A and prints it to a file
 

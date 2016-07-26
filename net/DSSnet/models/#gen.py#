@@ -27,13 +27,13 @@ clientOut.connect("tcp://%s:%s" % (server_IP,server_Port))
 
 # open pipe to communicate to opendss
 
-pipeout=pipe.setup_pipe_l(Gen_ID)
+pipeout=pipe.setup_pipe_l(~Gen_ID)
 pipin = pipe.setup_pipe_w()
 
 # send to control center
  
 def send_cc(val):
-    val = ('%s %s' % (Gen_ID,val))
+    val = ('%s s' % (en_ID,val))
     req_bytes = val.encode('utf-8')
     clientOut.send(req_bytes)
     status=clientOut.recv()

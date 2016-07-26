@@ -6,5 +6,9 @@ sudo touch ./tmp/pidlist
 sudo rm /tmp/fifo.tmp
 sudo rm *~
 sudo rm *.pyc
+sudo rm ./models/*.pyc
 sudo pkill freeze_listen
 sudo mn -c
+#sudo rm *.log
+
+echo ' good to go! '
