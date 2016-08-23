@@ -10,14 +10,11 @@ sleep 1
 echo '  1...'
 sleep 1
 
-echo "Starting Program B"
-# start program B
-./B.py > vtime.output 2>&1 &
-PID_PROGRAM_B=${!}
 
-echo "Starting Program A"
+echo "Starting Program C"
 # start program A
-./A.py &
+./C.py > vtime.output 2>&1 &
+
 PID_PROGRAM_A=${!}
 sleep 1
 # Register A with Virtual Time
@@ -89,18 +86,8 @@ sleep 1
 
 echo 'running for 20 more seconds'
 # wait for program B to finish (runs for 60 seconds)
-wait $PID_PROGRAM_B
-kill -s 9 $PID_PROGRAM_A
+wait $PID_PROGRAM_A
 
 echo 'test finished'
-echo 'check out the timestamps in test.output'
-
-# kill if they got through somehow
-{
-pkill -9 A.py                                                                                                              
-pkill -9 B.py
-} &> /dev/null
-
-sleep 3
 cat vtime.output
 

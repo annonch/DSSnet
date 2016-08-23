@@ -5,6 +5,7 @@
 import signal,os
 import time
 import sys
+import gtod
 
 RUN_TIME = 60 # seconds
 if len(sys.argv) > 1:
@@ -22,9 +23,9 @@ def listen(pipe):
     return pipe.readline()
 
 if __name__ == '__main__':
-    start_time = time.time()
+    start_time = gtod.time()
     my_pipe = setup_pipe()
-    while time.time() < (start_time + RUN_TIME):
+    while gtod.time() < (start_time + RUN_TIME):
         A = listen(my_pipe)
         if A:
             print('Program A GToD: %sProgram B GToD: %s \n' % ( A , time.time()))

@@ -7,6 +7,7 @@
 import signal,os
 import sys
 import time
+import gtod
 
 def setup_pipe():
     pipe_name = '/tmp/vtime_test.pipe'
@@ -26,5 +27,5 @@ def send(msg,pipe):
 if __name__ == '__main__':
     my_pipe = setup_pipe()
     while 1:
-        send(str(time.time()),my_pipe)
+        send(str(gtod.time()),my_pipe)
         time.sleep(2)

@@ -7,6 +7,7 @@ import thread
 import sys
 import pipe
 import logging
+import gtod
 
 cc_ID = sys.argv[1] 
 myIP = sys.argv[2]
@@ -20,7 +21,9 @@ logging.basicConfig(filename='%s.log'%cc_ID,level=logging.DEBUG)
 logging.debug('new run')
 
 #initialize values
-gen_val = 750.0
+gen_val1 = 250.0
+gen_val2 = 250.0
+gen_val3 = 250.0
 load_1_val = 250.0
 load_2_val = 250.0
 load_3_val = 250.0
@@ -74,26 +77,28 @@ def func():
     global load_2_val
     global load_3_val
     global load_4_val
-    global gen_val
+    global gen_val1
+    global gen_val2
+    global gen_val3
 
-    dif = gen_val - (load_1_val+load_2_val+load_3_val+load_4_val) 
-    if dif > 0.0:
-        charge(dif)
-    if dif < 0.0:
-        discharge(dif)
-
-def charge(dif):
-    send_es('charge %s \n' % str(dif))
-
-def discharge(dif):
-    send_es('discharge %s \n' % str(abs(dif)))
+    dif1 = gen_val1 - (1115 + load_4_val) 
+    dif2 = gen_val2 - (573 + load_1_val + load_2_val/2)
+    dif3 = gen_val3 - (880 + load_3_val + load_2_val/2)
+    
+    print('difs')
+    print(dif1)
+    print(dif2)
+    print(dif3)
+    
+    send_es('%s %s %s %s '% (dif1, dif2, dif3, gtod.time()))
 
 def send_es(msg):
+    print('sending %s' % msg)
     msg_bytes=msg.encode('utf-8')
     with com_lock:
         clientOut.send(msg_bytes)
         result=clientOut.recv()
-    logging.debug('send: %s at time %s' % (msg,time.time()))
+    logging.debug('send: %s at time %s' % (msg,gtod.time()))
 
 def listen():
     #logging.debug('in listen')
@@ -108,6 +113,7 @@ def listen():
     
     if (requestIn):
         line = requestIn.split()
+        print('recieved message %s'%line)
         if line[0] == 'load1':
             load_1_val = float(line[1])
         elif line[0] == 'load2':
@@ -117,11 +123,13 @@ def listen():
         elif line[0] == 'load4':
             load_4_val = float(line[1])
         elif line[0] == 'gen':
-            gen_val = float(line[1])
+            gen_val1 = float(line[1])
+            gen_val2 = float(line[2])
+            gen_val3 = float(line[3])
 
 com_lock=thread.allocate_lock()
 
-do_every(1,func)
+do_every(0.1,func)
 
 while 1:
     listen()

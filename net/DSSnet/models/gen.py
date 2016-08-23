@@ -10,7 +10,7 @@ import threading
 import zmq
 import os
 import logging
-
+import gtod
 
 TIME_INT = 0.1
 
@@ -40,8 +40,11 @@ def send_cc(val):
     logging.debug('sent message to cc: %s '%val)
 
 def get_val():
-    update = 'update b p pre_gen_report post_gen_report %s %s 0\n' %(time.time(),Gen_ID)
+    update = 'update b p pre_gen_report post_gen_report %s %s 1 mon_wind_gen\n' %(gtod.time(),Gen_ID)
     pipe.send_sync_event(update.encode('UTF-8'), pipin)
+
+def t():
+    print(time.time())
 
 # scheduler function
 def do_every(interval, worker_func, iterations = 0):
@@ -52,10 +55,19 @@ def do_every(interval, worker_func, iterations = 0):
         ).start();
     worker_func();
 
+time.sleep(3)# for sync to start properly
+
 do_every(TIME_INT,get_val)
 
+#print time.time()
+
+#do_every(TIME_INT,t,1)
+
+
+
 while 1:
-    #listne to respionse and sedn to cc
+    #listen to response and send to cc
     x = pipe.listen(pipeout)
     if x:
         send_cc(x)
+    time.sleep(0.001)

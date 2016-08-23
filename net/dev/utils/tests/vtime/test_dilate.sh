@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # keep the place tidy
-./clean.sh
+#./clean.sh
 echo 'testing Virtual time '
 echo 'dilation test'
 echo '3...'

@@ -1,4 +1,5 @@
 #
+new s0
 new s1
 new s2
 new s3
@@ -17,13 +18,14 @@ new s14
 new s15
 new s16
 #
+s0 cc (bw= 10mb)
 s1 s3  (bw=10mb)
 s1 s4 (bw=10mb)
-s1 cc (bw=10mb)
+s1 s0 (bw=10mb)
 #
 s2 s3 (bw=10mb)
 s2 s4 (bw=10mb)
-s2 cc (bw=10mb)
+s2 s0 (bw=10mb)
 #
 s3 s5 (bw=10mb)
 s3 s6 (bw=10mb)
@@ -75,7 +77,4 @@ s14 es (bw=10mb)
 s15 load3 (bw=10mb)
 #
 s16 load4 (bw=10mb)
-#
-s1 cc (bw=10mb)
-s2 cc (bw=10mb)
 #

@@ -73,9 +73,10 @@ parser.add_argument('-onos','--onos', action='store_const', const=1, help='use o
 parser.add_argument('-nc','--numControllers', help='number of controllers for onos to use',default=3,type=int)
 parser.add_argument('-tm','--test_mode',help='test mode for debugging',default=0,type=int)
 parser.add_argument('-mpt',help='WARNING DO NOT CHANGE',default=0.05,type=float)
+parser.add_argument('-pause',action='store_const', const = 1,help='enable use of pause')
 args = parser.parse_args()
     
-logging.basicConfig(filename=args.sync_event_log,level=logging.DEBUG)
+logging.basicConfig(filename=args.sync_event_log,level=logging.WARNING)
 
 # open transport layer to power coordinator
 # TCP socket
@@ -127,17 +128,23 @@ def setupPause():
 #
     
 def pause ():
-    fh.write('p')
-    if debug:
-        before_time = time.time()
-        logging.info('pause time: %s'%before_time)
+    if args.pause:
+        fh.write('p')
+        if debug:
+            before_time = time.time()
+            if args.test_mode >2:
+                print('pause time: %s'%before_time)
+            logging.info('pause time: %s'%before_time)
     
 def resume ():
-    fh.write('u')
-    time.sleep(MIN_PAUSE_INTERVAL)
-    if debug:
-        before_time = time.time()
-        logging.info('resume time: %s'%time.time())    
+    if args.pause:
+        fh.write('u')
+        time.sleep(MIN_PAUSE_INTERVAL)
+        if debug:
+            before_time = time.time()
+            if args.test_mode >2:
+                print('resume time: %s'%before_time)
+            logging.info('resume time: %s'%time.time())    
 
 #event Queue
 
@@ -195,6 +202,8 @@ def adjust_time(event):
         event[5] = str(float(event[5]) - float(adjust_time.beginning_of_time))
     
     #debugging virtual time
+    if args.test_mode > 2:
+        print('wall clock GToD: %s VT GToD: %s adjusted time: %s beginning of time %s'%(time.time(),old_GToD,event[5],adjust_time.beginning_of_time))
     
     logging.debug('wall clock GToD: %s VT GToD: %s adjusted time: %s beginning of time %s'%(time.time(),old_GToD,event[5],adjust_time.beginning_of_time))
     
@@ -212,6 +221,8 @@ def sync():
             event = newEvent.split()
             #adjust time
             event = adjust_time(event)
+            
+            logging.warning('event beginning %f' % time.time())
             logging.info('event being processed: %s' % event)
             try:
                 preprocess=getattr(handler,event[3])
@@ -224,6 +235,7 @@ def sync():
                 reply = do_com(processed_event)
 
             thread.start_new_thread(postProcess,(reply,newEvent))
+            #logging.warning('finish time: %s'%time.time())
     
         except (IndexError, AttributeError):
             # no event in Queue
@@ -245,6 +257,7 @@ def postProcess(reply,newEvent):
         num_block -= 1
         if num_block == 0:
             resume()
+    logging.warning('finish time: %f'%time.time())
     thread.exit()
 
     
@@ -351,7 +364,7 @@ def start_processes(net):
     '''
     time.sleep(30)
     '''
-    if not args.test_mode:
+    if args.test_mode < 4:
         for i in hosts:
             print i.get_process_command()
             net.get(i.get_host_name()).cmd(i.get_process_command())
@@ -396,7 +409,7 @@ if __name__ == '__main__':
     
     setLogLevel('info')
     if args.c:
-        subprocess.Popen('./clean.sh')
+        result = subprocess.Popen('./clean.sh')
         exit()
     run_main()
 
