@@ -13,7 +13,7 @@ sleep 1
 
 echo "Starting Program C"
 # start program A
-./C.py > vtime.output 2>&1 &
+sudo ./C.py > vtime.output 2>&1 &
 
 PID_PROGRAM_A=${!}
 sleep 1

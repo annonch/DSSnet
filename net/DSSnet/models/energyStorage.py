@@ -30,9 +30,9 @@ print('good to go')
 
 def openDSS(info):
     line=info.split()
-    t = gtod.time()
+    #t = gtod.time()
     #t = line[2]
-    logging.debug('descrepency: %s' % str(float(line[2])-t))
+    #logging.debug('descrepency: %s' % str(float(line[2])-t))
     if line[0] == 'charge':
         val1= line[1]
         val2=0.001
@@ -44,7 +44,7 @@ def openDSS(info):
     ph2 = line[1]
     ph3 = line[2]
 
-    update = 'update nb p pre_energyStorage post_energyStorage %s %s 3 %s %s %s\n' % (gtod.time(),es_ID,ph1,ph2,ph3)
+    update = 'update b p pre_energyStorage post_energyStorage %s %s 3 %s %s %s\n' % (time.time(),es_ID,ph1,ph2,ph3)
     logging.debug('sending to pipe')
     pipe.send_sync_event(update.encode('UTF-8'),pipin)
     

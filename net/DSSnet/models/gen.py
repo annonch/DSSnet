@@ -40,7 +40,7 @@ def send_cc(val):
     logging.debug('sent message to cc: %s '%val)
 
 def get_val():
-    update = 'update b p pre_gen_report post_gen_report %s %s 1 mon_wind_gen\n' %(gtod.time(),Gen_ID)
+    update = 'update b p pre_gen_report post_gen_report %s %s 1 mon_wind_gen\n' %(time.time(),Gen_ID)
     pipe.send_sync_event(update.encode('UTF-8'), pipin)
 
 def t():
@@ -57,13 +57,18 @@ def do_every(interval, worker_func, iterations = 0):
 
 time.sleep(3)# for sync to start properly
 
-do_every(TIME_INT,get_val)
+#do_every(TIME_INT,get_val)
+
+
 
 #print time.time()
 
 #do_every(TIME_INT,t,1)
 
-
+if os.fork():
+    while 1:
+        time.sleep(TIME_INT)
+        get_val()
 
 while 1:
     #listen to response and send to cc

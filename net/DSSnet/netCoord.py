@@ -117,19 +117,23 @@ def pidList(net):
 def setupPause():
     global pIDS, fh
     #open listener
+    '''
     pross = 'sudo /home/vagrant/virtual/VirtualTimeKernel/test_virtual_time/freeze_listen %s' % pIDS
     argss = shlex.split(pross)
     subprocess.Popen(argss)
     
     filename = '/tmp/fifo.tmp'
     fh=open(filename,"w",0)
+    '''
 #
 #  Interface to virtual time
 #
     
 def pause ():
+    global net
     if args.pause:
-        fh.write('p')
+        #fh.write('p')
+        net.freezeEmulation()
         if debug:
             before_time = time.time()
             if args.test_mode >2:
@@ -137,8 +141,10 @@ def pause ():
             logging.info('pause time: %s'%before_time)
     
 def resume ():
+    global net
     if args.pause:
-        fh.write('u')
+        net.freezeEmulation('unfreeze')
+        #fh.write('u')
         time.sleep(MIN_PAUSE_INTERVAL)
         if debug:
             before_time = time.time()
@@ -192,7 +198,7 @@ def static_vars(**kwargs):
         return func
     return decorate
 
-@static_vars(beginning_of_time = -10.0)
+@static_vars(beginning_of_time = -10.0) # just use arbitrary negative value
 def adjust_time(event):
     old_GToD = event[5]
     if adjust_time.beginning_of_time < 0.0:
@@ -338,6 +344,7 @@ def run_main():
         net.get(i.get_host_name()).cmd('ifconfig %s-eth0 %s' % (i.get_host_name(), i.get_ip()))
         print('ifconfig %s-eth0 %s' % (i.get_host_name(), i.get_ip()))
     '''
+
     for i in hosts:
         net.get(i.get_host_name()).setIP(i.get_ip())
     
@@ -361,9 +368,7 @@ def run_main():
 
 def start_processes(net):
     # start commands
-    '''
-    time.sleep(30)
-    '''
+
     if args.test_mode < 4:
         for i in hosts:
             print i.get_process_command()
@@ -402,6 +407,12 @@ class DSSnetCLI( OldCLI ):
 
     def do_setup_pipes(self, line):
         setup_pipes(net)
+    '''
+    def do_exit(self, line):
+        pause()
+        result = subprocess.Popen('./clean.sh')
+        exit()
+    '''
 
 CLI = DSSnetCLI
 

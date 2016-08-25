@@ -9,6 +9,8 @@ import pipe
 import logging
 import gtod
 
+TIME_INT = 0.1
+
 cc_ID = sys.argv[1] 
 myIP = sys.argv[2]
 ListenPort = sys.argv[3]
@@ -63,6 +65,7 @@ clientOut = contextOut.socket(zmq.REQ)
 print("tcp://%s:%s" % (es_IP,es_port))
 clientOut.connect("tcp://%s:%s" % (es_IP,es_port))
 
+'''
 # scheduler function
 def do_every(interval, worker_func, iterations = 0):
     if iterations !=1:
@@ -71,26 +74,30 @@ def do_every(interval, worker_func, iterations = 0):
             do_every, [interval, worker_func, 0 if iterations == 0 else iterations-1]
         ).start();
     worker_func();
+'''
 
 def func():
+    '''
     global load_1_val
     global load_2_val
     global load_3_val
     global load_4_val
+    '''
+    
     global gen_val1
     global gen_val2
     global gen_val3
 
-    dif1 = gen_val1 - (1115 + load_4_val) 
-    dif2 = gen_val2 - (573 + load_1_val + load_2_val/2)
-    dif3 = gen_val3 - (880 + load_3_val + load_2_val/2)
+    dif1 = gen_val1 - 1292
+    dif2 = gen_val2 - 1039#(573 + load_1_val + load_2_val/2)
+    dif3 = gen_val3 - 1252#(880 + load_3_val + load_2_val/2)
     
     print('difs')
     print(dif1)
     print(dif2)
     print(dif3)
     
-    send_es('%s %s %s %s '% (dif1, dif2, dif3, gtod.time()))
+    send_es('%s %s %s %s '% (dif1, dif2, dif3, time.time()))
 
 def send_es(msg):
     print('sending %s' % msg)
@@ -98,7 +105,7 @@ def send_es(msg):
     with com_lock:
         clientOut.send(msg_bytes)
         result=clientOut.recv()
-    logging.debug('send: %s at time %s' % (msg,gtod.time()))
+    logging.debug('send: %s at time %s' % (msg,time.time()))
 
 def listen():
     #logging.debug('in listen')
@@ -129,9 +136,12 @@ def listen():
 
 com_lock=thread.allocate_lock()
 
-do_every(0.1,func)
+if os.fork():
+    while 1:
+        time.sleep(TIME_INT)
+        func()#do_every(0.1,func)
 
 while 1:
     listen()
-    time.sleep(0.005)
+    #time.sleep(0.005)
     #func()
