@@ -46,16 +46,14 @@ def post_pmu(line,result):
 #smt
 
 def pre_energyStorage(line):
-	x=line[8]
-	y=line[9]
-	return 'energyStorage(%s_l,x,%s_g,y)'%(line[6],line[6])
+	return 'energyStorage("ES",line[8],line[9],line[10])'
 
 def pre_load_report(line):
 	result = 'load.updateL(line[6],line[5])'
 	return result
 	
 def pre_gen_report(line):
-	result = 'get_gen(line[6],line[5])'
+	result = 'get_power_sensor(line[8])'#get_gen(line[6],line[5])'
 	return result
 
 def post_energyStorage(line,result):
@@ -65,4 +63,5 @@ def	post_load_report(line,result):
 	return result
 
 def post_gen_report(line,result):
+	#print(result)
 	return result

@@ -44,3 +44,7 @@ New Line.692675    Phases=3 Bus1=692.1.2.3    Bus2=675.1.2.3  LineCode=mtx606 Le
 New Line.671684    Phases=2 Bus1=671.1.3      Bus2=684.1.3    LineCode=mtx604 Length=300  units=ft 
 New Line.684611    Phases=1 Bus1=684.3        Bus2=611.3      LineCode=mtx605 Length=300  units=ft 
 New Line.684652    Phases=1 Bus1=684.1        Bus2=652.1      LineCode=mtx607 Length=800  units=ft 
+
+! Elimination of Transformers and Switches
+New Line.633634    Phases=3 Bus1=633.1.2.3   Bus2=634.1.2.3  LineCode=mtx601 Length=300 units=ft 
+New Line.671692    Phases=3 Bus1=671.1.2.3   Bus2=692.1.2.3  LineCode=mtx601 Length=500 units=ft 

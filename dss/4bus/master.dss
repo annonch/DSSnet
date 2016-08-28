@@ -39,3 +39,6 @@ set voltagebases=[12.47, 4.16]
 calcvoltagebases     ! **** let DSS compute voltage bases
 
 Redirect monitors.dss
+
+solve 
+show monitor L3

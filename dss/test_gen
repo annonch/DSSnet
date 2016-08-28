@@ -1,0 +1,37 @@
+pu = 1000*1.333
+end_time = 10
+fille = 'wind_gen.csv'
+total_load = 1000.00
+
+def static_vars(**kwargs):
+    def decorate(func):
+        for k in kwargs:
+            setattr(func,k,kwargs[k])
+        return func
+    return decorate
+
+def readWind(fille):
+	data=[]
+	with open(fille,'r') as ins:
+		for line in ins:
+			data.append(line)
+	return data
+
+@static_vars(data=readWind(fille))
+def updateG(t,time_interval):
+	position = len(updateG.data)/(float(end_time)/time_interval)*float(t)/time_interval	
+	#print(int(position))
+	pu_val = float(updateG.data[int(position)]) *pu
+	return pu_val
+
+def load(t):
+	a=(float(t)*((.25*total_load)/end_time))+(1/8)*total_load
+	b=(float(t)*((-.25*total_load)/end_time))+(3/8)*total_load
+	c=float(t)*(.5*total_load)/end_time
+	d=float(t)*(-.5*total_load)/end_time+(1/2)*total_load
+	return a+b+c+d	
+
+for x in range(0,100,1):
+	gen = updateG(float(x)/10,0.1)
+	loads = load(float(x)/10)
+	print(gen-loads)
