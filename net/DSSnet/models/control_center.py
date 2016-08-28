@@ -3,8 +3,13 @@ import zmq
 import time
 import threading
 import os
+import thread
 import sys
 import pipe
+import logging
+import gtod
+
+TIME_INT = 0.1
 
 cc_ID = sys.argv[1] 
 myIP = sys.argv[2]
@@ -12,12 +17,19 @@ ListenPort = sys.argv[3]
 es_IP = sys.argv[4]
 es_port = sys.argv[5]
 
+logging.basicConfig(filename='%s.log'%cc_ID,level=logging.DEBUG)
+
+#start
+logging.debug('new run')
+
 #initialize values
-gen_val = 0
-load_1_val = 0
-load_2_val = 0
-load_3_val = 0
-load_4_val = 0
+gen_val1 = 250.0
+gen_val2 = 250.0
+gen_val3 = 250.0
+load_1_val = 250.0
+load_2_val = 250.0
+load_3_val = 250.0
+load_4_val = 250.0
 
 '''
 # listen for messages from the generator
@@ -44,14 +56,16 @@ pipin = pipe.setup_pipe_w()
 # listen to Loads/Generator
 contextIn = zmq.Context()
 serverIn = contextIn.socket(zmq.REP)
-#serverIn.bind("tcp://%s:%s" % (myIP,ListenPort))
-serverIn.bind("tcp://*:%s" % (ListenPort))
+print("tcp://%s:%s" % (myIP,ListenPort))
+serverIn.bind("tcp://%s:%s" % (myIP,ListenPort))
 
 # sent to Energy Storage Device
 contextOut = zmq.Context()
 clientOut = contextOut.socket(zmq.REQ)
+print("tcp://%s:%s" % (es_IP,es_port))
 clientOut.connect("tcp://%s:%s" % (es_IP,es_port))
 
+'''
 # scheduler function
 def do_every(interval, worker_func, iterations = 0):
     if iterations !=1:
@@ -60,51 +74,74 @@ def do_every(interval, worker_func, iterations = 0):
             do_every, [interval, worker_func, 0 if iterations == 0 else iterations-1]
         ).start();
     worker_func();
+'''
 
 def func():
-    l1=load_1_val
-    l2=load_2_val
-    l3=load_3_val
-    l4=load_4_val
-    g=gen_val
+    '''
+    global load_1_val
+    global load_2_val
+    global load_3_val
+    global load_4_val
+    '''
+    
+    global gen_val1
+    global gen_val2
+    global gen_val3
 
-    dif = g - (l1+l2+l3+l4) 
-    if dif > 0:
-        charge(dif)
-    if dif < 0:
-        discharge(dif)
-
-def charge(dif):
-    send_es('charge %s' % dif)
-
-def discharge(dif):
-    send_es('discharge %s' % abs(dif))
+    dif1 = gen_val1 - 1292
+    dif2 = gen_val2 - 1039#(573 + load_1_val + load_2_val/2)
+    dif3 = gen_val3 - 1252#(880 + load_3_val + load_2_val/2)
+    
+    print('difs')
+    print(dif1)
+    print(dif2)
+    print(dif3)
+    
+    send_es('%s %s %s %s '% (dif1, dif2, dif3, time.time()))
 
 def send_es(msg):
+    print('sending %s' % msg)
     msg_bytes=msg.encode('utf-8')
-    clientOut.send(msg_bytes)
-    result=clientOut.recv()
+    with com_lock:
+        clientOut.send(msg_bytes)
+        result=clientOut.recv()
+    logging.debug('send: %s at time %s' % (msg,time.time()))
 
 def listen():
+    #logging.debug('in listen')
     requestIn_bytes = serverIn.recv()
     requestIn=requestIn_bytes.decode('utf-8')
     ok='ok'.encode('utf-8')
     serverIn.send(ok)
+
+    logging.debug('recieved: %s'%requestIn)
+    
+    global load_1_val, load_2_val, load_3_val, load_4_val, gen_val
+    
     if (requestIn):
         line = requestIn.split()
+        print('recieved message %s'%line)
         if line[0] == 'load1':
-            load_1_val = int(line[1])
+            load_1_val = float(line[1])
         elif line[0] == 'load2':
-            load_2_val = int(line[1])
+            load_2_val = float(line[1])
         elif line[0] == 'load3':
-            load_3_val = int(line[1])
+            load_3_val = float(line[1])
         elif line[0] == 'load4':
-            load_4_val = int(line[1])
+            load_4_val = float(line[1])
         elif line[0] == 'gen':
-            gen_val = int(line[1])
+            gen_val1 = float(line[1])
+            gen_val2 = float(line[2])
+            gen_val3 = float(line[3])
 
+com_lock=thread.allocate_lock()
 
-do_every(1,func)
+if os.fork():
+    while 1:
+        time.sleep(TIME_INT)
+        func()#do_every(0.1,func)
 
 while 1:
     listen()
+    #time.sleep(0.005)
+    #func()

@@ -57,6 +57,7 @@ COORD_PIPE = 'tmp/coordination.pipe'
 if not os.path.exists(COORD_PIPE):
     os.mkfifo(COORD_PIPE)
 
+MIN_PAUSE_INTERVAL = 0.05
 # parser
 
 parser = argparse.ArgumentParser(description= 'Manages network emulation and synchronizes with the power Coordinator.')
@@ -65,15 +66,17 @@ parser.add_argument('-ip','--ip', help='ip of power coordinator', default='10.47
 parser.add_argument('-port','--port', help='port of the power coordinator, default/recommended: 50021', default='50021', type=str)
 parser.add_argument('-topo','--topo_config', help='path to topology file',default='./configs/topo.config', type=str)
 parser.add_argument('-IED','--IED_config', help='path to IED file', default='./configs/IED.config',type=str)
-parser.add_argument('--sync_event_log', help='path to logging file for synchronization events', default='logs/synch_event.log', type=str)
+parser.add_argument('-sel','--sync_event_log', help='path to logging file for synchronization events', default='logs/synch_event.log', type=str)
 #parser.add_argument('--window_size', help='maximum synchonization time(ms) for blocking events. see docs for more info', default = 0, type=int)
 parser.add_argument('-c','--c','--clean', action='store_const' , const = 1, help='cleans DSSnet, should be ran before running DSSnet')
 parser.add_argument('-onos','--onos', action='store_const', const=1, help='use onos (default yes)')
 parser.add_argument('-nc','--numControllers', help='number of controllers for onos to use',default=3,type=int)
-
+parser.add_argument('-tm','--test_mode',help='test mode for debugging',default=0,type=int)
+parser.add_argument('-mpt',help='WARNING DO NOT CHANGE',default=0.05,type=float)
+parser.add_argument('-pause',action='store_const', const = 1,help='enable use of pause')
 args = parser.parse_args()
     
-logging.basicConfig(filename=args.sync_event_log,level=logging.DEBUG)
+logging.basicConfig(filename=args.sync_event_log,level=logging.WARNING)
 
 # open transport layer to power coordinator
 # TCP socket
@@ -83,6 +86,8 @@ DSSout=contextOutDSS.socket(zmq.REQ)
 
 print 'Opening Connection to tcp://%s:%s' % (args.ip,args.port)
 DSSout.connect('tcp://%s:%s' % (args.ip,args.port))
+
+debug=1
 
 # Virtual time helpers
 
@@ -112,25 +117,40 @@ def pidList(net):
 def setupPause():
     global pIDS, fh
     #open listener
+    '''
     pross = 'sudo /home/vagrant/virtual/VirtualTimeKernel/test_virtual_time/freeze_listen %s' % pIDS
     argss = shlex.split(pross)
     subprocess.Popen(argss)
     
     filename = '/tmp/fifo.tmp'
     fh=open(filename,"w",0)
+    '''
 #
 #  Interface to virtual time
 #
     
 def pause ():
-    fh.write('p')
-    before_time = time.time()
-    logging.info('pause time: %s'%before_time)
+    global net
+    if args.pause:
+        #fh.write('p')
+        net.freezeEmulation()
+        if debug:
+            before_time = time.time()
+            if args.test_mode >2:
+                print('pause time: %s'%before_time)
+            logging.info('pause time: %s'%before_time)
     
 def resume ():
-    fh.write('u')
-    before_time = time.time()
-    logging.info('resume time: %s'%time.time())    
+    global net
+    if args.pause:
+        net.freezeEmulation('unfreeze')
+        #fh.write('u')
+        time.sleep(MIN_PAUSE_INTERVAL)
+        if debug:
+            before_time = time.time()
+            if args.test_mode >2:
+                print('resume time: %s'%before_time)
+            logging.info('resume time: %s'%time.time())    
 
 #event Queue
 
@@ -160,9 +180,10 @@ def pipe_listen (net):
         if newEvent:
             event = newEvent.split()
             if event[1] == 'b': # blocking
+                if num_block < 1:
+                    pause()
                 num_block+=1
-                pause()
-
+                
             
             # add event to priority queue
             heapq.heappush(eventQueue,
@@ -177,13 +198,21 @@ def static_vars(**kwargs):
         return func
     return decorate
 
-@static_vars(beginning_of_time = -10.0)
+@static_vars(beginning_of_time = -10.0) # just use arbitrary negative value
 def adjust_time(event):
+    old_GToD = event[5]
     if adjust_time.beginning_of_time < 0.0:
         adjust_time.beginning_of_time = float(event[5])
         event[5] = str(0.00001)# very small because 0 breaks things 
     else:
         event[5] = str(float(event[5]) - float(adjust_time.beginning_of_time))
+    
+    #debugging virtual time
+    if args.test_mode > 2:
+        print('wall clock GToD: %s VT GToD: %s adjusted time: %s beginning of time %s'%(time.time(),old_GToD,event[5],adjust_time.beginning_of_time))
+    
+    logging.debug('wall clock GToD: %s VT GToD: %s adjusted time: %s beginning of time %s'%(time.time(),old_GToD,event[5],adjust_time.beginning_of_time))
+    
     return event
 
 def sync():
@@ -198,6 +227,8 @@ def sync():
             event = newEvent.split()
             #adjust time
             event = adjust_time(event)
+            
+            logging.warning('event beginning %f' % time.time())
             logging.info('event being processed: %s' % event)
             try:
                 preprocess=getattr(handler,event[3])
@@ -210,6 +241,7 @@ def sync():
                 reply = do_com(processed_event)
 
             thread.start_new_thread(postProcess,(reply,newEvent))
+            #logging.warning('finish time: %s'%time.time())
     
         except (IndexError, AttributeError):
             # no event in Queue
@@ -231,6 +263,7 @@ def postProcess(reply,newEvent):
         num_block -= 1
         if num_block == 0:
             resume()
+    logging.warning('finish time: %f'%time.time())
     thread.exit()
 
     
@@ -275,7 +308,8 @@ class topo(Topo):
 pipes={}
                 
 def setup_pipes(net):
-    global hosts
+    global host
+    global pipes
 
     for i in hosts:
 
@@ -310,6 +344,7 @@ def run_main():
         net.get(i.get_host_name()).cmd('ifconfig %s-eth0 %s' % (i.get_host_name(), i.get_ip()))
         print('ifconfig %s-eth0 %s' % (i.get_host_name(), i.get_ip()))
     '''
+
     for i in hosts:
         net.get(i.get_host_name()).setIP(i.get_ip())
     
@@ -329,29 +364,63 @@ def run_main():
     startTime = time.time()
     print('initiation finished')
     
+    CLI(net)
+
+def start_processes(net):
     # start commands
-    '''
-    time.sleep(30)
-    '''
-    for i in hosts:
-        print i.get_process_command()
-        net.get(i.get_host_name()).cmd(i.get_process_command())
+
+    if args.test_mode < 4:
+        for i in hosts:
+            print i.get_process_command()
+            net.get(i.get_host_name()).cmd(i.get_process_command())
         
     setup_pipes(net)
-    
+
     if os.fork():
         pipe_listen(net)
     
-    if args.onos:
-        onos.CLI(net)
-    else:
-        CLI(net)
+
+if args.onos:
+    OldCLI=onos.CLI
+else:
+    OldCLI=CLI
+
+class DSSnetCLI( OldCLI ):
+    "CLI extensions for DSSnet"
+
+    prompt = '[%s] DSSnet -->  ' % time.time()
+    
+    def __init__( self,net, **kwargs ):
+        OldCLI.__init__( self,net, **kwargs )
+
+    def DSSnet( self, line):
+        pass
+
+    def do_pause( self, line):
+        pause()
+
+    def do_resume( self, line):
+        resume()
+
+    def do_start( self, line ):
+        start_processes(net)
+
+    def do_setup_pipes(self, line):
+        setup_pipes(net)
+    '''
+    def do_exit(self, line):
+        pause()
+        result = subprocess.Popen('./clean.sh')
+        exit()
+    '''
+
+CLI = DSSnetCLI
 
 if __name__ == '__main__':
     
     setLogLevel('info')
     if args.c:
-        subprocess.Popen('./clean.sh')
+        result = subprocess.Popen('./clean.sh')
         exit()
     run_main()
 

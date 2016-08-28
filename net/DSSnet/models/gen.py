@@ -9,10 +9,17 @@ import time
 import threading
 import zmq
 import os
+import logging
+import gtod
+
+TIME_INT = 0.1
 
 Gen_ID = sys.argv[1]
 server_IP = sys.argv[2]
 server_Port = sys.argv[3]
+
+
+logging.basicConfig(filename='%s.log'%Gen_ID,level=logging.DEBUG)
 
 contextOut = zmq.Context()
 clientOut = contextOut.socket(zmq.REQ)
@@ -26,13 +33,18 @@ pipin = pipe.setup_pipe_w()
 # send to control center
  
 def send_cc(val):
+    val = ('%s %s' % (Gen_ID,val))
     req_bytes = val.encode('utf-8')
     clientOut.send(req_bytes)
     status=clientOut.recv()
+    logging.debug('sent message to cc: %s '%val)
 
 def get_val():
-    update = 'update b p pre_gen_report post_gen_report %s %s 0\n' %(time.time(),Gen_ID)
+    update = 'update b p pre_gen_report post_gen_report %s %s 1 mon_wind_gen\n' %(time.time(),Gen_ID)
     pipe.send_sync_event(update.encode('UTF-8'), pipin)
+
+def t():
+    print(time.time())
 
 # scheduler function
 def do_every(interval, worker_func, iterations = 0):
@@ -43,4 +55,24 @@ def do_every(interval, worker_func, iterations = 0):
         ).start();
     worker_func();
 
-do_every(1,get_val)
+time.sleep(3)# for sync to start properly
+
+#do_every(TIME_INT,get_val)
+
+
+
+#print time.time()
+
+#do_every(TIME_INT,t,1)
+
+if os.fork():
+    while 1:
+        time.sleep(TIME_INT)
+        get_val()
+
+while 1:
+    #listen to response and send to cc
+    x = pipe.listen(pipeout)
+    if x:
+        send_cc(x)
+    time.sleep(0.001)

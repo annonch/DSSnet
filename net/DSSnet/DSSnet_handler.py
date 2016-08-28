@@ -42,13 +42,13 @@ def pre_gen_report(msg,net,hosts):
 def post_load_report(event,reply,net,hosts,pipes):
     i = (event.split()[6])
     value = reply
-    models.pipe.send_sync_event(value,pipes[i])
+    models.pipe.send_sync_event('%s \n'%value,pipes[i])
     return reply
 
 def post_gen_report(event,reply,net,hosts,pipes):
     i = (event.split()[6])
     value = reply
-    models.pipe.send_sync_event(value,pipes[i])
+    models.pipe.send_sync_event('%s \n'%value,pipes[i])
     return reply
 
 def pre_energyStorage(msg,net,hosts):
