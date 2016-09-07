@@ -139,7 +139,7 @@ def updateStorage():
 setupCircuit()
 
 
-for x in range(1,10000):
+for x in range(1,11000):
     t=float(x/1000.0)
 
     if x :
@@ -149,10 +149,10 @@ for x in range(1,10000):
         if x == 1:
             updateStorage()
         if x % 100 == 0:
-            #if x < 3200 or x >= 4200: 
-            #if x % 3200 !=0:
+            if x < 4000 or x >= 5100: 
+            #if x % 200 !=0:
             #pass
-            print(x)
-            updateStorage()
+                print(x)
+                updateStorage()
 		
 exportMonitors()
