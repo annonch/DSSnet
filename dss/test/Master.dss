@@ -1,0 +1,41 @@
+
+Clear   ! always have this as the first line before defining a new circuit
+
+New Circuit.IEEE_30
+
+! Define a really stiff 132 kV source for the slack bus
+! (continue editing the VSOURCE object created by the New Circuit command)
+~ BasekV=132  Bus1=B1   pu=1.06  MVASC3=5000000  5000000
+
+! Define the circuit elements
+Redirect Lines.DSS
+
+Redirect Transformers.DSS
+
+Redirect Loads.DSS
+
+Redirect Capacitors.DSS
+
+Redirect Generators.DSS
+
+! Let the openDSS estimate the voltage bases
+Set Voltagebases=[132, 33, 11, 1]    ! legal bases for this problem
+Calcvoltagebases
+
+New monitor.mtest1 element=Load.B26 terminal=1 mode=0 Residual=yes
+
+New monitor.mtest2 element=Load.B10 terminal=1 mode=1 Residual=yes
+
+New load.ltest1 Bus1=B24 kV=33  kW=10600 kvar=1900  vminpu=0.9 vmaxpu=1.10 
+
+New load.ltest2 Bus1=B26 kV=33  kW=2400  kvar=900   vminpu=0.9 vmaxpu=1.10 
+
+New generator.gtest1 Bus1=B11 kV= 11  kW=1     Model=3 Vpu=1.082 Maxkvar=24000 Minkvar=-6000  !  kvar=16200 
+
+New generator.gtest2 Bus1=B13 kV= 11  kW=1     Model=3 Vpu=1.071 Maxkvar=24000 Minkvar=-6000  !  kvar=10600 
+
+New Storage.estest1 Phases=1 Bus1=B13.1 kV=11 kWrated=2000 kWhrated=5000  pf=1 %stored=95 dispmode=external state=DISCHARGING
+
+New Storage.estest2 Phases=1 Bus1=B13.2 kV=11 kWrated=2000 kWhrated=5000  pf=1 %stored=95 dispmode=external state=DISCHARGING
+
+New Storage.estest3 Phases=1 Bus1=B13.3 kV=11 kWrated=2000 kWhrated=5000  pf=1 %stored=95 dispmode=external state=DISCHARGING

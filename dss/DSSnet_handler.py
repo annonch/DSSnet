@@ -1,6 +1,5 @@
 #####################
-# pre/post handling #
-#      Events       #
+#    event handling #
 #####################
 #  channon@iit.edu  #
 #####################
@@ -9,59 +8,53 @@
 #####################
 
 #this file holds preprocessing events for custom synchronization requests 
-#add pre and post procesing events here
 
-#preprocessing
+#   The function name must match line[3]
 
+#Input parameters are engine, args circuit and event as a string
+import dss
 
-
-def pre_load(line):
-	result = 'update_controllable_loads(line[6],line[8])'
-	return result
-'''
-def pre_load(line):
-	function_name='update_controllable_loads'
-	*args = line[6],line[8]
-'''
-def pre_gen(line):
-	result = 'update_controllable_gens(line[6],line[8])'
+def controllable_load(circuit,engine,args,line):
+	result = dss.updateL(engine,line[6],line[5],args.et,line[8])
 	return result
 
-def pre_pmu(line):
-	result= 'read_monitor(line[6])'	
+def controllable_generator(circuit,engine,args,line):
+	result = dss.updateG(engine,line[6],line[5],args.et,line[8])
 	return result
 
-#postprocessing
-
-def post_load(line,result):
-	return result	
-
-def post_gen(line,result):
-	return result
-
-def post_pmu(line,result):
-	#print (result) 	
-	return result
-
-#smt
-
-def pre_energyStorage(line):
-	return 'energyStorage("ES",line[8],line[9],line[10])'
-
-def pre_load_report(line):
-	result = 'load.updateL(line[6],line[5])'
-	return result
+# monitor name passed as arg
+def monitor_0(circuit,engine,args,line):
+	return dss.get_monitor_mode_0(engine,circuit,line[8])	
 	
-def pre_gen_report(line):
-	result = 'get_power_sensor(line[8])'#get_gen(line[6],line[5])'
-	return result
+def monitor_1(circuit,engine,args,line):
+	return dss.get_monitor_mode_1(engine,circuit,line[8])	
+	
+def storage(circuit,engine,args,line):
+	return dss.energyStorage(engine,line[6],line[8],line[9],line[10])
 
-def post_energyStorage(line,result):
-	return result
+def fault(circuit,engine,args,line):
+	return dss.fault(engine,line[6],line[8],line[9],line[10])
 
-def	post_load_report(line,result):
-	return result
+def get_load_value(circuit,engine,args,line):
+	return dss.getL(line[6],line[5],args.et)
 
-def post_gen_report(line,result):
-	#print(result)
-	return result
+def get_gen_value(circuit,engine,args,line):
+	return dss.getG(line[6],line[5],args.et)
+
+
+
+## Add custom handlers here! ##
+
+'''
+def example(circuit,engine,args,line):
+	return ??
+
+'''
+
+
+
+
+'''
+end
+
+'''

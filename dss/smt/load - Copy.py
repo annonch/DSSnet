@@ -2,7 +2,8 @@ import random
 total_load = 1000.0
 end_time = 10
 
-def updateL(l,t):
+def updateL(l,t): # L is name of load and t is time
+	# should be function of time
 	if l == 'load1a' :
 		return str(float(t)*100 + 5400) 
 

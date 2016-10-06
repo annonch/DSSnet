@@ -4,7 +4,7 @@
 #  channon@iit.edu  #
 #####################
 #      DSSnet       #
-#    Version 2.0    #
+#    Version 2.2    #
 #####################
 
 import win32com.client
@@ -26,13 +26,14 @@ import math
 ###########
 
 parser = argparse.ArgumentParser(description= 'Manages power system simulation and synchronizes with the network coordinator')
-parser.add_argument('--version', action='version',version='DSSnet 2.0')
-parser.add_argument('--ip', help='ip of power coordinator',default='216.47.152.23',type=str)
-parser.add_argument('--port', help='port reserved for power coordinator',default='50021',type=str)
+parser.add_argument('--version', action='version',version='DSSnet 2.2')
+parser.add_argument('-ip', help='ip of power coordinator',default='216.47.152.23',type=str)
+parser.add_argument('-port', help='port reserved for power coordinator',default='50021',type=str)
 parser.add_argument('-IED','--IED_config', help='path to IED file',default='C:\DSS\DSSnet\dss/4bus\IED.config',type=str)
 parser.add_argument('-cf','--circuit_filename', help='path to main circuit file',default = 'C:\DSS\DSSnet\dss/4bus\master.dss', type=str)
 parser.add_argument('-ts','--timestep', help='resolution of time step',default=0.001,type=float)
 parser.add_argument('-et', help='time the experiment should end',default=10.0,type=float)
+parser.add_argument('-mode', help='mode the simulator should be ran in: "snapshot", "duty", ', default = 'duty',type=str)
 args = parser.parse_args()
 
 engine=win32com.client.Dispatch("OpenDSSEngine.DSS")

@@ -21,3 +21,5 @@ Redirect Generators.DSS
 ! Let the openDSS estimate the voltage bases
 Set Voltagebases=[132, 33, 11, 1]    ! legal bases for this problem
 Calcvoltagebases
+
+New monitor.test element=Load.B30 terminal=1 mode=0 Residual=yes
