@@ -1,0 +1,5 @@
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/DataQualityMonitoring/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/DataQualityMonitoring.dll.mdb
+/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/DataQualityMonitoring.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/DataQualityMonitoring/obj/Mono/DataQualityMonitoring.dll
+/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/DataQualityMonitoring/obj/Mono/DataQualityMonitoring.dll.mdb

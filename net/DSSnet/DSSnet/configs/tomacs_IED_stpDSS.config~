@@ -1,0 +1,2 @@
+gen split Generator model split 6.6.6.11 split python ./models/gen.py gen 6.6.6.21 5000 &
+es split Energy Storage model split 6.6.6.21 split bash python ./models/energyStorage.py es 6.6.6.21 5000 & 
