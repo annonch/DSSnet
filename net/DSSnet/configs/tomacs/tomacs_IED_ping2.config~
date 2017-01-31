@@ -1,0 +1,2 @@
+h1 split pinger split 10.0.0.1 split sudo python2.7 /home/vagrant/DSSnet/net/DSSnet/DSSnet/models/h1.py h1 10.0.0.1 5000  &
+h2 split pingee split 10.0.0.2 split sudo python2.7 /home/vagrant/DSSnet/net/DSSnet/DSSnet/models/h1.py h2 10.0.0.1 5000 > pinglog.tmacs 2>&1 & 

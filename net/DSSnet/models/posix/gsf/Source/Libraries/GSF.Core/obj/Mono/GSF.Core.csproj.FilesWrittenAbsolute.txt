@@ -1,9 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Core/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Core/obj/Mono/GSF.ErrorManagement.ErrorLogger.bmp
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Core/obj/Mono/GSF.IO.LogFile.bmp
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Core/obj/Mono/GSF.IO.MultipleDestinationExporter.bmp
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Core/obj/Mono/GSF.Scheduling.ScheduleManager.bmp
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Core.dll.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Core.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Core/obj/Mono/GSF.Core.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Core/obj/Mono/GSF.Core.dll.mdb

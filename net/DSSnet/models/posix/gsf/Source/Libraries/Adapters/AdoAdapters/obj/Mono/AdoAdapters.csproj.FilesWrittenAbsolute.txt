@@ -1,5 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/AdoAdapters/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/AdoAdapters.dll.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/AdoAdapters.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/AdoAdapters/obj/Mono/AdoAdapters.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/AdoAdapters/obj/Mono/AdoAdapters.dll.mdb

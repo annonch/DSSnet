@@ -1,5 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/DynamicCalculator/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/DynamicCalculator.dll.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/DynamicCalculator.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/DynamicCalculator/obj/Mono/DynamicCalculator.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/DynamicCalculator/obj/Mono/DynamicCalculator.dll.mdb

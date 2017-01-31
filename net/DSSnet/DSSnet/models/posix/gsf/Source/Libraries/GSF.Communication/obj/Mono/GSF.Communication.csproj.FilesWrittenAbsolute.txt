@@ -1,7 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Communication/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Communication/obj/Mono/GSF.Communication.ClientBase.bmp
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Communication/obj/Mono/GSF.Communication.ServerBase.bmp
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Communication.dll.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Communication.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Communication/obj/Mono/GSF.Communication.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Communication/obj/Mono/GSF.Communication.dll.mdb

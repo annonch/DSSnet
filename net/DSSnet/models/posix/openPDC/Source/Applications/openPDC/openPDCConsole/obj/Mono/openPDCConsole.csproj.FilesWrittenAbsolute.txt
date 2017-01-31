@@ -1,6 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/openPDC/Source/Applications/openPDC/openPDCConsole/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/openPDC/Build/Output/Mono/Applications/openPDC/openPDCConsole.exe.config
-/home/solo/Projects/Self-healPMU/posix/openPDC/Build/Output/Mono/Applications/openPDC/openPDCConsole.exe.mdb
-/home/solo/Projects/Self-healPMU/posix/openPDC/Build/Output/Mono/Applications/openPDC/openPDCConsole.exe
-/home/solo/Projects/Self-healPMU/posix/openPDC/Source/Applications/openPDC/openPDCConsole/obj/Mono/openPDCConsole.exe
-/home/solo/Projects/Self-healPMU/posix/openPDC/Source/Applications/openPDC/openPDCConsole/obj/Mono/openPDCConsole.exe.mdb

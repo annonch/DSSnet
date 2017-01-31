@@ -1,0 +1,6 @@
+gen split Generator model split 6.6.6.11 split python ./models/gen.py gen 6.6.6.31 5000 &
+es split Energy Storage model split 6.6.6.21 split python ./models/energyStorage.py es 6.6.6.21 5001 & 
+cc split control center model split 6.6.6.31 split python ./models/tomacs_use/control_center.py cc 6.6.6.31 5000 6.6.6.21 5001 &
+load1 split load split 6.6.6.41 split python ./models/tomacs_use/load.py load1 6.6.6.31 5000 &
+load2 split load split 6.6.6.42 split python ./models/tomacs_use/load.py load2 6.6.6.31 5000 &
+load3 split load split 6.6.6.43 split python ./models/tomacs_use/load.py load3 6.6.6.31 5000 &

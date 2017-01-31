@@ -1,0 +1,853 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A	ping_common.h	100;"	d
+ACK	tftp.h	49;"	d
+ADDCARRY	clockdiff.c	40;"	d	file:
+ADDCARRY	clockdiff.c	41;"	d	file:
+ADDLIB	Makefile	/^ADDLIB=$/;"	m
+ALLIGN	rdisc.c	85;"	d	file:
+ALL_HOSTS_ADDRESS	rdisc.c	112;"	d	file:
+ALL_ROUTERS_ADDRESS	rdisc.c	113;"	d	file:
+ARPING_DEFAULT_DEVICE	Makefile	/^ARPING_DEFAULT_DEVICE=$/;"	m
+ARRAY_SIZE	ping6.c	446;"	d	file:
+ARRAY_SIZE	ping_common.c	66;"	d	file:
+B	ping_common.h	101;"	d
+BF_ALLOC	tftpsubs.c	67;"	d	file:
+BF_FREE	tftpsubs.c	68;"	d	file:
+BIASN	clockdiff.c	108;"	d	file:
+BIASP	clockdiff.c	107;"	d	file:
+BITMAP_SHIFT	ping_common.h	84;"	d
+BITMAP_SHIFT	ping_common.h	87;"	d
+BIT_CLEAR	ping6.c	111;"	d	file:
+BIT_SET	ping6.c	112;"	d	file:
+BIT_TEST	ping6.c	113;"	d	file:
+CC	Makefile	/^CC=gcc$/;"	m
+CCOPT	Makefile	/^CCOPT=-fno-strict-aliasing -Wstrict-prototypes -Wall -g$/;"	m
+CCOPTOPT	Makefile	/^CCOPTOPT=-O3$/;"	m
+CFLAGS	Makefile	/^CFLAGS=$(CCOPTOPT) $(CCOPT) $(GLIBCFIX) $(DEFINES)$/;"	m
+COMMON_OPTIONS	ping_common.h	167;"	d
+COMMON_OPTSTR	ping_common.h	175;"	d
+DATA	tftp.h	48;"	d
+DATE	Makefile	/^DATE=$(shell date --date $(TODAY) +%Y%m%d)$/;"	m
+DEFAULT_DEVICE	arping.c	61;"	d	file:
+DEFAULT_DEVICE_STR	arping.c	59;"	d	file:
+DEFDATALEN	ping_common.h	38;"	d
+DEFINES	Makefile	/^DEFINES=$/;"	m
+DEF_CAP	Makefile	/^	DEF_CAP = -DCAPABILITIES$/;"	m
+DEF_CRYPTO	Makefile	/^	DEF_CRYPTO = -DUSE_GNUTLS$/;"	m
+DEF_ENABLE_PING6_RTHDR	Makefile	/^	DEF_ENABLE_PING6_RTHDR = -DPING6_ENABLE_RTHDR$/;"	m
+DEF_ENABLE_RDISC_SERVER	Makefile	/^	DEF_ENABLE_RDISC_SERVER = -DRDISC_SERVER$/;"	m
+DEF_IDN	Makefile	/^	DEF_IDN = -DUSE_IDN$/;"	m
+DEF_SYSFS	Makefile	/^	DEF_SYSFS = -DUSE_SYSFS$/;"	m
+DEF_WITHOUT_IFADDRS	Makefile	/^	DEF_WITHOUT_IFADDRS = -DWITHOUT_IFADDRS$/;"	m
+DEF_arping	Makefile	/^DEF_arping = $(DEF_SYSFS) $(DEF_CAP) $(DEF_IDN) $(DEF_WITHOUT_IFADDRS)$/;"	m
+DEF_clockdiff	Makefile	/^DEF_clockdiff = $(DEF_CAP)$/;"	m
+DEF_ping	Makefile	/^DEF_ping  = $(DEF_CAP) $(DEF_IDN) $(DEF_WITHOUT_IFADDRS)$/;"	m
+DEF_ping6	Makefile	/^DEF_ping6 = $(DEF_CAP) $(DEF_IDN) $(DEF_WITHOUT_IFADDRS) $(DEF_ENABLE_PING6_RTHDR)$/;"	m
+DEF_ping_common	Makefile	/^DEF_ping_common = $(DEF_CAP) $(DEF_IDN)$/;"	m
+DEF_rarpd	Makefile	/^DEF_rarpd =$/;"	m
+DEF_rdisc	Makefile	/^DEF_rdisc = $(DEF_ENABLE_RDISC_SERVER)$/;"	m
+DEF_tftpd	Makefile	/^DEF_tftpd =$/;"	m
+DEF_tftpsubs	Makefile	/^DEF_tftpsubs =$/;"	m
+DEF_tracepath	Makefile	/^DEF_tracepath = $(DEF_IDN)$/;"	m
+DEF_tracepath6	Makefile	/^DEF_tracepath6 = $(DEF_IDN)$/;"	m
+DEF_traceroute6	Makefile	/^DEF_traceroute6 = $(DEF_CAP) $(DEF_IDN)$/;"	m
+EACCESS	tftp.h	72;"	d
+EBADID	tftp.h	75;"	d
+EBADOP	tftp.h	74;"	d
+EEXISTS	tftp.h	76;"	d
+ENABLE_PING6_RTHDR	Makefile	/^ENABLE_PING6_RTHDR=no$/;"	m
+ENABLE_RDISC_SERVER	Makefile	/^ENABLE_RDISC_SERVER=no$/;"	m
+ENOSPACE	tftp.h	73;"	d
+ENOTFOUND	tftp.h	71;"	d
+ENOUSER	tftp.h	77;"	d
+ERROR	tftp.h	50;"	d
+EUNDEF	tftp.h	70;"	d
+EVENTS	rarpd.c	705;"	d	file:
+FD_CLR	traceroute6.c	283;"	d	file:
+FD_ISSET	traceroute6.c	284;"	d	file:
+FD_SET	traceroute6.c	282;"	d	file:
+FD_SETSIZE	traceroute6.c	281;"	d	file:
+FD_ZERO	traceroute6.c	285;"	d	file:
+FUNC_LIB	Makefile	/^FUNC_LIB = $(if $(filter static,$(1)),$(LDFLAG_STATIC) $(2) $(LDFLAG_DYNAMIC),$(2))$/;"	m
+F_ADAPTIVE	ping_common.h	64;"	d
+F_AUDIBLE	ping_common.h	63;"	d
+F_FLOOD	ping_common.h	48;"	d
+F_FLOOD_POLL	ping_common.h	61;"	d
+F_FLOWINFO	ping_common.h	58;"	d
+F_INTERVAL	ping_common.h	49;"	d
+F_LATENCY	ping_common.h	62;"	d
+F_MARK	ping_common.h	68;"	d
+F_NOLOOP	ping_common.h	66;"	d
+F_NUMERIC	ping_common.h	50;"	d
+F_OUTSTANDING	ping_common.h	70;"	d
+F_PINGFILLED	ping_common.h	51;"	d
+F_PTIMEOFDAY	ping_common.h	69;"	d
+F_QUIET	ping_common.h	52;"	d
+F_RROUTE	ping_common.h	53;"	d
+F_SOURCEROUTE	ping_common.h	59;"	d
+F_SO_DEBUG	ping_common.h	54;"	d
+F_SO_DONTROUTE	ping_common.h	55;"	d
+F_STRICTSOURCE	ping_common.h	65;"	d
+F_TCLASS	ping_common.h	60;"	d
+F_TIMESTAMP	ping_common.h	57;"	d
+F_TTL	ping_common.h	67;"	d
+F_VERBOSE	ping_common.h	56;"	d
+Fprintf	traceroute6.c	288;"	d	file:
+GETIFCONF_TIMER	rdisc.c	484;"	d	file:
+GLIBCFIX	Makefile	/^GLIBCFIX=-D_GNU_SOURCE$/;"	m
+GOOD	clockdiff.c	94;"	d	file:
+HAVE_SIN6_SCOPEID	ping6.c	138;"	d	file:
+HOSTDOWN	clockdiff.c	97;"	d	file:
+HOST_COLUMN_SIZE	tracepath.c	55;"	d	file:
+HOST_COLUMN_SIZE	tracepath6.c	68;"	d	file:
+ICMP6_DST_UNREACH_BEYONDSCOPE	ping6.c	96;"	d	file:
+ICMP6_FILTER_SETBLOCK	ping6.c	125;"	d	file:
+ICMP6_FILTER_SETBLOCKALL	ping6.c	131;"	d	file:
+ICMP6_FILTER_SETPASS	ping6.c	122;"	d	file:
+ICMP6_FILTER_SETPASSALL	ping6.c	128;"	d	file:
+ICMP6_FILTER_WILLBLOCK	ping6.c	119;"	d	file:
+ICMP6_FILTER_WILLPASS	ping6.c	116;"	d	file:
+ICMPV6_NI_QUERY	ping6_niquery.h	19;"	d
+ICMPV6_NI_REPLY	ping6_niquery.h	20;"	d
+ICMP_FILTER	ping.c	70;"	d	file:
+ICMP_ROUTER_ADVERTISEMENT	rdisc.c	109;"	d	file:
+ICMP_ROUTER_SOLICITATION	rdisc.c	110;"	d	file:
+INELIGIBLE_PREF	rdisc.c	148;"	d	file:
+IPV4_TARGETS	Makefile	/^IPV4_TARGETS=tracepath ping clockdiff rdisc arping tftpd rarpd$/;"	m
+IPV6_FLOWINFO_FLOWLABEL	in6_flowlabel.h	35;"	d
+IPV6_FLOWINFO_PRIORITY	in6_flowlabel.h	36;"	d
+IPV6_FLOWINFO_SEND	in6_flowlabel.h	39;"	d
+IPV6_FLOWLABEL_MGR	in6_flowlabel.h	38;"	d
+IPV6_FL_A_GET	in6_flowlabel.h	22;"	d
+IPV6_FL_A_PUT	in6_flowlabel.h	23;"	d
+IPV6_FL_A_RENEW	in6_flowlabel.h	24;"	d
+IPV6_FL_F_CREATE	in6_flowlabel.h	26;"	d
+IPV6_FL_F_EXCL	in6_flowlabel.h	27;"	d
+IPV6_FL_S_ANY	in6_flowlabel.h	33;"	d
+IPV6_FL_S_EXCL	in6_flowlabel.h	30;"	d
+IPV6_FL_S_NONE	in6_flowlabel.h	29;"	d
+IPV6_FL_S_PROCESS	in6_flowlabel.h	31;"	d
+IPV6_FL_S_USER	in6_flowlabel.h	32;"	d
+IPV6_PMTUDISC_DO	tracepath6.c	42;"	d	file:
+IPV6_SRCRT_TYPE_0	ping6.c	101;"	d	file:
+IPV6_TARGETS	Makefile	/^IPV6_TARGETS=tracepath6 traceroute6 ping6$/;"	m
+IP_PMTUDISC_DO	tracepath6.c	39;"	d	file:
+IP_PMTUDISC_PROBE	tracepath.c	32;"	d	file:
+LASTTAG	Makefile	/^LASTTAG:=$(shell git describe HEAD | sed -e 's\/-.*\/\/')$/;"	m
+LDFLAG_CAP	Makefile	/^LDFLAG_CAP=-lcap$/;"	m
+LDFLAG_CRYPTO	Makefile	/^LDFLAG_CRYPTO=-lcrypto$/;"	m
+LDFLAG_DYNAMIC	Makefile	/^LDFLAG_DYNAMIC=-Wl,-Bdynamic$/;"	m
+LDFLAG_GNUTLS	Makefile	/^LDFLAG_GNUTLS=-lgnutls-openssl$/;"	m
+LDFLAG_IDN	Makefile	/^LDFLAG_IDN=-lidn$/;"	m
+LDFLAG_RESOLV	Makefile	/^LDFLAG_RESOLV=-lresolv$/;"	m
+LDFLAG_STATIC	Makefile	/^LDFLAG_STATIC=-Wl,-Bstatic$/;"	m
+LDFLAG_SYSFS	Makefile	/^LDFLAG_SYSFS=-lsysfs$/;"	m
+LDLIB	Makefile	/^LDLIB=$/;"	m
+LDLIBS	Makefile	/^LDLIBS=$(LDLIB) $(ADDLIB)$/;"	m
+LIBC_INCLUDE	Makefile	/^LIBC_INCLUDE=\/usr\/include$/;"	m
+LIB_CAP	Makefile	/^	LIB_CAP = $(call FUNC_LIB,$(USE_CAP),$(LDFLAG_CAP))$/;"	m
+LIB_CRYPTO	Makefile	/^	LIB_CRYPTO = $(call FUNC_LIB,$(USE_CRYPTO),$(LDFLAG_CRYPTO))$/;"	m
+LIB_CRYPTO	Makefile	/^	LIB_CRYPTO = $(call FUNC_LIB,$(USE_GNUTLS),$(LDFLAG_GNUTLS))$/;"	m
+LIB_IDN	Makefile	/^	LIB_IDN = $(call FUNC_LIB,$(USE_IDN),$(LDFLAG_IDN))$/;"	m
+LIB_RESOLV	Makefile	/^LIB_RESOLV = $(call FUNC_LIB,$(USE_RESOLV),$(LDFLAG_RESOLV))$/;"	m
+LIB_SYSFS	Makefile	/^	LIB_SYSFS = $(call FUNC_LIB,$(USE_SYSFS),$(LDFLAG_SYSFS))$/;"	m
+LIB_arping	Makefile	/^LIB_arping = $(LIB_SYSFS) $(LIB_CAP) $(LIB_IDN)$/;"	m
+LIB_clockdiff	Makefile	/^LIB_clockdiff = $(LIB_CAP)$/;"	m
+LIB_ping	Makefile	/^LIB_ping  = $(LIB_CAP) $(LIB_IDN)$/;"	m
+LIB_ping6	Makefile	/^LIB_ping6 = $(LIB_CAP) $(LIB_IDN) $(LIB_RESOLV) $(LIB_CRYPTO)$/;"	m
+LIB_rarpd	Makefile	/^LIB_rarpd =$/;"	m
+LIB_rdisc	Makefile	/^LIB_rdisc =$/;"	m
+LIB_tftpd	Makefile	/^LIB_tftpd =$/;"	m
+LIB_tracepath	Makefile	/^LIB_tracepath = $(LIB_IDN)$/;"	m
+LIB_tracepath6	Makefile	/^LIB_tracepath6 =$/;"	m
+LIB_traceroute6	Makefile	/^LIB_traceroute6 = $(LIB_CAP) $(LIB_IDN)$/;"	m
+MAXARG	tftpd.c	93;"	d	file:
+MAXICMPLEN	ping.c	78;"	d	file:
+MAXIFS	rdisc.c	115;"	d	file:
+MAXIPLEN	ping.c	77;"	d	file:
+MAXPACKET	ping6.c	135;"	d	file:
+MAXPACKET	rdisc.c	159;"	d	file:
+MAXPACKET	traceroute6.c	276;"	d	file:
+MAXWAIT	ping_common.h	40;"	d
+MAX_ADV_INT	rdisc.c	150;"	d	file:
+MAX_DUP_CHK	ping_common.h	76;"	d
+MAX_HOSTNAMELEN	clockdiff.c	29;"	d	file:
+MAX_HOSTNAMELEN	ping.c	81;"	d	file:
+MAX_HOSTNAMELEN	traceroute6.c	277;"	d	file:
+MAX_INITIAL_ADVERTISEMENTS	rdisc.c	140;"	d	file:
+MAX_INITIAL_ADVERT_INTERVAL	rdisc.c	139;"	d	file:
+MAX_RESPONSE_DELAY	rdisc.c	141;"	d	file:
+MAX_SOLICITATIONS	rdisc.c	144;"	d	file:
+MAX_SOLICITATION_DELAY	rdisc.c	146;"	d	file:
+MININTERVAL	ping_common.h	41;"	d
+MINUSERINTERVAL	ping_common.h	42;"	d
+MLD_LISTENER_QUERY	ping6.c	106;"	d	file:
+MLD_LISTENER_REDUCTION	ping6.c	108;"	d	file:
+MLD_LISTENER_REPORT	ping6.c	107;"	d	file:
+MODULO	clockdiff.c	109;"	d	file:
+MSGS	clockdiff.c	91;"	d	file:
+MSG_CONFIRM	ping_common.h	153;"	d
+MSG_CONFIRM	tftpd.c	73;"	d	file:
+MS_TDIFF	arping.c	102;"	d	file:
+NFDBITS	traceroute6.c	280;"	d	file:
+NIQUERY_OPTION	ping6.c	251;"	d	file:
+NI_IPV4ADDR_F_ALL	ping6_niquery.h	48;"	d
+NI_IPV4ADDR_F_TRUNCATE	ping6_niquery.h	47;"	d
+NI_IPV6ADDR_F_ALL	ping6_niquery.h	41;"	d
+NI_IPV6ADDR_F_COMPAT	ping6_niquery.h	42;"	d
+NI_IPV6ADDR_F_GLOBAL	ping6_niquery.h	45;"	d
+NI_IPV6ADDR_F_LINKLOCAL	ping6_niquery.h	43;"	d
+NI_IPV6ADDR_F_SITELOCAL	ping6_niquery.h	44;"	d
+NI_IPV6ADDR_F_TRUNCATE	ping6_niquery.h	40;"	d
+NI_NONCE_SIZE	ping6_niquery.h	3;"	d
+NI_QTYPE_IPV4ADDR	ping6_niquery.h	37;"	d
+NI_QTYPE_IPV6ADDR	ping6_niquery.h	36;"	d
+NI_QTYPE_NAME	ping6_niquery.h	35;"	d
+NI_QTYPE_NOOP	ping6_niquery.h	34;"	d
+NI_REFUSED	ping6_niquery.h	30;"	d
+NI_SUBJ_IPV4	ping6_niquery.h	26;"	d
+NI_SUBJ_IPV6	ping6_niquery.h	24;"	d
+NI_SUBJ_NAME	ping6_niquery.h	25;"	d
+NI_SUCCESS	ping6_niquery.h	29;"	d
+NI_UNKNOWN	ping6_niquery.h	31;"	d
+NONSTDTIME	clockdiff.c	96;"	d	file:
+NROUTES	ping.c	79;"	d	file:
+ODDBYTE	ping.c	895;"	d	file:
+ODDBYTE	ping.c	897;"	d	file:
+ODDBYTE	ping.c	899;"	d	file:
+ODDBYTE	rdisc.c	914;"	d	file:
+ODDBYTE	rdisc.c	916;"	d	file:
+ODDBYTE	rdisc.c	918;"	d	file:
+OFF	clockdiff.c	88;"	d	file:
+OFFSET_OF	arping.c	105;"	d	file:
+OFFSET_OF	ping6.c	447;"	d	file:
+ON	clockdiff.c	87;"	d	file:
+PACKET_IN	clockdiff.c	112;"	d	file:
+PKTSIZE	tftpd.c	83;"	d	file:
+PKTSIZE	tftpsubs.c	59;"	d	file:
+PROCESSING_TIME	clockdiff.c	110;"	d	file:
+Printf	traceroute6.c	289;"	d	file:
+RANGE	clockdiff.c	90;"	d	file:
+RRQ	tftp.h	46;"	d
+SCHINT	ping_common.h	44;"	d
+SCOPE_DELIMITER	ping6.c	142;"	d	file:
+SEGSIZE	tftp.h	41;"	d
+SLL_LEN	arping.c	115;"	d	file:
+SNAPSHOT	SNAPSHOT.h	/^static char SNAPSHOT[] = "s20121221";$/;"	v
+SOLICITATION_INTERVAL	rdisc.c	145;"	d	file:
+SOL_ICMPV6	ping6.c	91;"	d	file:
+SOL_IPV6	ping6.c	87;"	d	file:
+SOL_IPV6	tracepath6.c	35;"	d	file:
+SOL_IPV6	traceroute6.c	273;"	d	file:
+SYSFS_DEVATTR_ADDR_LEN	arping.c	/^	SYSFS_DEVATTR_ADDR_LEN,$/;"	e	enum:__anon3	file:
+SYSFS_DEVATTR_BROADCAST	arping.c	/^	SYSFS_DEVATTR_BROADCAST,$/;"	e	enum:__anon3	file:
+SYSFS_DEVATTR_FLAGS	arping.c	/^	SYSFS_DEVATTR_FLAGS,$/;"	e	enum:__anon3	file:
+SYSFS_DEVATTR_IFINDEX	arping.c	/^	SYSFS_DEVATTR_IFINDEX,$/;"	e	enum:__anon3	file:
+SYSFS_DEVATTR_NUM	arping.c	/^	SYSFS_DEVATTR_NUM$/;"	e	enum:__anon3	file:
+TAG	Makefile	/^TAG:=$(shell date --date=$(TODAY) +s%Y%m%d)$/;"	m
+TARGETS	Makefile	/^TARGETS=$(IPV4_TARGETS) $(IPV6_TARGETS)$/;"	m
+TIMEOUT	tftpd.c	77;"	d	file:
+TIMER_INTERVAL	rdisc.c	483;"	d	file:
+TODAY	Makefile	/^TODAY=$(shell date +%Y\/%m\/%d)$/;"	m
+TOS_MAX	ping.c	80;"	d	file:
+TRIALS	clockdiff.c	92;"	d	file:
+TSPTYPES	clockdiff.c	16;"	d	file:
+UNAME_N	Makefile	/^UNAME_N:=$(shell uname -n)$/;"	m
+UNREACHABLE	clockdiff.c	95;"	d	file:
+USAGE_NEWLINE	ping.c	1353;"	d	file:
+USAGE_NEWLINE	ping6.c	1826;"	d	file:
+USE_BITMAP64	ping_common.h	79;"	d
+USE_CAP	Makefile	/^USE_CAP=yes$/;"	m
+USE_CRYPTO	Makefile	/^USE_CRYPTO=shared$/;"	m
+USE_GNUTLS	Makefile	/^USE_GNUTLS=yes$/;"	m
+USE_IDN	Makefile	/^USE_IDN=no$/;"	m
+USE_RESOLV	Makefile	/^USE_RESOLV=yes$/;"	m
+USE_SYSFS	Makefile	/^USE_SYSFS=no$/;"	m
+WITHOUT_IFADDRS	Makefile	/^WITHOUT_IFADDRS=no$/;"	m
+WRQ	tftp.h	47;"	d
+_ARPA_TFTP_H	tftp.h	37;"	d
+__flr_pad	in6_flowlabel.h	/^	__u32	__flr_pad;$/;"	m	struct:in6_flowlabel_req
+__schedule_exit	ping_common.c	/^int __schedule_exit(int next)$/;"	f
+ackbuf	tftpd.c	/^char	ackbuf[PKTSIZE];$/;"	v
+acked	clockdiff.c	/^static u_short seqno, seqno0, acked;$/;"	v	file:
+acked	ping_common.c	/^__u16 acked;$/;"	v
+acknowledge	ping_common.h	/^static inline void acknowledge(__u16 seq)$/;"	f
+add_route	rdisc.c	/^add_route(struct in_addr addr)$/;"	f
+address	rdisc.c	/^	struct in_addr 	address;	\/* Used to identify the interface *\/$/;"	m	struct:interface	typeref:struct:interface::in_addr	file:
+advance_ntransmitted	ping_common.h	/^static inline void advance_ntransmitted(void)$/;"	f
+advert	arping.c	/^int dad, unsolicited, advert;$/;"	v
+advertise	rdisc.c	/^advertise(struct sockaddr_in *sin, int lft)$/;"	f
+age_table	rdisc.c	/^age_table(int time)$/;"	f
+all_ifaces	rarpd.c	/^int all_ifaces;$/;"	v
+allow_offlink	rarpd.c	/^int allow_offlink;$/;"	v
+arp_advise	rarpd.c	/^void arp_advise(int ifindex, unsigned char *lladdr, int lllen, __u32 ipaddr)$/;"	f
+arp_type	rarpd.c	/^	int		arp_type;$/;"	m	struct:rarp_map	file:
+base_port	tracepath.c	/^__u16 base_port;$/;"	v
+base_port	tracepath6.c	/^__u16 base_port;$/;"	v
+bcastaddr	rdisc.c	/^	struct in_addr	bcastaddr;$/;"	m	struct:interface	typeref:struct:interface::in_addr	file:
+best_preference	rdisc.c	/^int best_preference = 1;  	\/* Set to record only the router(s) with the$/;"	v
+bf	tftpsubs.c	/^struct bf {$/;"	s	file:
+bfs	tftpsubs.c	/^} bfs[2];$/;"	v	typeref:struct:bf
+bitmap	ping_common.h	/^	bitmap_t bitmap[MAX_DUP_CHK \/ (sizeof(bitmap_t) * 8)];$/;"	m	struct:rcvd_table
+bitmap_t	ping_common.h	/^typedef __u32	bitmap_t;$/;"	t
+bitmap_t	ping_common.h	/^typedef __u64	bitmap_t;$/;"	t
+bootable	rarpd.c	/^int bootable(__u32 addr)$/;"	f
+brd_recv	arping.c	/^int received, brd_recv, req_recv;$/;"	v
+brd_sent	arping.c	/^int sent, brd_sent;$/;"	v
+broadcast_only	arping.c	/^int broadcast_only;$/;"	v
+broadcast_pings	ping.c	/^static int broadcast_pings = 0;$/;"	v	file:
+buf	tftpd.c	/^char	buf[PKTSIZE];$/;"	v
+buf	tftpsubs.c	/^	char buf[PKTSIZE];      \/* room for data packet *\/$/;"	m	struct:bf	file:
+build_echo	ping6.c	/^int build_echo(__u8 *_icmph)$/;"	f
+build_niquery	ping6.c	/^int build_niquery(__u8 *_nih)$/;"	f
+cap_admin	ping_common.c	/^static cap_value_t cap_admin = CAP_NET_ADMIN;$/;"	v	file:
+cap_raw	arping.c	/^static cap_flag_value_t cap_raw = CAP_CLEAR;$/;"	v	file:
+cap_raw	ping_common.c	/^static cap_value_t cap_raw = CAP_NET_RAW;$/;"	v	file:
+caps	arping.c	/^static const cap_value_t caps[] = { CAP_NET_RAW, };$/;"	v	file:
+catch_signal	rarpd.c	/^void catch_signal(int sig, void (*handler)(int))$/;"	f
+catcher	arping.c	/^void catcher(void)$/;"	f
+check_device_by_ioctl	arping.c	/^static int check_device_by_ioctl(int s, struct ifreq *ifr)$/;"	f	file:
+check_ifflags	arping.c	/^static int check_ifflags(unsigned int ifflags, int fatal)$/;"	f	file:
+cm	ping.c	/^	struct cmsghdr cm;$/;"	m	struct:__anon5	typeref:struct:__anon5::cmsghdr	file:
+cmsg	ping.c	/^} cmsg = { {sizeof(struct cmsghdr) + sizeof(struct in_pktinfo), SOL_IP, IP_PKTINFO},$/;"	v	typeref:struct:__anon5	file:
+cmsg_len	ping.c	/^int cmsg_len;$/;"	v
+cmsgbuf	ping6.c	/^static unsigned char cmsgbuf[4096];$/;"	v	file:
+cmsglen	ping6.c	/^static int cmsglen = 0;$/;"	v	file:
+common_options	ping_common.c	/^void common_options(int ch)$/;"	f
+configure	rarpd.c	/^void configure(void)$/;"	f
+confirm	ping_common.c	/^int confirm = 0;$/;"	v
+confirm_flag	ping_common.c	/^int confirm_flag = MSG_CONFIRM;$/;"	v
+confirmed	tftpd.c	/^int	confirmed;$/;"	v
+copyright	ping.c	/^char copyright[] =$/;"	v
+copyright	ping6.c	/^char copyright[] =$/;"	v
+copyright	tftpd.c	/^char copyright[] =$/;"	v
+copyright	traceroute6.c	/^char copyright[] =$/;"	v
+count	arping.c	/^int count=-1;$/;"	v
+counter	tftpsubs.c	/^	int counter;            \/* size of data in buffer, or flag *\/$/;"	m	struct:bf	file:
+cur_time	ping_common.c	/^struct timeval start_time, cur_time;$/;"	v	typeref:struct:
+current	tftpsubs.c	/^static int current;     \/* index of buffer in use *\/$/;"	v	file:
+dad	arping.c	/^int dad, unsolicited, advert;$/;"	v
+data	ping.c	/^	__u32	data;$/;"	m	struct:icmp_filter	file:
+data	ping6.c	/^	int data;$/;"	m	struct:niquery_option	file:
+data_wait	tracepath.c	/^void data_wait(int fd)$/;"	f
+data_wait	tracepath6.c	/^void data_wait(int fd)$/;"	f
+datalen	ping_common.c	/^int datalen = DEFDATALEN;$/;"	v
+datalen	traceroute6.c	/^int datalen = sizeof(struct pkt_format);$/;"	v
+deadline	ping_common.c	/^int deadline = 0;		\/* time to die *\/$/;"	v
+debug	rarpd.c	/^int debug;$/;"	v
+debug	rdisc.c	/^int debug = 0;$/;"	v
+debugfile	rdisc.c	/^int debugfile;$/;"	v
+del_route	rdisc.c	/^del_route(struct in_addr addr)$/;"	f
+deltaT	traceroute6.c	/^double deltaT(struct timeval *t1p, struct timeval *t2p)$/;"	f
+device	arping.c	/^struct device device = {$/;"	v	typeref:struct:device
+device	arping.c	/^struct device {$/;"	s	file:
+device	ping.c	/^char *device;$/;"	v
+device	ping6.c	/^char *device;$/;"	v
+device	traceroute6.c	/^char *device = NULL;$/;"	v
+dirs	tftpd.c	/^char	*dirs[MAXARG+1];$/;"	v
+disable_capability_admin	ping_common.h	/^static inline int disable_capability_admin(void)	{ return modify_capability(0); };$/;"	f
+disable_capability_admin	ping_common.h	/^static inline int disable_capability_admin(void)	{ return modify_capability(CAP_NET_ADMIN, CAP_CLEAR); };$/;"	f
+disable_capability_raw	arping.c	/^static inline int disable_capability_raw(void)$/;"	f	file:
+disable_capability_raw	ping_common.h	/^static inline int disable_capability_raw(void)		{ return modify_capability(0); };$/;"	f
+disable_capability_raw	ping_common.h	/^static inline int disable_capability_raw(void)		{ return modify_capability(CAP_NET_RAW,   CAP_CLEAR); };$/;"	f
+discard_table	rdisc.c	/^void discard_table(void)$/;"	f
+do_fork	rdisc.c	/^void do_fork(void)$/;"	f
+do_reload	rarpd.c	/^int do_reload = 1;$/;"	v
+drop_capabilities	arping.c	/^void drop_capabilities(void)$/;"	f
+drop_capabilities	ping_common.c	/^void drop_capabilities(void)$/;"	f
+drop_rights	clockdiff.c	/^void drop_rights(void) {$/;"	f
+dst	arping.c	/^struct in_addr src, dst;$/;"	v	typeref:struct:
+e_code	tftpd.c	/^	int	e_code;$/;"	m	struct:errmsg	file:
+e_msg	tftpd.c	/^	char	*e_msg;$/;"	m	struct:errmsg	file:
+enable_capability_admin	ping_common.h	/^static inline int enable_capability_admin(void)		{ return modify_capability(1); };$/;"	f
+enable_capability_admin	ping_common.h	/^static inline int enable_capability_admin(void)		{ return modify_capability(CAP_NET_ADMIN, CAP_SET);   };$/;"	f
+enable_capability_raw	arping.c	/^static inline int enable_capability_raw(void)$/;"	f	file:
+enable_capability_raw	ping_common.h	/^static inline int enable_capability_raw(void)		{ return modify_capability(1); };$/;"	f
+enable_capability_raw	ping_common.h	/^static inline int enable_capability_raw(void)		{ return modify_capability(CAP_NET_RAW,   CAP_SET);   };$/;"	f
+errmsg	tftpd.c	/^struct errmsg {$/;"	s	file:
+errmsgs	tftpd.c	/^} errmsgs[] = {$/;"	v	typeref:struct:errmsg
+euid	arping.c	/^static uid_t euid;$/;"	v	file:
+euid	ping_common.c	/^uid_t euid;$/;"	v
+exiting	ping_common.c	/^volatile int exiting;$/;"	v
+f_convert	tftpd.c	/^	int	f_convert;$/;"	m	struct:formats	file:
+f_mode	tftpd.c	/^	char	*f_mode;$/;"	m	struct:formats	file:
+f_recv	tftpd.c	/^	void	(*f_recv)(struct formats*);$/;"	m	struct:formats	file:
+f_send	tftpd.c	/^	void	(*f_send)(struct formats*);$/;"	m	struct:formats	file:
+f_validate	tftpd.c	/^	int	(*f_validate)(char *filename, int mode);$/;"	m	struct:formats	file:
+family	tracepath6.c	/^sa_family_t family = AF_INET6;$/;"	v
+file	tftpd.c	/^FILE *file;$/;"	v
+fill	ping_common.c	/^static void fill(char *patp)$/;"	f	file:
+find_device	arping.c	/^static int find_device(void)$/;"	f	file:
+find_device_by_ifaddrs	arping.c	/^static int find_device_by_ifaddrs(void)$/;"	f	file:
+find_device_by_ioctl	arping.c	/^static int find_device_by_ioctl(void)$/;"	f	file:
+find_device_by_sysfs	arping.c	/^int find_device_by_sysfs(void)$/;"	f
+find_router	rdisc.c	/^find_router(struct in_addr addr)$/;"	f
+finish	arping.c	/^void finish(void)$/;"	f
+finish	ping_common.c	/^void finish(void)$/;"	f
+finish	rdisc.c	/^finish()$/;"	f
+firsthop	traceroute6.c	/^struct sockaddr_in6 firsthop;$/;"	v	typeref:struct:sockaddr_in6
+flags	rdisc.c	/^	int		flags;$/;"	m	struct:interface	file:
+flowlabel	ping6.c	/^__u32 flowlabel;$/;"	v
+flr_action	in6_flowlabel.h	/^	__u8	flr_action;$/;"	m	struct:in6_flowlabel_req
+flr_dst	in6_flowlabel.h	/^	struct in6_addr	flr_dst;$/;"	m	struct:in6_flowlabel_req	typeref:struct:in6_flowlabel_req::in6_addr
+flr_expires	in6_flowlabel.h	/^	__u16 	flr_expires;$/;"	m	struct:in6_flowlabel_req
+flr_flags	in6_flowlabel.h	/^	__u16	flr_flags;$/;"	m	struct:in6_flowlabel_req
+flr_label	in6_flowlabel.h	/^	__u32	flr_label;$/;"	m	struct:in6_flowlabel_req
+flr_linger	in6_flowlabel.h	/^	__u16	flr_linger;$/;"	m	struct:in6_flowlabel_req
+flr_share	in6_flowlabel.h	/^	__u8	flr_share;$/;"	m	struct:in6_flowlabel_req
+forever	rdisc.c	/^int forever = 0;	\/* Never give up on host. If 0 defer fork until$/;"	v
+formats	tftpd.c	/^struct formats {$/;"	s	file:
+formats	tftpd.c	/^} formats[] = {$/;"	v	typeref:struct:formats
+free	arping.c	/^	int free;$/;"	m	struct:sysfs_devattrs	file:
+from	tftpd.c	/^} from;$/;"	v	typeref:union:__anon1
+fromlen	tftpd.c	/^socklen_t	fromlen;$/;"	v
+gather_statistics	ping_common.c	/^int gather_statistics(__u8 *icmph, int icmplen,$/;"	f
+graceful_finish	rdisc.c	/^graceful_finish()$/;"	f
+handler	arping.c	/^	int (*handler)(char *ptr, struct sysfs_devattr_values *v, unsigned int idx);$/;"	m	struct:sysfs_devattrs	file:
+handler	ping6.c	/^	int (*handler)(int index, const char *arg);$/;"	m	struct:niquery_option	file:
+has_arg	ping6.c	/^	int has_arg;$/;"	m	struct:niquery_option	file:
+hatype	rarpd.c	/^	int		hatype;$/;"	m	struct:iflink	file:
+he	arping.c	/^struct sockaddr_storage he;$/;"	v	typeref:struct:sockaddr_storage
+hextoui	ping6.c	/^static int hextoui(const char *str)$/;"	f	file:
+hhistory	tracepath.c	/^struct hhistory$/;"	s	file:
+hhistory	tracepath6.c	/^struct hhistory$/;"	s	file:
+his	tracepath.c	/^struct hhistory his[64];$/;"	v	typeref:struct:hhistory
+his	tracepath6.c	/^struct hhistory his[64];$/;"	v	typeref:struct:hhistory
+hisname	clockdiff.c	/^char *myname, *hisname;$/;"	v
+hisptr	tracepath.c	/^int hisptr;$/;"	v
+hisptr	tracepath6.c	/^int hisptr;$/;"	v
+hops	tracepath.c	/^	int	hops;$/;"	m	struct:hhistory	file:
+hops	tracepath6.c	/^	int	hops;$/;"	m	struct:hhistory	file:
+hops_from	tracepath.c	/^int hops_from = -1;$/;"	v
+hops_from	tracepath6.c	/^int hops_from = -1;$/;"	v
+hops_to	tracepath.c	/^int hops_to = -1;$/;"	v
+hops_to	tracepath6.c	/^int hops_to = -1;$/;"	v
+hostname	ping_common.c	/^char *hostname;$/;"	v
+hostname	traceroute6.c	/^char *hostname;$/;"	v
+icmp_cksum	rdisc.c	/^	u_short	icmp_cksum;		\/* ones complement cksum of struct *\/$/;"	m	struct:icmp_ra	file:
+icmp_code	rdisc.c	/^	u_char	icmp_code;		\/* type sub code *\/$/;"	m	struct:icmp_ra	file:
+icmp_filter	ping.c	/^struct icmp_filter {$/;"	s	file:
+icmp_lifetime	rdisc.c	/^	short 	icmp_lifetime;$/;"	m	struct:icmp_ra	file:
+icmp_num_addrs	rdisc.c	/^	u_char	icmp_num_addrs;$/;"	m	struct:icmp_ra	file:
+icmp_ra	rdisc.c	/^struct icmp_ra$/;"	s	file:
+icmp_ra	rdisc.c	135;"	d	file:
+icmp_ra_addr	rdisc.c	/^struct icmp_ra_addr$/;"	s	file:
+icmp_sock	ping.c	/^int icmp_sock;			\/* socket file descriptor *\/$/;"	v
+icmp_sock	ping6.c	/^static int icmp_sock;$/;"	v	file:
+icmp_sock	traceroute6.c	/^int icmp_sock;			\/* receive (icmp) socket file descriptor *\/$/;"	v
+icmp_type	rdisc.c	/^	u_char	icmp_type;		\/* type of message, see below *\/$/;"	m	struct:icmp_ra	file:
+icmp_wpa	rdisc.c	/^	u_char	icmp_wpa;		\/* Words per address *\/$/;"	m	struct:icmp_ra	file:
+id	clockdiff.c	/^uint16_t id;$/;"	v
+ident	ping_common.c	/^int ident;			\/* process id to identify our packets *\/$/;"	v
+ident	traceroute6.c	/^	__u32 ident;$/;"	m	struct:pkt_format	file:
+ident	traceroute6.c	/^pid_t ident;$/;"	v
+if_name2index	ping6.c	/^unsigned int if_name2index(const char *ifname)$/;"	f
+ifa	arping.c	/^	struct ifaddrs *ifa;$/;"	m	struct:device	typeref:struct:device::ifaddrs	file:
+ifa_list	rarpd.c	/^	struct ifaddr 	*ifa_list;$/;"	m	struct:iflink	typeref:struct:iflink::ifaddr	file:
+ifaddr	rarpd.c	/^struct ifaddr$/;"	s	file:
+ifidx	rarpd.c	/^int ifidx;$/;"	v
+ifindex	arping.c	/^	int ifindex;$/;"	m	struct:device	file:
+ifindex	rarpd.c	/^	int		ifindex;$/;"	m	struct:rarp_map	file:
+ifindex	rdisc.c	/^	int		ifindex;$/;"	m	struct:interface	file:
+ifl_list	rarpd.c	/^} *ifl_list;$/;"	v	typeref:struct:iflink
+iflink	rarpd.c	/^struct iflink$/;"	s	file:
+ifname	arping.c	/^	char *ifname;$/;"	m	struct:sysfs_devattr_values	file:
+ifname	rarpd.c	/^char *ifname;$/;"	v
+in6_flowlabel_req	in6_flowlabel.h	/^struct in6_flowlabel_req$/;"	s
+in_cksum	clockdiff.c	/^int in_cksum(u_short *addr, int len)$/;"	f
+in_cksum	ping.c	/^in_cksum(const u_short *addr, register int len, u_short csum)$/;"	f
+in_cksum	rdisc.c	/^u_short in_cksum(u_short *addr, int len)$/;"	f
+in_flight	ping_common.h	/^static inline int in_flight(void)$/;"	f
+in_kernel	rdisc.c	/^	int		in_kernel;$/;"	m	struct:table	file:
+in_pr_addr	ping_common.c	/^volatile int in_pr_addr = 0;	\/* pr_addr() is executing *\/$/;"	v
+index	rarpd.c	/^	int	       	index;$/;"	m	struct:iflink	file:
+inet6_srcrt_add	ping6.c	/^int inet6_srcrt_add(struct cmsghdr *cmsg, const struct in6_addr *addr)$/;"	f
+inet6_srcrt_init	ping6.c	/^extern struct cmsghdr *	inet6_srcrt_init(void *bp, int type)$/;"	f
+inet6_srcrt_space	ping6.c	/^size_t inet6_srcrt_space(int type, int segments)$/;"	f
+init	rdisc.c	/^init()$/;"	f
+initial_advert_interval	rdisc.c	/^int initial_advert_interval = MAX_INITIAL_ADVERT_INTERVAL;$/;"	v
+initial_advertisements	rdisc.c	/^int initial_advertisements = MAX_INITIAL_ADVERTISEMENTS;$/;"	v
+initifs	rdisc.c	/^initifs()$/;"	f
+initlog	rdisc.c	/^void initlog(void)$/;"	f
+install_filter	ping.c	/^void install_filter(void)$/;"	f
+install_filter	ping6.c	/^void install_filter(void)$/;"	f
+interactive	clockdiff.c	/^int interactive = 0;$/;"	v
+interface	rdisc.c	/^struct interface$/;"	s	file:
+interfaces	rdisc.c	/^static struct interface *interfaces;$/;"	v	typeref:struct:interface	file:
+interfaces_size	rdisc.c	/^static int interfaces_size;			\/* Number of elements in interfaces *\/$/;"	v	file:
+interval	ping_common.c	/^int interval = 1000;		\/* interval between packets (msec) *\/$/;"	v
+ip_opt_len	clockdiff.c	/^int ip_opt_len = 0;$/;"	v
+ipaddr	rarpd.c	/^	__u32		ipaddr;$/;"	m	struct:rarp_map	file:
+ipi	ping.c	/^	struct in_pktinfo ipi;$/;"	m	struct:__anon5	typeref:struct:__anon5::in_pktinfo	file:
+ira_addr	rdisc.c	/^	__u32	ira_addr;$/;"	m	struct:icmp_ra_addr	file:
+ira_preference	rdisc.c	/^	__u32	ira_preference;$/;"	m	struct:icmp_ra_addr	file:
+is_directly_connected	rdisc.c	/^is_directly_connected(struct in_addr in)$/;"	f
+isbroadcast	rdisc.c	/^static __inline__ int isbroadcast(struct sockaddr_in *sin)$/;"	f	file:
+ismulticast	rdisc.c	/^static __inline__ int ismulticast(struct sockaddr_in *sin)$/;"	f	file:
+join	rdisc.c	/^join(int sock, struct sockaddr_in *sin)$/;"	f
+justquit	tftpd.c	/^void justquit(int signo)$/;"	f
+last	arping.c	/^struct timeval start, last;$/;"	v	typeref:struct:
+left_until_advertise	rdisc.c	/^static int left_until_advertise;$/;"	v	file:
+lifetime	rdisc.c	/^int lifetime;$/;"	v
+limit_capabilities	arping.c	/^void limit_capabilities(void)$/;"	f
+limit_capabilities	ping_common.c	/^void limit_capabilities(void)$/;"	f
+lingertime	ping_common.c	/^int lingertime = MAXWAIT*1000;$/;"	v
+listen_arp	rarpd.c	/^int listen_arp;$/;"	v
+lladdr	rarpd.c	/^	unsigned char	lladdr[16];$/;"	m	struct:iflink	file:
+lladdr	rarpd.c	/^	unsigned char	lladdr[16];$/;"	m	struct:rarp_map	file:
+lladdr_len	rarpd.c	/^	int		lladdr_len;$/;"	m	struct:rarp_map	file:
+llsqrt	ping_common.c	/^static long llsqrt(long long a)$/;"	f	file:
+load_arp_bpflet	rarpd.c	/^static int load_arp_bpflet(int fd)$/;"	f	file:
+load_db	rarpd.c	/^void load_db(void)$/;"	f
+load_if	rarpd.c	/^void load_if(void)$/;"	f
+local	rarpd.c	/^	__u32		local;$/;"	m	struct:ifaddr	file:
+localaddr	rdisc.c	/^	struct in_addr	localaddr;	\/* Actual address if the interface *\/$/;"	m	struct:interface	typeref:struct:interface::in_addr	file:
+logdebug	rdisc.c	218;"	d	file:
+logerr	rdisc.c	214;"	d	file:
+logging	rdisc.c	/^static int logging = 0;$/;"	v	file:
+logperror	rdisc.c	/^logperror(char *str)$/;"	f
+logtrace	rdisc.c	216;"	d	file:
+main	arping.c	/^main(int argc, char **argv)$/;"	f
+main	clockdiff.c	/^main(int argc, char *argv[])$/;"	f
+main	ping.c	/^main(int argc, char **argv)$/;"	f
+main	ping6.c	/^int main(int argc, char *argv[])$/;"	f
+main	rarpd.c	/^int main(int argc, char **argv)$/;"	f
+main	rdisc.c	/^int main(int argc, char **argv)$/;"	f
+main	tftpd.c	/^int main(int ac, char **av)$/;"	f
+main	tracepath.c	/^main(int argc, char **argv)$/;"	f
+main	tracepath6.c	/^int main(int argc, char **argv)$/;"	f
+main	traceroute6.c	/^int main(int argc, char *argv[])$/;"	f
+main_loop	ping_common.c	/^void main_loop(int icmp_sock, __u8 *packet, int packlen)$/;"	f
+mapped	tracepath6.c	/^int mapped;$/;"	v
+mark	ping_common.c	/^int mark;$/;"	v
+mask	rarpd.c	/^	__u32		mask;$/;"	m	struct:ifaddr	file:
+max_adv_int	rdisc.c	/^int max_adv_int = MAX_ADV_INT;$/;"	v
+max_preference	rdisc.c	/^int max_preference(void)$/;"	f
+max_solicitations	rdisc.c	/^int max_solicitations = MAX_SOLICITATIONS;$/;"	v
+max_ttl	traceroute6.c	/^int max_ttl = 30;$/;"	v
+maxpacket	ping.c	/^int maxpacket = sizeof(outpack);$/;"	v
+maxpacket	ping6.c	/^int maxpacket = sizeof(outpack);$/;"	v
+maxtimeout	tftpd.c	/^int	maxtimeout = 5*TIMEOUT;$/;"	v
+me	arping.c	/^struct sockaddr_storage me;$/;"	v	typeref:struct:sockaddr_storage
+measure	clockdiff.c	/^measure(struct sockaddr_in * addr)$/;"	f
+measure_delta	clockdiff.c	/^int measure_delta;$/;"	v
+measure_delta1	clockdiff.c	/^int measure_delta1;$/;"	v
+measure_opt	clockdiff.c	/^measure_opt(struct sockaddr_in * addr)$/;"	f
+min_adv_int	rdisc.c	/^int min_adv_int;$/;"	v
+min_rtt	clockdiff.c	/^long min_rtt;$/;"	v
+modify_capability	ping_common.c	/^int modify_capability(cap_value_t cap, cap_flag_value_t on)$/;"	f
+modify_capability	ping_common.c	/^int modify_capability(int on)$/;"	f
+modify_capability_raw	arping.c	/^int modify_capability_raw(int on)$/;"	f
+mtu	tracepath.c	/^int mtu = 65535;$/;"	v
+mtu	tracepath6.c	/^int mtu;$/;"	v
+myname	clockdiff.c	/^char *myname, *hisname;$/;"	v
+nak	tftpd.c	/^void nak(int error)$/;"	f
+name	arping.c	/^	char *name;$/;"	m	struct:device	file:
+name	arping.c	/^	const char *name;$/;"	m	struct:sysfs_devattrs	file:
+name	ping6.c	/^	char *name;$/;"	m	struct:niquery_option	file:
+name	rarpd.c	/^	char		name[IFNAMSIZ];$/;"	m	struct:iflink	file:
+name	rdisc.c	/^	char		name[IFNAMSIZ];$/;"	m	struct:interface	file:
+namelen	ping6.c	/^	int namelen;$/;"	m	struct:niquery_option	file:
+nchecksum	ping_common.c	/^long nchecksum;			\/* replies with bad checksum *\/$/;"	v
+nerrors	ping_common.c	/^long nerrors;			\/* icmp errors *\/$/;"	v
+netmask	rdisc.c	/^	struct in_addr	netmask;$/;"	m	struct:interface	typeref:struct:interface::in_addr	file:
+newline	tftpsubs.c	/^int newline = 0;        \/* fillbuf: in middle of newline expansion *\/$/;"	v
+next	rarpd.c	/^	struct ifaddr 	*next;$/;"	m	struct:ifaddr	typeref:struct:ifaddr::ifaddr	file:
+next	rarpd.c	/^	struct iflink	*next;$/;"	m	struct:iflink	typeref:struct:iflink::iflink	file:
+next	rarpd.c	/^	struct rarp_map *next;$/;"	m	struct:rarp_map	typeref:struct:rarp_map::rarp_map	file:
+next	rdisc.c	/^	struct table	*next;$/;"	m	struct:table	typeref:struct:table::table	file:
+nextone	tftpsubs.c	/^static int nextone;     \/* index of next buffer to use *\/$/;"	v	file:
+nflag	traceroute6.c	/^int nflag;			\/* print addresses numerically *\/$/;"	v
+ni_cksum	ping6_niquery.h	13;"	d
+ni_code	ping6_niquery.h	12;"	d
+ni_flag	ping6.c	/^int ni_flag = 0;$/;"	v
+ni_flags	ping6_niquery.h	15;"	d
+ni_group	ping6.c	/^char *ni_group;$/;"	v
+ni_hdr	ping6_niquery.h	/^struct ni_hdr {$/;"	s
+ni_nonce	ping6_niquery.h	/^	__u8				ni_nonce[NI_NONCE_SIZE];$/;"	m	struct:ni_hdr
+ni_nonce_ptr	ping6.c	/^__u8 *ni_nonce_ptr;$/;"	v
+ni_nonce_secret	ping6.c	/^} ni_nonce_secret;$/;"	v	typeref:struct:__anon4
+ni_qtype	ping6_niquery.h	14;"	d
+ni_query	ping6.c	/^int ni_query = -1;$/;"	v
+ni_subject	ping6.c	/^void *ni_subject = NULL;$/;"	v
+ni_subject_len	ping6.c	/^int ni_subject_len = 0;$/;"	v
+ni_subject_type	ping6.c	/^int ni_subject_type = -1;$/;"	v
+ni_type	ping6_niquery.h	11;"	d
+ni_u	ping6_niquery.h	/^	struct icmp6_hdr		ni_u;$/;"	m	struct:ni_hdr	typeref:struct:ni_hdr::icmp6_hdr
+niquery_check_nonce	ping6.c	/^static inline int niquery_check_nonce(__u8 *nonce)$/;"	f	file:
+niquery_fill_nonce	ping6.c	/^static inline void niquery_fill_nonce(__u16 seq, __u8 *nonce)$/;"	f	file:
+niquery_init_nonce	ping6.c	/^static void niquery_init_nonce(void)$/;"	f	file:
+niquery_is_enabled	ping6.c	/^static inline int niquery_is_enabled(void)$/;"	f	file:
+niquery_is_subject_valid	ping6.c	/^static inline int niquery_is_subject_valid(void)$/;"	f	file:
+niquery_nonce	ping6.c	/^static int niquery_nonce(__u8 *nonce, int fill)$/;"	f	file:
+niquery_option	ping6.c	/^struct niquery_option {$/;"	s	file:
+niquery_option_handler	ping6.c	/^int niquery_option_handler(const char *opt_arg)$/;"	f
+niquery_option_help_handler	ping6.c	/^int niquery_option_help_handler(int index, const char *arg)$/;"	f
+niquery_option_ipv4_flag_handler	ping6.c	/^static int niquery_option_ipv4_flag_handler(int index, const char *arg)$/;"	f	file:
+niquery_option_ipv4_handler	ping6.c	/^static int niquery_option_ipv4_handler(int index, const char *arg)$/;"	f	file:
+niquery_option_ipv6_flag_handler	ping6.c	/^static int niquery_option_ipv6_flag_handler(int index, const char *arg)$/;"	f	file:
+niquery_option_ipv6_handler	ping6.c	/^static int niquery_option_ipv6_handler(int index, const char *arg)$/;"	f	file:
+niquery_option_name_handler	ping6.c	/^static int niquery_option_name_handler(int index, const char *arg)$/;"	f	file:
+niquery_option_subject_addr_handler	ping6.c	/^static int niquery_option_subject_addr_handler(int index, const char *arg)$/;"	f	file:
+niquery_option_subject_name_handler	ping6.c	/^static int niquery_option_subject_name_handler(int index, const char *arg)$/;"	f	file:
+niquery_options	ping6.c	/^struct niquery_option niquery_options[] = {$/;"	v	typeref:struct:niquery_option
+niquery_set_qtype	ping6.c	/^static int niquery_set_qtype(int type)$/;"	f	file:
+niquery_set_subject_type	ping6.c	/^static int niquery_set_subject_type(int type)$/;"	f	file:
+no_resolve	tracepath.c	/^int no_resolve = 0;$/;"	v
+no_resolve	tracepath6.c	/^int no_resolve = 0;$/;"	v
+npackets	ping_common.c	/^long npackets;			\/* max packets to transmit *\/$/;"	v
+nprobes	traceroute6.c	/^int nprobes = 3;$/;"	v
+nreceived	ping_common.c	/^long nreceived;			\/* # of packets we got back *\/$/;"	v
+nreceived	rdisc.c	/^int nreceived = 0;$/;"	v
+nrepeats	ping_common.c	/^long nrepeats;			\/* number of duplicates *\/$/;"	v
+nroute	ping.c	/^static int nroute = 0;$/;"	v	file:
+ntohsp	ping6.c	/^static inline int ntohsp(__u16 *p)$/;"	f	file:
+ntransmitted	ping_common.c	/^long ntransmitted;		\/* sequence # for outbound packets = #sent *\/$/;"	v
+ntransmitted	rdisc.c	/^int ntransmitted = 0;$/;"	v
+num_interfaces	rdisc.c	/^static int num_interfaces;$/;"	v	file:
+only_ethers	rarpd.c	/^int only_ethers;$/;"	v
+options	ping_common.c	/^int options;$/;"	v
+options	traceroute6.c	/^int options;			\/* socket options *\/$/;"	v
+optlen	ping.c	/^int optlen = 0;$/;"	v
+outpack	ping.c	/^u_char outpack[0x10000];$/;"	v
+outpack	ping6.c	/^u_char outpack[MAXPACKET];$/;"	v
+overhead	tracepath.c	/^const int overhead = 28;$/;"	v
+overhead	tracepath6.c	/^int overhead;$/;"	v
+packet	traceroute6.c	/^u_char	packet[512];		\/* last inbound (icmp) packet *\/$/;"	v
+packet_ok	traceroute6.c	/^int packet_ok(u_char *buf, int cc, struct sockaddr_in6 *from,$/;"	f
+parse_reply	ping.c	/^parse_reply(struct msghdr *msg, int cc, void *addr, struct timeval *tv)$/;"	f
+parse_reply	ping6.c	/^parse_reply(struct msghdr *msg, int cc, void *addr, struct timeval *tv)$/;"	f
+parsetos	ping.c	/^int parsetos(char *str)$/;"	f
+peer	tftpd.c	/^int	peer;$/;"	v
+pid	ping6.c	/^	pid_t pid;$/;"	m	struct:__anon4	file:
+pinger	ping_common.c	/^int pinger(void)$/;"	f
+pipesize	ping_common.c	/^int  pipesize = -1;$/;"	v
+pkt_format	traceroute6.c	/^struct pkt_format$/;"	s	file:
+pktbuf	tracepath.c	/^void *pktbuf;$/;"	v
+pktbuf	tracepath6.c	/^void *pktbuf;$/;"	v
+pmtudisc	ping.c	/^int pmtudisc = -1;$/;"	v
+pmtudisc	ping6.c	/^int pmtudisc=-1;$/;"	v
+port	traceroute6.c	/^u_short port = 32768+666;	\/* start udp dest port # for probe packets *\/$/;"	v
+pr_addr	ping.c	/^pr_addr(__u32 addr)$/;"	f
+pr_addr	ping6.c	/^char * pr_addr(struct in6_addr *addr)$/;"	f
+pr_addr_jmp	ping_common.c	/^jmp_buf pr_addr_jmp;$/;"	v
+pr_addr_n	ping6.c	/^char * pr_addr_n(struct in6_addr *addr)$/;"	f
+pr_echo_reply	ping.c	/^void pr_echo_reply(__u8 *_icp, int len)$/;"	f
+pr_echo_reply	ping6.c	/^void pr_echo_reply(__u8 *_icmph, int cc)$/;"	f
+pr_icmph	ping.c	/^void pr_icmph(__u8 type, __u8 code, __u32 info, struct icmphdr *icp)$/;"	f
+pr_icmph	ping6.c	/^int pr_icmph(__u8 type, __u8 code, __u32 info)$/;"	f
+pr_iph	ping.c	/^void pr_iph(struct iphdr *ip)$/;"	f
+pr_name	rdisc.c	/^char *pr_name(struct in_addr addr)$/;"	f
+pr_niquery_reply	ping6.c	/^void pr_niquery_reply(__u8 *_nih, int len)$/;"	f
+pr_niquery_reply_addr	ping6.c	/^void pr_niquery_reply_addr(struct ni_hdr *nih, int len)$/;"	f
+pr_niquery_reply_name	ping6.c	/^void pr_niquery_reply_name(struct ni_hdr *nih, int len)$/;"	f
+pr_options	ping.c	/^void pr_options(unsigned char * cp, int hlen)$/;"	f
+pr_pack	rdisc.c	/^pr_pack(char *buf, int cc, struct sockaddr_in *from)$/;"	f
+pr_type	rdisc.c	/^pr_type(int t)$/;"	f
+pr_type	traceroute6.c	/^char * pr_type(unsigned char t)$/;"	f
+preference	rdisc.c	/^	int		preference;$/;"	m	struct:table	file:
+preference	rdisc.c	/^	int 		preference;$/;"	m	struct:interface	file:
+preference	rdisc.c	/^int preference = 0;		\/* Setable with -p option *\/$/;"	v
+prefix	rarpd.c	/^	__u32		prefix;$/;"	m	struct:ifaddr	file:
+preload	ping_common.c	/^int preload;$/;"	v
+prevchar	tftpsubs.c	/^int prevchar = -1;      \/* putbuf: previous char (cr check) *\/$/;"	v
+print	traceroute6.c	/^void print(unsigned char *buf, int cc, struct sockaddr_in6 *from)$/;"	f
+print_hex	arping.c	/^void print_hex(unsigned char *p, int len)$/;"	f
+print_host	tracepath.c	/^void print_host(const char *a, const char *b, int both)$/;"	f
+print_host	tracepath6.c	/^void print_host(const char *a, const char *b, int both)$/;"	f
+print_timestamp	ping_common.c	/^void print_timestamp(void)$/;"	f
+probe_ttl	tracepath.c	/^int probe_ttl(int fd, int ttl)$/;"	f
+probe_ttl	tracepath6.c	/^int probe_ttl(int fd, int ttl)$/;"	f
+probehdr	tracepath.c	/^struct probehdr$/;"	s	file:
+probehdr	tracepath6.c	/^struct probehdr$/;"	s	file:
+prusage	rdisc.c	/^static void prusage(void)$/;"	f	file:
+ptr	arping.c	/^	void		*ptr;$/;"	m	union:sysfs_devattr_value	file:
+put_myipaddr	rarpd.c	/^int put_myipaddr(unsigned char **ptr_p, int ifindex, __u32 hisipaddr)$/;"	f
+put_mylladdr	rarpd.c	/^int put_mylladdr(unsigned char **ptr_p, int ifindex, int alen)$/;"	f
+putchar_safe	ping6.c	/^static void putchar_safe(char c)$/;"	f	file:
+quiet	arping.c	/^int quiet;$/;"	v
+quit_on_reply	arping.c	/^int quit_on_reply=0;$/;"	v
+r_init	tftpsubs.c	/^struct tftphdr *r_init() { return rw_init(1); }         \/* read-ahead *\/$/;"	f
+rarp_db	rarpd.c	/^} *rarp_db;$/;"	v	typeref:struct:rarp_map
+rarp_lookup	rarpd.c	/^struct rarp_map *rarp_lookup(int ifindex, int hatype,$/;"	f
+rarp_map	rarpd.c	/^struct rarp_map$/;"	s	file:
+rcvd_clear	ping_common.h	/^static inline void rcvd_clear(__u16 seq)$/;"	f
+rcvd_set	ping_common.h	/^static inline void rcvd_set(__u16 seq)$/;"	f
+rcvd_table	ping_common.h	/^struct rcvd_table {$/;"	s
+rcvd_tbl	ping_common.c	/^struct rcvd_table rcvd_tbl;$/;"	v	typeref:struct:rcvd_table
+rcvd_test	ping_common.h	/^static inline bitmap_t rcvd_test(__u16 seq)$/;"	f
+read_ahead	tftpsubs.c	/^void read_ahead(FILE *file, int convert)$/;"	f
+readit	tftpsubs.c	/^int readit(FILE * file, struct tftphdr **dpp, int convert)$/;"	f
+receive_error_msg	ping.c	/^int receive_error_msg()$/;"	f
+receive_error_msg	ping6.c	/^int receive_error_msg()$/;"	f
+received	arping.c	/^int received, brd_recv, req_recv;$/;"	v
+record_router	rdisc.c	/^record_router(struct in_addr router, int preference, int ttl)$/;"	f
+recv_pack	arping.c	/^int recv_pack(unsigned char *buf, int len, struct sockaddr_ll *FROM)$/;"	f
+recvaddress	rdisc.c	/^char    *sendaddress, *recvaddress;$/;"	v
+recverr	tracepath.c	/^int recverr(int fd, int ttl)$/;"	f
+recverr	tracepath6.c	/^int recverr(int fd, int ttl)$/;"	f
+recvfile	tftpd.c	/^void recvfile(struct formats *pf)$/;"	f
+remaining_time	rdisc.c	/^	int		remaining_time;$/;"	m	struct:table	file:
+remoteaddr	rdisc.c	/^	struct in_addr	remoteaddr;$/;"	m	struct:interface	typeref:struct:interface::in_addr	file:
+req_recv	arping.c	/^int received, brd_recv, req_recv;$/;"	v
+responder	rdisc.c	/^int responder;$/;"	v
+rexmtval	tftpd.c	/^int	rexmtval = TIMEOUT;$/;"	v
+route	ping.c	/^static __u32 route[10];$/;"	v	file:
+router	rdisc.c	/^	struct in_addr	router;$/;"	m	struct:table	typeref:struct:table::in_addr	file:
+rtioctl	rdisc.c	/^rtioctl(struct in_addr addr, int op)$/;"	f
+rtt	clockdiff.c	/^long rtt = 1000;$/;"	v
+rtt	ping_common.c	/^int rtt;$/;"	v
+rtt_addend	ping_common.c	/^int rtt_addend;$/;"	v
+rtt_sigma	clockdiff.c	/^long rtt_sigma = 0;$/;"	v
+rw_init	tftpsubs.c	/^struct tftphdr *rw_init(int x)$/;"	f
+s	arping.c	/^int s;$/;"	v
+s	rdisc.c	/^int s;			\/* Socket file descriptor *\/$/;"	v
+sa	tftpd.c	/^	struct	sockaddr     sa;$/;"	m	union:__anon1	typeref:struct:__anon1::sockaddr	file:
+saddr	traceroute6.c	/^struct sockaddr_in6 saddr;$/;"	v	typeref:struct:sockaddr_in6
+schedule_exit	ping_common.h	/^static inline int schedule_exit(int next)$/;"	f
+screen_width	ping_common.c	/^static int screen_width = INT_MAX;$/;"	v	file:
+select_ipaddr	rarpd.c	/^struct ifaddr *select_ipaddr(int ifindex, __u32 *sel_addr, __u32 **alist)$/;"	f
+send_pack	arping.c	/^int send_pack(int s, struct in_addr src, struct in_addr dst,$/;"	f
+send_probe	ping.c	/^int send_probe()$/;"	f
+send_probe	ping6.c	/^int send_probe(void)$/;"	f
+send_probe	traceroute6.c	/^void send_probe(int seq, int ttl)$/;"	f
+sendaddress	rdisc.c	/^char    *sendaddress, *recvaddress;$/;"	v
+sendbcast	rdisc.c	/^sendbcast(int s, char *packet, int packetlen)$/;"	f
+sendbcastif	rdisc.c	/^sendbcastif(int s, char *packet, int packetlen, struct interface *ifp)$/;"	f
+sendbuff	traceroute6.c	/^char *sendbuff;$/;"	v
+sendfile	tftpd.c	/^void sendfile(struct formats *pf)$/;"	f
+sendmcast	rdisc.c	/^sendmcast(int s, char *packet, int packetlen, struct sockaddr_in *sin)$/;"	f
+sendmcastif	rdisc.c	/^sendmcastif(int s, char *packet, int packetlen,	struct sockaddr_in *sin,$/;"	f
+sendtime	tracepath.c	/^	struct timeval sendtime;$/;"	m	struct:hhistory	typeref:struct:hhistory::timeval	file:
+sendtime	tracepath6.c	/^	struct timeval sendtime;$/;"	m	struct:hhistory	typeref:struct:hhistory::timeval	file:
+sent	arping.c	/^int sent, brd_sent;$/;"	v
+seq	traceroute6.c	/^	__u32 seq;$/;"	m	struct:pkt_format	file:
+seqno	clockdiff.c	/^static u_short seqno, seqno0, acked;$/;"	v	file:
+seqno0	clockdiff.c	/^static u_short seqno, seqno0, acked;$/;"	v	file:
+serve_it	rarpd.c	/^void serve_it(int fd)$/;"	f
+server	clockdiff.c	/^struct sockaddr_in server;$/;"	v	typeref:struct:sockaddr_in
+set_device_broadcast	arping.c	/^static void set_device_broadcast(struct device *dev, unsigned char *ba, size_t balen)$/;"	f	file:
+set_device_broadcast_fallback	arping.c	/^static int set_device_broadcast_fallback(struct device *device, unsigned char *ba, size_t balen)$/;"	f	file:
+set_device_broadcast_ifaddrs_one	arping.c	/^static int set_device_broadcast_ifaddrs_one(struct device *device, unsigned char *ba, size_t balen, int fatal)$/;"	f	file:
+set_device_broadcast_sysfs	arping.c	/^int set_device_broadcast_sysfs(struct device *device, unsigned char *ba, size_t balen)$/;"	f
+set_signal	arping.c	/^void set_signal(int signo, void (*handler)(void))$/;"	f
+set_signal	ping_common.h	/^static inline void set_signal(int signo, void (*handler)(int))$/;"	f
+settos	ping.c	/^int settos = 0;			\/* Set TOS, Precendence or other QOS options *\/$/;"	v
+setup	ping_common.c	/^void setup(int icmp_sock)$/;"	f
+show_both	tracepath.c	/^int show_both = 0;$/;"	v
+show_both	tracepath6.c	/^int show_both = 0;$/;"	v
+sig_alarm	rarpd.c	/^void sig_alarm(int signo)$/;"	f
+sig_hup	rarpd.c	/^void sig_hup(int signo)$/;"	f
+sigexit	ping_common.c	/^static void sigexit(int signo)$/;"	f	file:
+signal_setup	rdisc.c	/^void signal_setup(int signo, void (*handler)(void))$/;"	f
+sigstatus	ping_common.c	/^static void sigstatus(int signo)$/;"	f	file:
+sin	tftpd.c	/^	struct	sockaddr_in  sin;$/;"	m	union:__anon1	typeref:struct:__anon1::sockaddr_in	file:
+sin6	tftpd.c	/^	struct	sockaddr_in6 sin6;$/;"	m	union:__anon1	typeref:struct:__anon1::sockaddr_in6	file:
+sll_len	arping.c	/^static inline socklen_t sll_len(size_t halen)$/;"	f	file:
+sndbuf	ping_common.c	/^int sndbuf;$/;"	v
+sndsock	traceroute6.c	/^int sndsock;			\/* send (udp) socket file descriptor *\/$/;"	v
+sock	clockdiff.c	/^int sock;$/;"	v
+sock_raw	clockdiff.c	/^int sock_raw;$/;"	v
+sock_setbufs	ping_common.c	/^void sock_setbufs(int icmp_sock, int alloc)$/;"	f
+solicit	rdisc.c	/^int solicit = 0;$/;"	v
+solicitation_interval	rdisc.c	/^unsigned int solicitation_interval = SOLICITATION_INTERVAL;$/;"	v
+solicitor	rdisc.c	/^solicitor(struct sockaddr_in *sin)$/;"	f
+source	arping.c	/^char *source;$/;"	v
+source	ping.c	/^struct sockaddr_in source;$/;"	v	typeref:struct:sockaddr_in
+source	ping6.c	/^struct sockaddr_in6 source;$/;"	v	typeref:struct:sockaddr_in6
+source	traceroute6.c	/^char *source = NULL;$/;"	v
+src	arping.c	/^struct in_addr src, dst;$/;"	v	typeref:struct:in_addr
+srcrt	ping6.c	/^struct cmsghdr *srcrt;$/;"	v	typeref:struct:cmsghdr
+start	arping.c	/^struct timeval start, last;$/;"	v	typeref:struct:timeval
+start_time	ping_common.c	/^struct timeval start_time, cur_time;$/;"	v	typeref:struct:timeval
+status	ping_common.c	/^void status(void)$/;"	f
+status_snapshot	ping_common.c	/^volatile int status_snapshot;$/;"	v
+support_multicast	rdisc.c	/^int support_multicast()$/;"	f
+synchnet	tftpsubs.c	/^int synchnet(int f)$/;"	f
+sysfs	arping.c	/^	struct sysfs_devattr_values *sysfs;$/;"	m	struct:device	typeref:struct:device::sysfs_devattr_values	file:
+sysfs_devattr_macaddr	arping.c	/^static int sysfs_devattr_macaddr(char *ptr, struct sysfs_devattr_values *v, unsigned int idx)$/;"	f	file:
+sysfs_devattr_ulong	arping.c	/^static int sysfs_devattr_ulong(char *ptr, struct sysfs_devattr_values *v, unsigned int idx,$/;"	f	file:
+sysfs_devattr_ulong_dec	arping.c	/^static int sysfs_devattr_ulong_dec(char *ptr, struct sysfs_devattr_values *v, unsigned int idx)$/;"	f	file:
+sysfs_devattr_ulong_hex	arping.c	/^static int sysfs_devattr_ulong_hex(char *ptr, struct sysfs_devattr_values *v, unsigned int idx)$/;"	f	file:
+sysfs_devattr_value	arping.c	/^union sysfs_devattr_value {$/;"	u	file:
+sysfs_devattr_values	arping.c	/^struct sysfs_devattr_values$/;"	s	file:
+sysfs_devattr_values_init	arping.c	/^static void sysfs_devattr_values_init(struct sysfs_devattr_values *v, int do_free)$/;"	f	file:
+sysfs_devattrs	arping.c	/^struct sysfs_devattrs {$/;"	s	file:
+sysfs_devattrs	arping.c	/^} sysfs_devattrs[SYSFS_DEVATTR_NUM] = {$/;"	v	typeref:struct:sysfs_devattrs
+table	rdisc.c	/^struct table *table;$/;"	v	typeref:struct:table
+table	rdisc.c	/^struct table {$/;"	s	file:
+target	arping.c	/^char *target;$/;"	v
+target	tracepath.c	/^struct sockaddr_in target;$/;"	v	typeref:struct:sockaddr_in
+target	tracepath6.c	/^struct sockaddr_storage target;$/;"	v	typeref:struct:sockaddr_storage
+targetlen	tracepath6.c	/^socklen_t targetlen;$/;"	v
+tclass	ping6.c	/^__u32 tclass;$/;"	v
+tftp	tftpd.c	/^void tftp(struct tftphdr *tp, int size)$/;"	f
+tftp_dir	rarpd.c	/^char *tftp_dir = "\/etc\/tftpboot";$/;"	v
+tftphdr	tftp.h	/^struct	tftphdr {$/;"	s
+th_block	tftp.h	62;"	d
+th_code	tftp.h	63;"	d
+th_data	tftp.h	/^	char	th_data[1];		\/* data or error string *\/$/;"	m	struct:tftphdr
+th_msg	tftp.h	65;"	d
+th_opcode	tftp.h	/^	short	th_opcode;		\/* packet type *\/$/;"	m	struct:tftphdr
+th_stuff	tftp.h	64;"	d
+th_u	tftp.h	/^	} th_u;$/;"	m	struct:tftphdr	typeref:union:tftphdr::__anon2
+timeout	arping.c	/^int timeout;$/;"	v
+timeout	tftpd.c	/^int	timeout;$/;"	v
+timeoutbuf	tftpd.c	/^jmp_buf	timeoutbuf;$/;"	v
+timer	rdisc.c	/^void timer()$/;"	f
+timer	tftpd.c	/^void timer(int signo)$/;"	f
+timing	ping_common.c	/^int timing;			\/* flag to do timing *\/$/;"	v
+tmax	ping_common.c	/^long tmax;			\/* maximum round trip time *\/$/;"	v
+tmin	ping_common.c	/^long tmin = LONG_MAX;		\/* minimum round trip time *\/$/;"	v
+trace	rdisc.c	/^int trace = 0;$/;"	v
+ts_type	ping.c	/^static int ts_type;$/;"	v	file:
+tsum	ping_common.c	/^long long tsum;			\/* sum of all times, for doing average *\/$/;"	v
+tsum2	ping_common.c	/^long long tsum2;$/;"	v
+ttl	ping_common.c	/^int ttl;$/;"	v
+ttl	tracepath.c	/^	__u32 ttl;$/;"	m	struct:probehdr	file:
+ttl	tracepath6.c	/^	__u32 ttl;$/;"	m	struct:probehdr	file:
+tu_block	tftp.h	/^		short	tu_block;	\/* block # *\/$/;"	m	union:tftphdr::__anon2
+tu_code	tftp.h	/^		short	tu_code;	\/* error code *\/$/;"	m	union:tftphdr::__anon2
+tu_stuff	tftp.h	/^		char	tu_stuff[1];	\/* request packet stuff *\/$/;"	m	union:tftphdr::__anon2
+tv	ping6.c	/^	struct timeval tv;$/;"	m	struct:__anon4	typeref:struct:__anon4::timeval	file:
+tv	tracepath.c	/^	struct timeval tv;$/;"	m	struct:probehdr	typeref:struct:probehdr::timeval	file:
+tv	tracepath6.c	/^	struct timeval tv;$/;"	m	struct:probehdr	typeref:struct:probehdr::timeval	file:
+tv	traceroute6.c	/^	struct timeval tv;$/;"	m	struct:pkt_format	typeref:struct:pkt_format::timeval	file:
+tvsub	ping_common.h	/^static inline void tvsub(struct timeval *out, struct timeval *in)$/;"	f
+tvsub	traceroute6.c	/^tvsub(out, in)$/;"	f
+tz	traceroute6.c	/^struct timezone tz;		\/* leftover *\/$/;"	v	typeref:struct:timezone
+uid	ping_common.c	/^int uid;$/;"	v
+ulong	arping.c	/^	unsigned long	ulong;$/;"	m	union:sysfs_devattr_value	file:
+unicasting	arping.c	/^int unicasting;$/;"	v
+unsolicited	arping.c	/^int dad, unsolicited, advert;$/;"	v
+update_interval	ping_common.c	/^static inline void update_interval(void)$/;"	f	file:
+usage	arping.c	/^void usage(void)$/;"	f
+usage	clockdiff.c	/^usage() {$/;"	f
+usage	ping.c	/^void usage(void)$/;"	f
+usage	ping6.c	/^void usage(void)$/;"	f
+usage	rarpd.c	/^void usage()$/;"	f
+usage	rdisc.c	/^const char usage[] =$/;"	v
+usage	tracepath.c	/^static void usage(void)$/;"	f	file:
+usage	tracepath6.c	/^static void usage(void)$/;"	f	file:
+usage	traceroute6.c	/^void usage(void)$/;"	f
+validate_access	tftpd.c	/^int validate_access(char *filename, int mode)$/;"	f
+value	arping.c	/^	union sysfs_devattr_value	value[SYSFS_DEVATTR_NUM];$/;"	m	struct:sysfs_devattr_values	typeref:union:sysfs_devattr_values::sysfs_devattr_value	file:
+verbose	rarpd.c	/^int verbose;$/;"	v
+verbose	rdisc.c	/^int verbose = 0;$/;"	v
+verbose	traceroute6.c	/^int verbose;$/;"	v
+w_init	tftpsubs.c	/^struct tftphdr *w_init() { return rw_init(0); }         \/* write-behind *\/$/;"	f
+wait_for_reply	traceroute6.c	/^wait_for_reply(sock, from, to, reset_timer)$/;"	f
+waittime	traceroute6.c	/^int waittime = 5;		\/* time to wait for response (in seconds) *\/$/;"	v
+whereto	ping.c	/^struct sockaddr_in whereto;	\/* who to ping *\/$/;"	v	typeref:struct:sockaddr_in
+whereto	ping6.c	/^struct sockaddr_in6 whereto;	\/* who to ping *\/$/;"	v	typeref:struct:sockaddr_in6
+whereto	rdisc.c	/^struct sockaddr_in whereto;\/* Address to send to *\/$/;"	v	typeref:struct:sockaddr_in
+whereto	traceroute6.c	/^struct sockaddr_in6 whereto;	\/* Who to try to reach *\/$/;"	v	typeref:struct:sockaddr_in6
+working_recverr	ping_common.c	/^int working_recverr;$/;"	v
+write_behind	tftpsubs.c	/^int write_behind(FILE *file, int convert)$/;"	f
+write_stdout	ping_common.h	/^static inline void write_stdout(const char *str, size_t len)$/;"	f
+writeit	tftpsubs.c	/^int writeit(FILE *file, struct tftphdr **dpp, int ct, int convert)$/;"	f

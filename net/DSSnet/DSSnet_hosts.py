@@ -2,12 +2,13 @@ class DSSnet_hosts:
     'class for meta process/IED info'
     p_id = 0
     
-    def __init__(self, msg, IED_id, command, ip):
+    def __init__(self, msg, IED_id, command, ip, pipe = True):
         self.properties= msg
         self.IED_id     = IED_id
         self.process_id= DSSnet_hosts.p_id
         self.command = command
         self.ip = ip
+        self.pipe = pipe
         DSSnet_hosts.p_id +=1
     
     def number_processes(self):

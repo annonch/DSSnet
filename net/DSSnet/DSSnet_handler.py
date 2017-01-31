@@ -5,9 +5,85 @@ import models.pipe
 
 # pre-processing events
 
+##################################
+
 import pipes
 
+def get_load_value(msg,net,hosts):
+    return msg
 
+def controllable_generator(msg,net,hosts):
+    return msg
+
+def controllable_load(msg,net,hosts):
+    return msg
+
+def storage(msg,net,hosts):
+    return msg
+
+def fault(msg,net,hosts):
+    return msg
+
+def monitor_0(msg,net,hosts):
+    return msg
+
+def monitor_1(msg,net,hosts):
+    return msg
+
+def get_load_value(msg,net,hosts):
+    return msg
+
+def get_gen_value(msg,net,hosts):
+    return msg
+
+###########
+
+
+def post_get_load_value(event,reply,net,hosts,pipes):
+    #print event
+    i = (event.split()[6])
+    value = reply
+    models.pipe.send_sync_event('%s \n'%value,pipes[i])
+    return reply
+
+def post_get_gen_value(event,reply,net,hosts,pipes):
+    #print event
+    i = (event.split()[6])
+    value = reply
+    models.pipe.send_sync_event('%s \n'%value,pipes[i])
+    return reply
+
+def post_controllable_generator(event,reply,net,hosts,pipes):
+    return reply
+
+def post_controllable_load(event,reply,net,hosts,pipes):
+    return reply
+
+def post_energyStorage(event,reply,net,hosts,pipes):
+    return reply
+
+def post_fault(event,reply,net,hosts,pipes):
+    return reply
+
+def post_monitor_0(event,reply,net,hosts,pipes):
+    i = (event.split()[6])
+    value = reply
+    models.pipe.send_sync_event('%s \n'%value,pipes[i])
+    return reply
+
+def post_monitor_1(event,reply,net,hosts,pipes):
+    i = (event.split()[6])
+    value = reply
+    models.pipe.send_sync_event('%s \n'%value,pipes[i])
+    return reply
+
+
+
+
+#################################33
+#              OLD
+#################################33
+'''
 def pre_gen(msg,net,hosts):
     return msg
 
@@ -18,6 +94,22 @@ def pre_pmu(msg,net,hosts):
     return msg
 
 
+
+def pre_link_down(msg,net, hosts):
+    a = msg[8]
+    b = msg[9]
+    print a
+    print b
+    print 'here we are'
+    net.configLinkStatus(a,b,'down')
+    return 0
+
+def pre_link_down(msg,net, hosts):
+    a = msg[8]
+    b = msg[9]
+    net.configLinkStatus(a,b,'down')
+    return 0
+
 # post processing events
 
 def post_load(event,reply,net,hosts,pipes):
@@ -27,8 +119,12 @@ def post_gen(event,reply,net,hosts,pipes):
     return reply
 
 def post_pmu(event,reply,net,hosts,pipes):
-    print event
-    print reply
+    return reply
+
+def post_link_down(event,reply,net,hosts,pipes):
+    return reply
+
+def post_link_up(event,reply,net,hosts,pipes):
     return reply
 
 #### smt
@@ -46,6 +142,7 @@ def post_load_report(event,reply,net,hosts,pipes):
     return reply
 
 def post_gen_report(event,reply,net,hosts,pipes):
+    print event
     i = (event.split()[6])
     value = reply
     models.pipe.send_sync_event('%s \n'%value,pipes[i])
@@ -72,3 +169,4 @@ def post_pmu(event, reply, net, hosts, pipes):
     print 'we did it!'
     return reply
     
+'''

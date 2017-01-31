@@ -1,5 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.ServiceModel/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.ServiceModel.dll.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.ServiceModel.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.ServiceModel/obj/Mono/GSF.ServiceModel.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.ServiceModel/obj/Mono/GSF.ServiceModel.dll.mdb

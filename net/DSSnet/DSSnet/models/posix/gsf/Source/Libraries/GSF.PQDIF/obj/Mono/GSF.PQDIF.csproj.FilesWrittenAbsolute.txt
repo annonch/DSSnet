@@ -1,5 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.PQDIF/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.PQDIF.dll.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.PQDIF.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.PQDIF/obj/Mono/GSF.PQDIF.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.PQDIF/obj/Mono/GSF.PQDIF.dll.mdb

@@ -1,5 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.PhasorProtocols/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.PhasorProtocols.dll.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.PhasorProtocols.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.PhasorProtocols/obj/Mono/GSF.PhasorProtocols.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.PhasorProtocols/obj/Mono/GSF.PhasorProtocols.dll.mdb

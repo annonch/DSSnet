@@ -1,8 +1,0 @@
-SetProp, 1E050,   -1E050, 1E050, -1E050, 16777215, 16777215, 0, 4
-Curve, 0, 0, 2, 0, 0, 1, " t(sec)"
-Curve, 0, 255, 2, 0, 0, 1, " VAngle1"
-Curve, 0, 16711680, 2, 0, 0, 1, " VAngle2"
-Xlabel, "Time, H"
-Ylabel, "Mag"
-ChartCaption, "mon_1:  V1,  V2,  V3"
-PctRim, 2

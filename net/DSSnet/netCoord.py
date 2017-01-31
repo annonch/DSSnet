@@ -13,7 +13,7 @@
 
 from mininet.topo import Topo, SingleSwitchTopo
 from mininet.net import Mininet
-from mininet.node import CPULimitedHost, Controller, OVSKernelSwitch, RemoteController, Host
+from mininet.node import CPULimitedHost, Controller, OVSKernelSwitch, RemoteController, Host, OVSBridge
 from mininet.cli import CLI
 from mininet.link import TCLink
 from mininet.util import irange, dumpNodeConnections, quietRun, specialClass
@@ -56,8 +56,6 @@ import onos
 COORD_PIPE = 'tmp/coordination.pipe'
 if not os.path.exists(COORD_PIPE):
     os.mkfifo(COORD_PIPE)
-
-MIN_PAUSE_INTERVAL = 0.05
 # parser
 
 parser = argparse.ArgumentParser(description= 'Manages network emulation and synchronizes with the power Coordinator.')
@@ -73,10 +71,55 @@ parser.add_argument('-onos','--onos', action='store_const', const=1, help='use o
 parser.add_argument('-nc','--numControllers', help='number of controllers for onos to use',default=3,type=int)
 parser.add_argument('-tm','--test_mode',help='test mode for debugging',default=0,type=int)
 parser.add_argument('-mpt',help='WARNING DO NOT CHANGE',default=0.05,type=float)
-parser.add_argument('-pause',action='store_const', const = 1,help='enable use of pause')
+parser.add_argument('-pause', help='enable use of pause',dest = 'pause',action='store_false')
+parser.add_argument('-logLevel','-ll',help = 'logging level: info warn error debug',default='info',type=str)
+parser.add_argument('-stp',help = 'use stp protocol on switches',dest = 'stp',action='store_true')
+parser.add_argument('-rstp',help = 'use rstp protocol on switches',dest = 'rstp',action='store_true')
+parser.add_argument('-ovs_pid_files',help='path to dir containing ovsdb-server.pid and ovs-vswitchd.pid',default='/usr/local/var/run/openvswitch/',type=str)
+parser.add_argument('-ovs_vt',help='enabling this flag removes ovs from vt', default = 'store_true', action='store_false',dest = 'ovs_vt')
+parser.add_argument('-tdf', help='time dilation factor',default = 1,type=int)
+parser.add_argument('-kern',help='kernel switch or user switch, default kernel',dest = 'kern',action='store_false',default='store_true')
 args = parser.parse_args()
+
+setLogLevel('info')
+
     
 logging.basicConfig(filename=args.sync_event_log,level=logging.WARNING)
+
+if args.kern:
+    print('kernel switch used')
+else:
+    print('user switch detected')
+
+if args.stp and args.onos:
+    warn("stp and onos enabled")
+
+if args.stp and args.onos:
+    warn("rstp and onos enabled")
+
+if args.stp and args.rstp:
+    error("stp and rstp can not both be enabled")
+    exit(1)
+
+if args.stp:
+    print('stp enabled')
+
+elif args.rstp:
+    print('rstp enabled')
+
+elif args.onos:
+    print('onos enabled')
+
+else:
+    print('custom controller')
+
+if args.ovs_vt:
+    print('ovs in virtual time')
+else:
+    print('ovs not in virtual time')
+
+MIN_PAUSE_INTERVAL = args.mpt
+
 
 # open transport layer to power coordinator
 # TCP socket
@@ -92,6 +135,44 @@ debug=1
 # Virtual time helpers
 
 pIDS=' '
+ovsdb_pid = ' '
+vswitchd_pid = ' '
+
+def ovs_dilate():
+    global pIDS, ovsdb_pid, vswitchd_pid
+    
+    filename= '%sovsdb-server.pid' % args.ovs_pid_files
+    
+    with open(filename, 'r') as ins:
+      fdata = [line.rstrip() for line in ins]
+      ovsdb_pid = fdata[0]
+      pIDS += ' %s' % fdata[0]
+      
+    filename= '%sovs-vswitchd.pid' % args.ovs_pid_files
+    with open(filename, 'r') as ins:
+        fdata = [line.rstrip() for line in ins]
+        vswitchd_pid = fdata[0]
+        pIDS += ' %s' %fdata[0]
+
+    cmd_str = 'dilate_all_procs -t %d -p %s %s ' % (args.tdf * 1000, vswitchd_pid, ovsdb_pid)
+    subprocess.check_output(cmd_str, shell=True)
+  
+def ovs_restore():
+    global ovsdb_pid, vswitchd_pid
+    filename= '%sovsdb-server.pid' % args.ovs_pid_files
+    print (filename)
+    with open(filename, 'r') as ins:
+        fdata = [line.rstrip() for line in ins]
+        ovsdb_pid = fdata[0]
+
+    filename= '%sovs-vswitchd.pid' % args.ovs_pid_files
+    with open(filename, 'r') as ins:
+        fdata = [line.rstrip() for line in ins]
+        vswitchd_pid = fdata[0]
+    
+    cmd_str = 'dilate_all_procs -t %d -p %s %s ' % (args.tdf * 0, vswitchd_pid, ovsdb_pid)
+    print cmd_str
+    subprocess.check_output(cmd_str, shell=True)
 
 def pidList(net):
     global pIDS
@@ -113,39 +194,40 @@ def pidList(net):
 
     print ('pids in virtual time: %s' % pIDS)
 
-
-def setupPause():
-    global pIDS, fh
-    #open listener
-    '''
-    pross = 'sudo /home/vagrant/virtual/VirtualTimeKernel/test_virtual_time/freeze_listen %s' % pIDS
-    argss = shlex.split(pross)
-    subprocess.Popen(argss)
-    
-    filename = '/tmp/fifo.tmp'
-    fh=open(filename,"w",0)
-    '''
 #
 #  Interface to virtual time
 #
     
 def pause ():
-    global net
+    global net,controlNetwork
     if args.pause:
-        #fh.write('p')
         net.freezeEmulation()
+        if args.onos:
+            controlNetwork.net.freezeEmulation()
+        if args.ovs_vt:
+            cmd_str= 'freeze_all_procs -p %s %s -f' % (ovsdb_pid ,vswitchd_pid)
+            subprocess.check_output(cmd_str, shell=True)
         if debug:
             before_time = time.time()
             if args.test_mode >2:
                 print('pause time: %s'%before_time)
             logging.info('pause time: %s'%before_time)
-    
+
+def resume_ovs(): 
+    cmd_str= 'freeze_all_procs -p %s %s -u' % (ovsdb_pid ,vswitchd_pid)
+    subprocess.check_output(cmd_str, shell=True)
+
+
 def resume ():
     global net
     if args.pause:
         net.freezeEmulation('unfreeze')
-        #fh.write('u')
+        if args.onos:
+            controlNetwork.net.freezeEmulation('unfreeze')
+        if args.ovs_vt:
+            resume_ovs()
         time.sleep(MIN_PAUSE_INTERVAL)
+
         if debug:
             before_time = time.time()
             if args.test_mode >2:
@@ -189,7 +271,7 @@ def pipe_listen (net):
             heapq.heappush(eventQueue,
                            DSSnet_events.Events(newEvent,event[5]))
             
-                        
+previous_time = -10.0 # some inconsistencies at the ms level
             
 def static_vars(**kwargs):
     def decorate(func):
@@ -200,13 +282,18 @@ def static_vars(**kwargs):
 
 @static_vars(beginning_of_time = -10.0) # just use arbitrary negative value
 def adjust_time(event):
+    global previous_time
     old_GToD = event[5]
     if adjust_time.beginning_of_time < 0.0:
         adjust_time.beginning_of_time = float(event[5])
         event[5] = str(0.00001)# very small because 0 breaks things 
     else:
-        event[5] = str(float(event[5]) - float(adjust_time.beginning_of_time))
-    
+        new_time = float(event[5]) - float(adjust_time.beginning_of_time)
+        if new_time < previous_time:
+            event[5] = str(previous_time)
+        else:
+            event[5] = str(new_time)
+    previous_time = float(event[5])
     #debugging virtual time
     if args.test_mode > 2:
         print('wall clock GToD: %s VT GToD: %s adjusted time: %s beginning of time %s'%(time.time(),old_GToD,event[5],adjust_time.beginning_of_time))
@@ -214,6 +301,19 @@ def adjust_time(event):
     logging.debug('wall clock GToD: %s VT GToD: %s adjusted time: %s beginning of time %s'%(time.time(),old_GToD,event[5],adjust_time.beginning_of_time))
     
     return event
+
+
+
+
+'''
+sync pulls an event from the event heap 
+it runs the preprocessing function (user defined)
+and sends the event to the power coordinator (if required)
+lastly it creates a new thread to handle the post processing
+
+rinse and repeat
+'''
+
 
 def sync():
     global eventQueue
@@ -230,22 +330,45 @@ def sync():
             
             logging.warning('event beginning %f' % time.time())
             logging.info('event being processed: %s' % event)
+            
+
+            if event[2] == 'n':
+                print 'test'
+                x = net.configLinkStatus('s1','s2','down')
+                print 'test finished?'
             try:
                 preprocess=getattr(handler,event[3])
                 processed_event=preprocess(event,net,hosts)
             except AttributeError:
                 print('pre-process error: %s' % newEvent)
                 logging.info('pre-process error with event request %s' % newEvent)
-        
-            with com_lock: # mutual exclusivity is required with com (shouldnt be a problem)
-                reply = do_com(processed_event)
+            
+            # check destination of event (power or network)
+            # if power sent to power coord.
+            if event[2] == 'p':             
+                with com_lock: # mutual exclusivity is required with com (shouldnt be a problem)
+                    reply = do_com(processed_event)
+            
+            if event[2] == 'n':
+                if args.test_mode > 1:
+                    print('network event detected in DSSnet %s ' % newEvent)
+                reply = processed_event
 
+            if args.test_mode >2:
+                print (reply)
             thread.start_new_thread(postProcess,(reply,newEvent))
-            #logging.warning('finish time: %s'%time.time())
-    
+            
         except (IndexError, AttributeError):
             # no event in Queue
             pass
+
+'''
+
+Post processing will run the post process handler 
+ it also manages the resume interface if active blocking events
+Then it dies :(
+
+'''
     
 def postProcess(reply,newEvent):
     global net,hosts,num_block,pipes
@@ -257,8 +380,6 @@ def postProcess(reply,newEvent):
         print('post process error:  %s' % newEvent)
         logging.info('post process error with event request: %s' % newEvent)
 
-    #models.pipe.send_sync('hi',pipes['h1'])
-    
     if event[1] == 'b':
         num_block -= 1
         if num_block == 0:
@@ -267,6 +388,12 @@ def postProcess(reply,newEvent):
     thread.exit()
 
     
+''' 
+
+do_com just sends the event to the power coordinator
+
+'''
+
 def do_com(req):
     #request is a list turn to string
     request = ' '.join(req)
@@ -278,6 +405,13 @@ def do_com(req):
     return data
 
 hosts = []
+
+'''
+
+This class reasds the IED configuration from file (user defined)
+creates the network topology
+
+'''
 
 class topo(Topo):
     "creates topology"
@@ -292,8 +426,13 @@ class topo(Topo):
                     # expecting a dssnet_host object format
                     properties = line.split(' split ') # wont interfere with command 
                     # msg id command
-                    hosts.append(DSSnet_hosts.DSSnet_hosts(properties[1], properties[0], properties[3], properties[2]))
-                    thost = self.addHost(properties[0])
+                    try:
+                        hosts.append(DSSnet_hosts.DSSnet_hosts(properties[1], properties[0], properties[3], properties[2],properties[4]))
+                        thost = self.addHost(properties[0])
+                    except IndexError:
+                        print 'no pipe info given'
+                        hosts.append(DSSnet_hosts.DSSnet_hosts(properties[1], properties[0], properties[3], properties[2]))
+                        thost = self.addHost(properties[0])
                     
         with open(args.topo_config, 'r') as ins:
             for line in ins:
@@ -301,26 +440,87 @@ class topo(Topo):
                     
                     elements = line.split()
                     if elements[0] == 'new' :
-                        self.addSwitch(elements[1])
+                        if args.stp:
+                            self.addSwitch(elements[1],failMode='standalone',stp=1)
+                        elif args.rstp:
+                            self.addSwitch(elements[1],failMode='standalone',rstp=1)
+                        else:
+                            if args.kern:
+                                self.addSwitch(elements[1])
+                            else:
+                                self.addSwitch(elements[1],switch='user')
                     else:
                         self.addLink(elements[0],elements[1])#,elements[2])
 
 pipes={}
                 
+'''
+
+setup pipes reads creates a pipe to each host so that the 
+
+'''
+
 def setup_pipes(net):
     global host
     global pipes
 
     for i in hosts:
+        if i.pipe:
+            fn = './tmp/%s' % i.get_host_name()
+            print 'creating pipe: %s '%fn
+            if not os.path.exists(fn):
+                os.mkfifo(fn)
+            pipes[i.get_host_name()] = os.open(fn,os.O_WRONLY)
 
-        fn = './tmp/%s' % i.get_host_name()
 
-        print 'creating pipe: %s '%fn
+#################### EXPeriment ################
 
-        if not os.path.exists(fn):
-            os.mkfifo(fn)
-        pipes[i.get_host_name()] = os.open(fn,os.O_WRONLY)
+def link_up_down(i,s1,s2):
+    if i:
+        print('%s %s down')
+        net.configLinkStatus(s1, s2, 'down')
+    else:
+        print('%s %s up')
+        net.configLinkStatus(s1, s2, 'up')
+        
+def pause_unpause(interval,inc,s1,s2):
+    count=30
 
+    while 1:
+        count+=inc
+        if count % 60 == 0 :
+            if count % 120 == 0:
+                link_up_down(0,s1,s2)
+            else:
+                link_up_down(1,s1,s2)
+
+        time.sleep(interval)
+        if args.test_mode >= 3:
+            pause()
+        time.sleep(interval)
+        if args.test_mode >= 3:
+            resume()
+
+def custom_ping(interval=0.015):
+    count=0
+    while 1:
+        count +=1
+        if count % 2 == 0:
+            print "pausing"
+            pause()
+        else:
+            print "resuming"
+            resume()
+        time.sleep(interval)
+
+def add_vt(line):
+    global pIDS
+    print 'adding to virtual time'
+    pIDS += 'line '
+
+# use with tm 10 and loop topo
+
+################################################
 
 
 def run_main():
@@ -332,39 +532,47 @@ def run_main():
         controlNetwork = onos.ONOSCluster('c0', args.numControllers)
         net = Mininet(top,
                       controller=[ controlNetwork],
-                      switch=onos.ONOSOVSSwitch )
+                      switch=onos.ONOSOVSSwitch)#, failMode = 'standalone' )
     else:
         net = Mininet(top, link = TCLink)
     
+    # if we call ovs dilate first maybe the threads will be in vt
+    if args.ovs_vt:
+        ovs_dilate()
     net.start()
-
-    # set IP
-    '''
-    for i in hosts:
-        net.get(i.get_host_name()).cmd('ifconfig %s-eth0 %s' % (i.get_host_name(), i.get_ip()))
-        print('ifconfig %s-eth0 %s' % (i.get_host_name(), i.get_ip()))
-    '''
-
+    if args.ovs_vt:
+        ovs_dilate()
+    if args.onos:
+        pass
+    #fix
+    #net.dilateEmulation(1,0) # param 1 is tdf param 2 is if we should dilate controller 
+    #net.dilateEmulation(1,0)
+    
+    # set IPs in hosts
     for i in hosts:
         net.get(i.get_host_name()).setIP(i.get_ip())
-    
-
     
     print('Dumping Host Connections')
     dumpNodeConnections(net.hosts)
 
-    net.waitConnected()
+    #net.waitConnected()
 
     pidList(net)
-    setupPause()
-    time.sleep(1)
-
-
+ 
     global startTime
     startTime = time.time()
-    print('initiation finished')
-    
+    print('initiation finished')  
+
     CLI(net)
+
+''' 
+The IED configuration file dictates what command each host should run on startup
+
+tm (test mode) 4 or greater will not call start processes -- this is for debugging purposes. 
+find more in the debug document
+
+'''
+
 
 def start_processes(net):
     # start commands
@@ -378,17 +586,22 @@ def start_processes(net):
 
     if os.fork():
         pipe_listen(net)
-    
+
 
 if args.onos:
     OldCLI=onos.CLI
 else:
     OldCLI=CLI
 
+'''
+This class extends the Mininet CLI
+
+'''
+
 class DSSnetCLI( OldCLI ):
     "CLI extensions for DSSnet"
 
-    prompt = '[%s] DSSnet -->  ' % time.time()
+    prompt = 'DSSnet -->  ' 
     
     def __init__( self,net, **kwargs ):
         OldCLI.__init__( self,net, **kwargs )
@@ -407,21 +620,49 @@ class DSSnetCLI( OldCLI ):
 
     def do_setup_pipes(self, line):
         setup_pipes(net)
-    '''
+    
+    def do_show_freeze(self, line):
+        net.showFreezeStatus()
+
+    def do_show_dilation(self, line):
+        net.showDilation()
+    
     def do_exit(self, line):
-        pause()
+        ovs_restore()
         result = subprocess.Popen('./clean.sh')
         exit()
-    '''
+    
+    def do_pause_unpause(self, line):
+        l=line.split(' ')
+        print l
+        if args.test_mode < 4:
+            pause_unpause(1,1,l[0],l[1])
+        else: 
+            pause_unpause(1,2,l[0],l[1])
+    
+    def do_custom_ping(self, line):
+        custom_ping(float(line))
+
+    def do_add_vt(self, line):
+        add_vt(line)
+
+###########################
 
 CLI = DSSnetCLI
 
 if __name__ == '__main__':
-    
-    setLogLevel('info')
+    # in case we died in a bad state
+    ovs_restore()
+    resume_ovs()
+
+    setLogLevel = args.logLevel
     if args.c:
+        ovs_restore()
         result = subprocess.Popen('./clean.sh')
         exit()
     run_main()
 
 # fin
+
+
+

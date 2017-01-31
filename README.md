@@ -1,10 +1,10 @@
 # DSSnet #
 
 ### Requirements for installation: ###
-* Ubuntu / Debian ( Debian >> Ubuntu ) probably will work on windows and osx.. (not tested yet)
+* Ubuntu / Debian probably will work on windows and osx.. (not tested yet)
 * Vagrant
 * Virtual-box 
-* Windows VM 
+* Windows (VM) 
 
 ###  Use  ###
 * DSSnet combines a power grid simulator (OpenDSS) with a SDN emulator (mininet). The software is designed to get high fidelity results of smart grid networks that require both communication and power. 
@@ -12,13 +12,14 @@
 
 ## How do I get set up? ##
 
-### two ways to set up the network emulation (use the fast version) ###
+### Navigate to /net/ ###
 
 #### Set up the network emulation ####
 * get this repository
-* navigate to LINUX-FAST/
+* navigate to /net/LINUX-VM/
 * run vagrant up
 * may take a while to download image
+* Seriously it may take quite a while
 * If the message 
  ```
  default: SSH address: 127.0.0.1:2222
@@ -33,22 +34,6 @@
 * this is some problem because of the re-packaging just ctrl+c and ignore
 * run vagrant ssh to log in. if it prompts for password use `vagrant`
 * see vagrant docs for more info on vagrant (other useful commands vagrant destroy and vagrant halt)
-
-#### I want to build everything the long way (everything will be very updated) ####
-* navigate to LINUX-SLOW/
-* run vagrant up (this takes about 2-3 hours more or less depending on Internet and processor)
-* vagrant ssh
-* sudo reboot (IMPORTANT - we have recompiled the kernel with the latest virtual time kernel)
-* wait 60 seconds
-* vagrant ssh - now everything is setup
-* go to virtual/VirtualTimeKernel/test_virtual_time/
-* run `sudo make`
-* run `sudo make install`
-* run `sudo make install`
-* go to virtual/VirtualTimeKernel/mininet 
-* run `sudo make`
-* run `sudo make install`
-* run `sudo make install`
 
 #### Setup Windows ####
 * Get windows VM (win 7 onwards)
@@ -107,7 +92,6 @@ update b p pre_pmu post_pmu 1465928573.14 a1 0
 * This tests the blocking and non-blocking queues and verifies connectivity to the simulation. 
 * __always start the power coordinator first__
 * the numbers returned are time and the pmu raw measurements
-
 
 ### Moving Forward ###
 * now that the code is working you can start by creating the DSS circuit.

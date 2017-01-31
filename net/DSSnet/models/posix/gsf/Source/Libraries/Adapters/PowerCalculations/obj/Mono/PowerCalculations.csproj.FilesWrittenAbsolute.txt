@@ -1,5 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/PowerCalculations/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/PowerCalculations.dll.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/PowerCalculations.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/PowerCalculations/obj/Mono/PowerCalculations.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/Adapters/PowerCalculations/obj/Mono/PowerCalculations.dll.mdb

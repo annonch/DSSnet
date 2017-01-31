@@ -1,8 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Tools/ConfigEditor/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Tools/ConfigEditor/obj/Mono/ConfigEditor.Main.resources
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Tools/ConfigEditor/obj/Mono/ConfigEditor.Properties.Resources.resources
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Tools/ConfigEditor/ConfigEditor.exe.config
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Tools/ConfigEditor/ConfigEditor.exe.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Tools/ConfigEditor/ConfigEditor.exe
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Tools/ConfigEditor/obj/Mono/ConfigEditor.exe
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Tools/ConfigEditor/obj/Mono/ConfigEditor.exe.mdb

@@ -1,5 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.SELEventParser/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.SELEventParser.dll.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.SELEventParser.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.SELEventParser/obj/Mono/GSF.SELEventParser.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.SELEventParser/obj/Mono/GSF.SELEventParser.dll.mdb

@@ -11,7 +11,6 @@ import zmq
 import os
 import logging
 
-
 TIME_INT = 0.1
 
 Load_ID = sys.argv[1]
@@ -43,23 +42,13 @@ def get_val():
     update = 'update b p pre_load_report post_load_report %s %s 0\n' %(time.time(),Load_ID)
     pipe.send_sync_event(update.encode('UTF-8'), pipin)
 
-# scheduler function
-def do_every(interval, worker_func, iterations = 0):
-    if iterations !=1:
-        threading.Timer (
-            interval,
-            do_every, [interval, worker_func, 0 if iterations == 0 else iterations-1]
-        ).start();
-    worker_func();
-
-do_every(TIME_INT,get_val)
-
-logging.debug('starting')
-
 while 1:
-    # listen to response and send to cc
+    time.sleep(TIME_INT)
+    get_val()
+
     x = pipe.listen(pipeout)
     
     if x:
         logging.debug(x)
         send_cc(x)
+

@@ -1,7 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.TimeSeries/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.TimeSeries/obj/Mono/GSF.TimeSeries.DebugHostBase.resources
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.TimeSeries/obj/Mono/GSF.TimeSeries.ServiceHostBase.resources
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.TimeSeries.dll.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.TimeSeries.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.TimeSeries/obj/Mono/GSF.TimeSeries.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.TimeSeries/obj/Mono/GSF.TimeSeries.dll.mdb

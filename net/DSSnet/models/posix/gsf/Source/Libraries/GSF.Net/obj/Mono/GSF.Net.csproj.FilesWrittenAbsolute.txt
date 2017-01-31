@@ -1,7 +1,0 @@
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Net/obj/Mono/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Net/obj/Mono/GSF.Net.Ftp.FtpClient.bmp
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Net/obj/Mono/GSF.Net.Ftp.FtpFileWatcher.bmp
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Net.dll.mdb
-/home/solo/Projects/Self-healPMU/posix/gsf/Build/Output/Mono/Libraries/GSF.Net.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Net/obj/Mono/GSF.Net.dll
-/home/solo/Projects/Self-healPMU/posix/gsf/Source/Libraries/GSF.Net/obj/Mono/GSF.Net.dll.mdb
