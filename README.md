@@ -90,48 +90,164 @@ optional arguments:
 ```
 ### Linux TEST ###
 #### test ####
+* navigate to  C:\DSS\DSSnet\dss on windows
+* run `python powerCoord.py -ip x.x.x.x whatever the ip of your win vm is
 * navigate to  ~/DSSnet/net/DSSnet/ on linux
 * run `sudo python netCoord.py -ip x.x.x.x whatever the ip of your win vm is
 * You should see 
+
 ```
+ sudo ./netCoord.py 
+kernel switch used
+custom controller
+ovs in virtual time
 Opening Connection to tcp://10.47.142.26:50021
+/usr/local/var/run/openvswitch/ovsdb-server.pid
+dilate_all_procs -t 0 -p 1184 1182 
+no pipe info given
+no pipe info given
+no pipe info given
+no pipe info given
+no pipe info given
+no pipe info given
 *** Creating network
 *** Adding controller
 *** Adding hosts:
-h1 h2 
+estest f1 gtest1 ltest1 mtest1 mtest2 
 *** Adding switches:
-s1 s2 
+s1 s2 s3 s4 s5 s6 
 *** Adding links:
-(s1, h1) (s1, s2) (s2, h2) 
+(s1, ltest1) (s1, s2) (s2, gtest1) (s2, s3) (s3, estest) (s3, s4) (s4, mtest1) (s4, s5) (s5, f1) (s5, mtest2) (s5, s6) 
 *** Configuring hosts
-h1 h2 
+estest f1 gtest1 ltest1 mtest1 mtest2 
 *** Starting controller
 c0 
-*** Starting 2 switches
-s1 s2 ...
+*** Starting 6 switches
+s1 s2 s3 s4 s5 s6 ...
 Dumping Host Connections
-h1 h1-eth0:s1-eth2
-h2 h2-eth0:s2-eth2
-pids in virtual time:   24230 24232 24237 24240 24223
-python ./models/testModelNoBlocking.py h1 &
-
-python ./models/testModelBlocking.py h2 &
-creating pipe: ./tmp/h1 
-creating pipe: ./tmp/h2 
+estest estest-eth0:s3-eth3
+f1 f1-eth0:s5-eth4
+gtest1 gtest1-eth0:s2-eth3
+ltest1 ltest1-eth0:s1-eth2
+mtest1 mtest1-eth0:s4-eth3
+mtest2 mtest2-eth0:s5-eth3
+pids in virtual time:   1182 1184 1182 1184 19783 19785 19787 19789 19791 19793 19798 19801 19804 19807 19810 19813 19776
 initiation finished
 *** Starting CLI:
-mininet> 
 ```
-* basically you should then see in 10 seconds 
+
+* At this point type `start`
+
 ```
-update n p pre_pmu post_pmu 1465928573.14 a1 0
-update b p pre_pmu post_pmu 1465928573.14 a1 0
-update n p pre_pmu post_pmu 1465928573.14 a1 0
-407202 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85
-update b p pre_pmu post_pmu 1465928573.14 a1 0
-407202 7199 0 7199 -120 7199 119 334 -35 331 -154 341 85
+DSSnet -->  start
+sudo python ./models/test/load.py ltest1 &
+
+sudo python ./models/test/gen.py gtest1 &
+
+sudo python ./models/test/es.py estest &
+
+sudo python ./models/test/mon0.py mtest1 &
+
+sudo python ./models/test/mon1.py mtest2 &
+
+sudo python ./models/test/fault.py f1 &
+
+creating pipe: ./tmp/ltest1 
+creating pipe: ./tmp/gtest1 
+creating pipe: ./tmp/estest 
+creating pipe: ./tmp/mtest1 
+creating pipe: ./tmp/mtest2 
+creating pipe: ./tmp/f1 
+DSSnet -->  update b p storage post_storage 1485976509.54 estest 3 1950 2050 -500
+update n p fault post_fault 1485976509.73 f1 3 1 b24 a
+update n p controllable_generator post_controllable_generator 1485976509.73 gtest1 1 1.5
+update b p monitor_0 post_monitor_0 1485976509.93 mtest1 0 
+update b p monitor_1 post_monitor_1 1485976510.08 mtest2 0 
+update n p controllable_load post_controllable_load 1485976510.23 ltest1 1 10700
+update n p controllable_generator post_controllable_generator 1485976510.74 gtest1 1 1.5
+update b p monitor_0 post_monitor_0 1485976511.14 mtest1 0 
+update b p monitor_1 post_monitor_1 1485976511.44 mtest2 0 
+update n p controllable_load post_controllable_load 1485976511.74 ltest1 1 10700
+update n p controllable_generator post_controllable_generator 1485976511.74 gtest1 1 1.5
+update b p monitor_0 post_monitor_0 1485976512.34 mtest1 0 
+update n p controllable_generator post_controllable_generator 1485976512.74 gtest1 1 1.5
+update b p monitor_1 post_monitor_1 1485976512.8 mtest2 0 
+update n p controllable_load post_controllable_load 1485976513.24 ltest1 1 10700
+update b p monitor_0 post_monitor_0 1485976513.55 mtest1 0 
+update n p controllable_generator post_controllable_generator 1485976513.74 gtest1 1 1.5
+update b p monitor_1 post_monitor_1 1485976514.15 mtest2 0 
+update n p controllable_load post_controllable_load 1485976514.74 ltest1 1 10700
+update n p controllable_generator post_controllable_generator 1485976514.74 gtest1 1 1.5
+update b p monitor_0 post_monitor_0 1485976514.75 mtest1 0 
+update b p monitor_1 post_monitor_1 1485976515.51 mtest2 0 
+update n p controllable_generator post_controllable_generator 1485976515.74 gtest1 1 1.5
+update b p monitor_0 post_monitor_0 1485976515.96 mtest1 0 
+update n p controllable_load post_controllable_load 1485976516.24 ltest1 1 10700
+update n p controllable_generator post_controllable_generator 1485976516.74 gtest1 1 1.5
+update b p monitor_1 post_monitor_1 1485976516.86 mtest2 0 
+update b p monitor_0 post_monitor_0 1485976517.17 mtest1 0 
+update n p controllable_load post_controllable_load 1485976517.74 ltest1 1 10700
+update n p controllable_generator post_controllable_generator 1485976517.74 gtest1 1 1.5
+update b p monitor_1 post_monitor_1 1485976518.22 mtest2 0 
+update b p monitor_0 post_monitor_0 1485976518.37 mtest1 0 
+update n p controllable_generator post_controllable_generator 1485976518.74 gtest1 1 1.5
+update n p controllable_load post_controllable_load 1485976519.24 ltest1 1 10700
+update b p monitor_1 post_monitor_1 1485976519.58 mtest2 0 
+update b p monitor_0 post_monitor_0 1485976519.59 mtest1 0 
 ``` 
-* what this is doing is setting up a IEEE 4 bus system and with a monitor on line one at bus 1 acting as a pmu
+
+* I hit ctrl + c and then type exit to gracefully exit the DSSnet program ( See FAQ )
+```
+Interrupt
+
+Interrupt
+DSSnet -->  DSSnet -->  exit
+/usr/local/var/run/openvswitch/ovsdb-server.pid
+dilate_all_procs -t 0 -p 1184 1182 
+vagrant@coursera-sdn:~/DSSnet/net/DSSnet$ /usr/bin/java: No such file or directory
+rm: cannot remove ‘/tmp/fifo.tmp’: No such file or directory
+rm: cannot remove ‘*~’: No such file or directory
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_core lt-nox_core ovs-openflowd ovs-controller udpbwtest mnexec ivs 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_core lt-nox_core ovs-openflowd ovs-controller udpbwtest mnexec ivs 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+2017-02-01T19:22:01Z|00001|fatal_signal|WARN|terminating with signal 14 (Alarm clock)
+Alarm clock
+ovs-vsctl --timeout=1 list-br
+2017-02-01T19:22:02Z|00001|fatal_signal|WARN|terminating with signal 14 (Alarm clock)
+Alarm clock
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+( ip link del s1-eth2;ip link del s2-eth1;ip link del s1-eth1;ip link del s2-eth3;ip link del s3-eth1;ip link del s2-eth2;ip link del s3-eth3;ip link del s4-eth1;ip link del s3-eth2;ip link del s4-eth3;ip link del s5-eth1;ip link del s4-eth2;ip link del s5-eth4;ip link del s5-eth3;ip link del s6-eth1;ip link del s5-eth2 ) 2> /dev/null
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ good to go! 
+
+vagrant@coursera-sdn:~/DSSnet/net/DSSnet$ 
+```
+
+* your exact output may be different but this tests the current supported models
+* controllable load
+* controllable generator
+* controllable energy storage (negative value for charge) 
+* monitors 0 and 1
+* fault
+* 
+* The network coordinator will keep running indefinetely. the `-et` option on the power coordinator stops the power coordinator at a set time and then exports whatever monitors were registered in the IED file. (default 2 seconds)
+
 * This tests the blocking and non-blocking queues and verifies connectivity to the simulation. 
 * __always start the power coordinator first__
 * the numbers returned are time and the pmu raw measurements
@@ -139,7 +255,7 @@ update b p pre_pmu post_pmu 1465928573.14 a1 0
 ## Known Issues ##
 * In windows: IED file, and the load / generator 'loadshape' files are placed in C:\\DSS\DSSnet\dss\ So copy paste accordingly.
 * In windows: the monitors that are exported need to be moved or they will be overwritten by subsequent experiments automatically
-
+* when the 
 ### Moving Forward ###
 * now that the code is working you can start by creating the DSS circuit.
 * create an entry for each IED (controllable load/generator/es/etc) in the IED configuration file in windows. Note IED file items are ones such that will be updated via the network coordinator.
@@ -170,9 +286,16 @@ To seek help, and feature requests:
 #### Sync Event Format ####
 
 * space delimited
-* `update b/nb destination(n/p) preprocessing_handler post_handler time hostID NumFields(n) f(1) f(2) ... f(n) `
-* ex.:  `update nb p pow_default post_d 10.02341 Load101 1 50` Change value of load 101 to 50 kW
-* ex.:  `update b p pow_default post_d 10.05683 PDC1001 5 PMU101 PMU102 PMU103 PMU1004 PMU1005` Request values of PMUs
+* `update b/n destination(n/p) preprocessing_handler post_handler time hostID NumFields(n) f(1) f(2) ... f(n) `
+* examples:
+* update b p controllable_generator post_controllable_generator  0.1 gtest1 1 1.5
+* update b p controllable_load post_controllable_load 0.2 ltest1 1 10700
+* update b p monitor_0 post_monitor_0 0.45 mtest1 0
+* update b p monitor_1 post_monitor_1 0.82 mtest2 0
+* update b p storage post_storage 1.06 estest 3 1950 2050 -500
+* update b p monitor_0 post_monitor_0 1.2 mtest1 0
+* update b p monitor_1 post_monitor_1 1.4 mtest2 0
+* update b p fault post_fault 1.6 f1 3 1 B24 a   
 
 
 ### IED Models ###
@@ -184,11 +307,9 @@ To seek help, and feature requests:
 * the name of the pipe is `./tmp/hostid.pipe`
 
 #### Existing Models ####
-
-none 
-
+TODO
 ## Files ##
-
+TODO
 ### IPC ###
 
 * `pipe.py`
@@ -217,11 +338,11 @@ todo - add more description
 * field 3 is the assigned ip address
 * field 4 is the startup command for the host - can use && |& ; etc
 * keyword split is used to deliminate the field
-
+* TODO use better config formats
 
 #### format ####
 * id split msg split ip split command
-* `PMU101 split PMU split 1.2.3.4 split python pmu.py 101 pdc5 1.4.2.5 pmu101 > log.txt
+* `PMU101 split PMU split 1.2.3.4 split python pmu.py 101 pdc5 1.4.2.5 pmu101 > log.txt`
 
 ### topo config ###
 * defines switches links and linkops
@@ -232,7 +353,13 @@ todo - add more description
 
 ## FAQ ##
 
-Common problem: dont forget the `&` so that the process on hosts run in background.
+1.) Freezes upon starting host processes   
+ans:  Common problem: dont forget the `&` so that the process on hosts run in background.      
+2.) netCoord.py appears black after typeing exit    
+ans: poor thread management. hit ctrl + c and probably will experience issue 3  
+3.) after exiting netCoord.py I can not see cursor ( or typing text in terminal) anymore  
+ans:  hit ctrl + c in terminal window then type `sudo netCoord.py -c`    
+
 
 ## Troubleshooting ##
 
