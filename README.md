@@ -256,6 +256,12 @@ vagrant@coursera-sdn:~/DSSnet/net/DSSnet$
 * In windows: IED file, and the load / generator 'loadshape' files are placed in C:\\DSS\DSSnet\dss\ So copy paste accordingly.
 * In windows: the monitors that are exported need to be moved or they will be overwritten by subsequent experiments automatically
 * when the 
+
+## UTILITIES ##
+* htop - utilizes vt information on processes
+type `sudo -E htop` or just `htop` in non sudo permissions to view interesting stuff
+* `ps fj` is a nice formated output to verify models are running
+
 ### Moving Forward ###
 * now that the code is working you can start by creating the DSS circuit.
 * create an entry for each IED (controllable load/generator/es/etc) in the IED configuration file in windows. Note IED file items are ones such that will be updated via the network coordinator.
