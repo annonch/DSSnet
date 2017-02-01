@@ -59,7 +59,7 @@ def post_controllable_generator(event,reply,net,hosts,pipes):
 def post_controllable_load(event,reply,net,hosts,pipes):
     return reply
 
-def post_energyStorage(event,reply,net,hosts,pipes):
+def post_storage(event,reply,net,hosts,pipes):
     return reply
 
 def post_fault(event,reply,net,hosts,pipes):
