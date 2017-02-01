@@ -9,7 +9,7 @@ import math
 Gen_files = []
 Load_files = []
 
-with open('C:\DSS\DSSnet\dss\/test\IED.config','r') as ins:
+with open('C:\DSS\DSSnet\dss\IED.config','r') as ins:
 		for line in ins:
 			lin = line.split()
 			if lin[0] == 'load':
@@ -140,7 +140,7 @@ def readfiles(files):
     data={}
     for f in files:
     	data[f.split('.')[0]]=readfile(f)
-
+       
     return data
 
 @static_vars(data=readfiles(Gen_files))

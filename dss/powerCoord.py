@@ -31,7 +31,7 @@ parser.add_argument('-trace',
 parser.add_argument('-trace_file', help = 'location for trace file',
                         default ='C:\DSS\DSSnet\dss/test\synch.config', type=str  )
 parser.add_argument('--version', action='version',
-                        version='DSSnet 2.2')
+                        version='DSSnet 3.0')
 parser.add_argument('-ip', help='ip of power coordinator',
                         default='216.47.152.23',type=str)
 parser.add_argument('-port', help='port reserved for power coordinator',
@@ -43,7 +43,7 @@ parser.add_argument('-cf','--circuit_filename', help='path to main circuit file'
 parser.add_argument('-ts','--timestep', help='resolution of time step',
                         default=0.001,type=float)
 parser.add_argument('-et', help='time the experiment should end',
-                        default=10.0,type=float)
+                        default=2.0,type=float)
 parser.add_argument('-mode', help='mode the simulator should be ran in: "Snap", "Duty", "Harmonics", "Direct","Dynamics": default is duty ', 
                         default = 'duty',type=str)
 parser.add_argument('-mode_number','-mn', 

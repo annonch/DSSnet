@@ -24,10 +24,11 @@ def controllable_generator(circuit,engine,args,line):
 
 # monitor name passed as arg
 def monitor_0(circuit,engine,args,line):
-	return dss.get_monitor_mode_0(engine,circuit,line[8])	
+	#print(line)
+	return dss.get_monitor_mode_0(engine,circuit,line[6])	
 	
 def monitor_1(circuit,engine,args,line):
-	return dss.get_monitor_mode_1(engine,circuit,line[8])	
+	return dss.get_monitor_mode_1(engine,circuit,line[6])	
 	
 def storage(circuit,engine,args,line):
 	return dss.energyStorage(engine,line[6],line[8],line[9],line[10])
