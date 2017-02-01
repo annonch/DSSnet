@@ -1,14 +1,14 @@
 # DSSnet #
 
 ### Requirements for installation: ###
-* Ubuntu / Debian probably will work on windows and osx.. (not tested yet)
+* Ubuntu / Debian ... Should work on windows and osx.. (not tested yet)
 * Vagrant
 * Virtual-box 
 * Windows (VM) 
 
 ###  Use  ###
 * DSSnet combines a power grid simulator (OpenDSS) with a SDN emulator (mininet). The software is designed to get high fidelity results of smart grid networks that require both communication and power. 
-* Version 2.0
+* Version 3.0
 
 ## How do I get set up? ##
 
@@ -31,23 +31,66 @@
     default: Warning: Authentication failure. Retrying...
     default: Warning: Authentication failure. Retrying...
 ```
-* this is some problem because of the re-packaging just ctrl+c and ignore
-* run vagrant ssh to log in. if it prompts for password use `vagrant`
+* this is some problem because of the re-packaging from an existing box just WAIT and ignore until it times out
+* run vagrant ssh to log in. If it prompts for password use `vagrant`
 * see vagrant docs for more info on vagrant (other useful commands vagrant destroy and vagrant halt)
+* IMPORTANT: If the box does not load after timing out run `vagrant destroy` then `vagrant up` and let it time out with the above error message.
 
 #### Setup Windows ####
 * Get windows VM (win 7 onwards)
-* Get python + numpy, win32com, (andaconda is easy for this stuff) [ tutorial to come, vagrant? ] 
+* Get python + numpy, win32com, (andaconda is easy for this stuff) [ tutorial to come ] 
 * text editor
+* IMPORTANT: create the following directory, C:\DSS and put the repository here
+* IMPORTANT: the full path to the power coordinator should be C:\\DSS\DSSnet\dss\powerCoord2.py
 
 #### Setup Network  ####
 * open port on windows, default 50021
 * make sure to test that the linux vm can communicate with the windows vm (try telnet)
 
+### Windows TEST ###
 #### test ####
-* on windows navigate to win folder in repository
-* run `python powerCoord.py -ip x.x.x.x` whatever the ip of your win vm is (you can use bridged adapter under virtualbox settings to get a ip to the outside world)
-* navigate to  DSSnet/net/DSSnet/ on linux
+* on windows navigate to dss folder in repository
+* run `python powerCoord.py --trace 1 -et 1`
+* What this is doing is sending in a trace file of events like the network coordinator would do to make sure that everything is good on the windows side.
+* Note the IED files and the load/generation files should be in this directory along side the powerCoord.py ( I will try to make this easier soon )
+* the configuration file defaults to the test case in the folder test 
+* the trace file defaults to the test folder synch.trace
+* the export monitors are in the folder that the circuit configuration file is in
+* type `python powerCoord.py -h` to see all the options
+```
+usage: powerCoord.py [-h] [-trace TRACE] [-trace_file TRACE_FILE] [--version]
+                     [-ip IP] [-port PORT] [-IED IED_CONFIG]
+                     [-cf CIRCUIT_FILENAME] [-ts TIMESTEP] [-et ET]
+                     [-mode MODE] [-mode_number MODE_NUMBER]
+
+Manages power system simulation and synchronizes with the network coordinator
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -trace TRACE          "-trace 1" for yes: instead of using network emulator
+                        we can use a trace of synchronization events from file
+  -trace_file TRACE_FILE
+                        location for trace file
+  --version             show program's version number and exit
+  -ip IP                ip of power coordinator
+  -port PORT            port reserved for power coordinator
+  -IED IED_CONFIG, --IED_config IED_CONFIG
+                        path to IED file
+  -cf CIRCUIT_FILENAME, --circuit_filename CIRCUIT_FILENAME
+                        path to main circuit file
+  -ts TIMESTEP, --timestep TIMESTEP
+                        resolution of time step
+  -et ET                time the experiment should end
+  -mode MODE            mode the simulator should be ran in: "Snap", "Duty",
+                        "Harmonics", "Direct","Dynamics": default is duty
+  -mode_number MODE_NUMBER, -mn MODE_NUMBER
+                        number of solutions done in different modes. Warning
+                        this advances the clock (I believe that you can just
+                        set the timestep to a good value and be okay)
+```
+### Linux TEST ###
+#### test ####
+* navigate to  ~/DSSnet/net/DSSnet/ on linux
 * run `sudo python netCoord.py -ip x.x.x.x whatever the ip of your win vm is
 * You should see 
 ```
@@ -93,13 +136,18 @@ update b p pre_pmu post_pmu 1465928573.14 a1 0
 * __always start the power coordinator first__
 * the numbers returned are time and the pmu raw measurements
 
+## Known Issues ##
+* In windows: IED file, and the load / generator 'loadshape' files are placed in C:\\DSS\DSSnet\dss\ So copy paste accordingly.
+* In windows: the monitors that are exported need to be moved or they will be overwritten by subsequent experiments automatically
+
 ### Moving Forward ###
 * now that the code is working you can start by creating the DSS circuit.
-* create an entry for each IED in the IED configuration file in windows
-* create a load/generation entry or pre/post configuration entry in the corresponding python files in windows
-* create an IED model for your IEDs that run in the emulation in linux
-* create a topology and ied configuration file in linux
-*  create a controller application (more to come)
+* create an entry for each IED (controllable load/generator/es/etc) in the IED configuration file in windows. Note IED file items are ones such that will be updated via the network coordinator.
+* dynamic loads/gens go in the dss folder as csv files  ( the whole file is split evenly over the specified time (-et x))
+* create an IED model (in python) for your IEDs that run in the emulation in linux
+* IED models should create pipe objects similar to the example to communicate to the netCoordinator 
+* create a topology and ied configuration file in linux ( use the example ones as template )
+* Specify startup options and create a controller application (more to come)
 
 ### Who do I talk to? ###
 To seek help, and feature requests:
@@ -182,15 +230,9 @@ todo - add more description
 * new switch_id
 * a b linkops
 
-
-
-
 ## FAQ ##
 
-
-no questions yet
-
-
+Common problem: dont forget the `&` so that the process on hosts run in background.
 
 ## Troubleshooting ##
 
@@ -220,5 +262,4 @@ tcp        0      0 127.0.0.1:52618         127.0.0.1:6653          TIME_WAIT   
 tcp6       0      0 :::6653                 :::*                    LISTEN      22734/java      
 ```
 
-well you should reserve this port for the controller. 
-
+Well you should reserve this port for the controller. 
