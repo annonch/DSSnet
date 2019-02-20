@@ -1,0 +1,62 @@
+
+Clear   ! always have this as the first line before defining a new circuit
+
+New Circuit.MG
+~ basekv=4.16 pu=1.000 phases=3 bus1=650  
+~ Angle=30                                                         ! advance angle 30 deg so result agree with published angle
+~ BaseMVA=0.01
+
+! Define the circuit elements
+Redirect Lines.DSS
+
+Redirect Capacitors.DSS
+
+Redirect Loads.DSS
+
+Redirect Generators.DSS
+
+! Let the openDSS estimate the voltage bases
+Set Voltagebases=4.16
+Calcvoltagebases
+
+New monitor.mon_bus_650 element=Line.650632 terminal=1 mode=0 Residual=yes
+New monitor.mon_bus_634 element=Line.633634 terminal=2 mode=0 Residual=yes
+New monitor.mon_bus_675 element=Line.692675 terminal=2 mode=0 Residual=yes
+New monitor.mon_bus_646 element=Line.645646 terminal=2 mode=0 Residual=yes
+New monitor.mon_bus_611 element=Line.684611 terminal=2 mode=0 Residual=yes
+New monitor.mon_bus_652 element=Line.684652 terminal=2 mode=0 Residual=yes
+New monitor.mon_bus_680 element=Line.671680 terminal=2 mode=0 Residual=yes
+
+
+New monitor.mon_ES_1 element=storage.ES1 terminal=1 mode=1 Residual=yes
+New monitor.mon_ES_2 element=storage.ES2 terminal=1 mode=1 Residual=yes
+New monitor.mon_ES_3 element=storage.ES3 terminal=1 mode=1 Residual=yes
+
+New monitor.mon_wind_gen element=Generator.gen terminal=1 mode=1 Residual=yes
+
+!set mode=direct
+!solve
+!sample
+!solve 
+!set mode=dynamics
+!solve
+!sample
+
+
+!#Solve mode=f
+!#Show f
+
+
+!show monitor mon_wind_gen
+!show isolated
+!show kvbasemismatch
+!show V LN Nodes
+
+
+!Monitor.Name = mon_wind_gen !
+!Monitor.clear
+!Monitor.take
+!Monitor.save
+!show monitor mon_wind_gen
+
+!solve mode=duty
