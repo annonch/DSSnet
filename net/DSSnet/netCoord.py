@@ -60,7 +60,7 @@ if not os.path.exists(COORD_PIPE):
 
 parser = argparse.ArgumentParser(description= 'Manages network emulation and synchronizes with the power Coordinator.')
 parser.add_argument('--version', action='version', version='DSSnet 2.0')
-parser.add_argument('-ip','--ip', help='ip of power coordinator', default='10.47.142.26', type=str)
+parser.add_argument('-ip','--ip', help='ip of power coordinator', default='localhost', type=str)
 parser.add_argument('-port','--port', help='port of the power coordinator, default/recommended: 50021', default='50021', type=str)
 parser.add_argument('-topo','--topo_config', help='path to topology file',default='./configs/topo.config', type=str)
 parser.add_argument('-IED','--IED_config', help='path to IED file', default='./configs/IED.config',type=str)
@@ -75,7 +75,7 @@ parser.add_argument('-pause', help='enable use of pause',dest = 'pause',action='
 parser.add_argument('-logLevel','-ll',help = 'logging level: info warn error debug',default='info',type=str)
 parser.add_argument('-stp',help = 'use stp protocol on switches',dest = 'stp',action='store_true')
 parser.add_argument('-rstp',help = 'use rstp protocol on switches',dest = 'rstp',action='store_true')
-parser.add_argument('-ovs_pid_files',help='path to dir containing ovsdb-server.pid and ovs-vswitchd.pid',default='/usr/local/var/run/openvswitch/',type=str)
+parser.add_argument('-ovs_pid_files',help='path to dir containing ovsdb-server.pid and ovs-vswitchd.pid',default='/var/run/openvswitch/',type=str)
 parser.add_argument('-ovs_vt',help='enabling this flag removes ovs from vt', default = 'store_true', action='store_false',dest = 'ovs_vt')
 parser.add_argument('-tdf', help='time dilation factor',default = 1,type=int)
 parser.add_argument('-kern',help='kernel switch or user switch, default kernel',dest = 'kern',action='store_false',default='store_true')

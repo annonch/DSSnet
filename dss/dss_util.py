@@ -9,7 +9,7 @@ import math
 Gen_files = []
 Load_files = []
 
-with open('C:\DSS\DSSnet\dss\IED.config','r') as ins:
+with open('./IED.config','r') as ins:
 		for line in ins:
 			lin = line.split()
 			if lin[0] == 'load':

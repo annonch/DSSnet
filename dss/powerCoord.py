@@ -7,17 +7,19 @@
 #    Version 2.2    #
 #####################
 
-import win32com.client
+#import win32com.client
 import zmq
 import numpy
 from numpy import array
 import sys
 import argparse
 import DSSnet_handler as handler
-import dss
+import dss_util
 import time
 import os.path
 import math
+## nw
+import opendssdirect as DSS
 
 ###########
 #  Setup  #
@@ -29,17 +31,17 @@ parser.add_argument('-trace',
                         help='"-trace 1" for yes: instead of using network emulator we can use a trace of synchronization events from file', 
                         default=0,type=int)
 parser.add_argument('-trace_file', help = 'location for trace file',
-                        default ='C:\DSS\DSSnet\dss/test\synch.config', type=str  )
+                        default ='/home/dssnet/Projects/dssnet/dss/test/synch.config', type=str  )
 parser.add_argument('--version', action='version',
                         version='DSSnet 3.0')
 parser.add_argument('-ip', help='ip of power coordinator',
-                        default='216.47.152.23',type=str)
+                        default='localhost',type=str)
 parser.add_argument('-port', help='port reserved for power coordinator',
                         default='50021',type=str)
 parser.add_argument('-IED','--IED_config', help='path to IED file',
-                        default='C:\DSS\DSSnet\dss/test\IED.config',type=str)
+                        default='/home/dssnet/Projects/dssnet/dss/test/IED.config',type=str)
 parser.add_argument('-cf','--circuit_filename', help='path to main circuit file',
-                        default = 'C:\DSS\DSSnet\dss/test\master.dss', type=str)
+                        default = '/home/dssnet/Projects/dssnet/dss/test/master.dss', type=str)
 parser.add_argument('-ts','--timestep', help='resolution of time step',
                         default=0.001,type=float)
 parser.add_argument('-et', help='time the experiment should end',
@@ -68,19 +70,21 @@ except ValueError:
     print('ERROR: mode_number must be a string representation of an integer')
     print('EXITING')
     exit(-3)
+    
 ### START up connection to OpenDSS ###
-
-engine=win32com.client.Dispatch("OpenDSSEngine.DSS")
-if not engine.Start("0"):
-    print('ERROR: Can not start engine')
-    print('EXITING')
-    exit(-1)
+DSS._utils.dss_py.use_com_compat(True)
+engine = DSS._utils.dss_py.DSS
+#engine=win32com.client.Dispatch("OpenDSSEngine.DSS")
+#if not engine.Start("0"):
+#    print('ERROR: Can not start engine')
+#    print('EXITING')
+#    exit(-1)
 
 trace=[]
 if args.trace:
     print('%s%s'% ('\n Experiment running in trace mode from synch.config', 
             '\n --------------------------------------'))
-    trace = dss.readfile(args.trace_file)
+    trace = dss_util.readfile(args.trace_file)
 
 
 engine.Text.Command='clear'
@@ -169,7 +173,7 @@ def commNet(serverIn):
         # what does netCoord want us to do????
         if length > 1 :
             newTime = line[5]
-            go = dss.get_up_to_date(engine,float(newTime),args,loads,gens)
+            go = dss_util.get_up_to_date(engine,float(newTime),args,loads,gens)
             
             # time exceeded
             if go == 'end':
@@ -180,7 +184,7 @@ def commNet(serverIn):
                 exit(f)
             # process event
 
-            dss.updateTime(engine,newTime,loads,gens,args.et)
+            dss_util.updateTime(engine,newTime,loads,gens,args.et)
 
             reply='ok'
             
@@ -247,7 +251,7 @@ def send(s,server):
 
 
 def finish():
-    dss.exportMonitors(engine,monitors)
+    dss_util.exportMonitors(engine,monitors)
     # if we need to do anything upon finish
     # do it here
     return 0
